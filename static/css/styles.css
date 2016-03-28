@@ -1,0 +1,45 @@
+/*Base*/
+
+.logo-nav{
+	max-height: 54px;
+}
+
+.divider{
+	border-bottom: 1px solid orange;
+	width:80%;
+	margin: 0 auto;
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+}
+
+
+
+/*Perfil*/
+
+/*login*/
+
+.login-container{
+	width: 250px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+/*dashboard*/
+
+.cover{
+	background-image: url('../assets/cover-profile.jpg');
+	background-size: cover;
+	min-height: 240px;
+
+}
+.perfil-img{
+
+	border-radius: 50%;
+	background-color: white;
+	transition: all 1s ease-in-out;
+}
+.perfil-img:hover{
+	border-radius: 10%;
+	
+}

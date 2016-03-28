@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block titulo%}
+	{{request.user.username}}'s Dashboard'
+{%endblock titulo%}
+
+{%block content%}
+
+
+
+<div class="cover valign-wrapper">
+
+	<div class="valign container white-text">
+	<div class="row">
+	<img class="perfil-img col m3 s12"src="{%static 'assets/logo_geek.png'%}">
+	<div class="col m9 s12">
+	<h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
+	<h4>Suscripción Gratuita <span class="green-text">Activo</span></h4>
+	</div>
+	</div>
+	</div>
+
+
+</div>
+
+<section class="section">
+<article class="container">
+
+	<a onclick="Materialize.toast('Proximamente', 4000)" class="waves-effect waves-light btn orange">Modificar mi info</a>
+	<a onclick="Materialize.toast('Proximamente', 4000)" class="waves-effect waves-light btn green">Tus Eventos</a>
+	<a onclick="Materialize.toast('Proximamente', 4000)" href="#!" class="waves-effect waves-light btn red">Tus Cursos</a>
+
+
+
+
+
+
+
+
+
+	</article></section>
+
+{%endblock content%}
+
+{%block scripts%}
+<script>
+  $(document).ready(function(){
+    
+  });
+</script>
+
+  {%endblock scripts%}

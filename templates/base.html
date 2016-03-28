@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+  <link rel="icon" 
+      type="image/png" 
+      href="{%static 'assets/logo_geek.png'%}">
+	<title>{%block titulo%}FixTeR{%endblock titulo%}</title>
+
+	<!--Materialize-->
+	  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+   <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Fa fa icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!--Estilos fixter-->
+  <link rel="stylesheet" type="text/css" href="{%static 'css/styles.css'%}">
+      
+
+</head>
+<body class="grey lighten-4">
+
+	 <nav class="white">
+    <div class="nav-wrapper">
+      <a href="{%url 'dashboard'%}">
+      <img class="logo-nav" src="{%static 'assets/logo_geek.png'%}">
+      </a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a href="http://fixter.org" class="black-text">FixTeR.org</a></li>
+        <li><a href="#!" class="black-text">Eventos</a></li>
+        {%if request.user.is_authenticated%}
+        <li>
+          <a href="{%url 'dashboard'%}" class="black-text">Tu Perfil</a>
+        </li>
+        <li>
+          <a href="{%url 'logout'%}" class="red-text">Cerrar Sesión</a>
+        </li>
+        {%else%}
+        <li>
+          <a href="{%url 'login'%}" class="black-text">Inicia Sesión</a>
+        </li>
+        {%endif%}
+      </ul>
+
+      <ul class="side-nav" id="mobile-demo">
+
+        <li><a href="http://fixter.org" class="black-text">FixTeR.org</a></li>
+        <li><a href="#!" class="black-text">Eventos</a></li>
+        <li><a href="mobile.html" class="black-text">Tu Perfil</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+
+
+	{%block content%}
+	{%endblock content%}
+
+
+
+ <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      
+ <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+  <script>
+  $( document ).ready(function(){
+  	$(".button-collapse").sideNav();
+  }) 
+
+  </script>
+
+  {%block scripts%}{%endblock scripts%}
+  
+</body>
+</html>
