@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block titulo%}
+	Eventos FixTeR
+{%endblock titulo%}
+
+{%block content%}
+<section class="section">
+<article class="container">
+
+
+	<h1>Eventos Próximos</h1>
+<ul class="collection">
+
+	{%for event in events%}
+
+
+    <li class="collection-item avatar">
+      <img src="/media/{{event.logo}}" alt="" class="circle">
+      <h4 class="title">{{event.titulo}}</h4>
+      <p>{{event.fecha}}<br>
+         {{event.slug}}
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+
+{%empty%}
+
+<span>No hay Eventos próximos</span>
+    {%endfor%}
+
+
+
+
+
+
+
+</article>
+</section>
+
+
+{%endblock content%}

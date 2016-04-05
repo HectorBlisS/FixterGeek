@@ -33,7 +33,7 @@
 
       <ul class="right hide-on-med-and-down">
         <li><a href="http://fixter.org" class="black-text">FixTeR.org</a></li>
-        <li><a href="#!" class="black-text">Eventos</a></li>
+        <li><a href="{%url 'eventos:todos'%}" class="black-text">Eventos</a></li>
         {%if request.user.is_authenticated%}
         <li>
           <a href="{%url 'dashboard'%}" class="black-text">Tu Perfil</a>

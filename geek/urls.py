@@ -4,14 +4,19 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static 
 from perfil import urls as PerfilUrls
+from eventos import urls as EventosUrls
 
 from social.apps.django_app import urls as socialUrls
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^perfil/',
     	include(PerfilUrls)),
+
+    url(r'^eventos/',
+    	include(EventosUrls,namespace='eventos')),
 
         # Social Auth
     url('social-auth/',

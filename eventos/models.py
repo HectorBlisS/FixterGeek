@@ -1,0 +1,27 @@
+from django.db import models
+from django.conf import settings
+from django.core.urlresolvers import reverse
+
+class Evento(models.Model):
+	titulo=models.CharField(max_length=50)
+	slug=models.SlugField(max_length=60,null=True,blank=True)
+	descripcion=models.TextField()
+	detalles=models.TextField()
+	fecha=models.DateTimeField(auto_now=True)
+	direccion=models.TextField()
+	logo=models.ImageField(upload_to='logos',null=True,blank=True)
+	portada=models.ImageField(upload_to='eventos',null=True,blank=True)
+
+	def __str__(self):
+		return self.titulo
+
+	# def get_absolute_url(self):
+	# 	return reverse()
+
+class Registro(models.Model):
+	usuario=models.OneToOneField(settings.AUTH_USER_MODEL)
+	amigos=models.IntegerField()
+	evento=models.ForeignKey(Evento,related_name='registros')
+
+	def __str__(self):
+		return "{} se registro a {}".format(self.usuario,self.evento)

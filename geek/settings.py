@@ -27,10 +27,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'perfil',
-        # mi app antes pa el logout
+    # mi app antes pa el logout
     'django.contrib.admin',
     # Social Auth
     'social.apps.django_app.default',
+    'eventos',
+
     ]
 
 MIDDLEWARE_CLASSES = [
