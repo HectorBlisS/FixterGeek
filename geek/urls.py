@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static 
 from perfil import urls as PerfilUrls
 from eventos import urls as EventosUrls
+from mailin import urls as MailinUrls
 
 from social.apps.django_app import urls as socialUrls
 
@@ -17,6 +18,9 @@ urlpatterns = [
 
     url(r'^eventos/',
     	include(EventosUrls,namespace='eventos')),
+
+    url(r'^mailin/',
+        include(MailinUrls,namespace='mailin')),
 
         # Social Auth
     url('social-auth/',

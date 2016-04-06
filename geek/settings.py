@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # Social Auth
     'social.apps.django_app.default',
     'eventos',
+    'mailin',
 
     ]
 
@@ -147,4 +148,18 @@ SOCIAL_AUTH_TWITTER_SECRET = 'JQXyI1x7FLOCZJORXng6MmjH0pNNRlQpF0glVYjxIxXRM36R9x
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '773946138609-lrt0vme6hr6kbqgavvaerov44pcu9mo8.apps.googleusercontent.com' #Google consumer key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '-5iamsoiKaBnlZWZ3kp1ArHF' #secret
+
+
+# Correo electronico
+EMAIL_HOST = 'smtpout.secureserver.net'
+# EMAIL_HOST='smtp.gmail.com'
+# EMAIL_PORT = '587'
+EMAIL_PORT='465'
+EMAIL_HOST_USER = 'contacto@fixter.org'
+# EMAIL_HOST_USER = 'tterrenofacil@gmail.com'
+EMAIL_HOST_PASSWORD = 'Poweroso77'
+# EMAIL_HOST_PASSWORD = 'Miguel741010'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL=False
 
