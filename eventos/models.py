@@ -7,7 +7,7 @@ class Evento(models.Model):
 	slug=models.SlugField(max_length=60,null=True,blank=True)
 	descripcion=models.TextField()
 	detalles=models.TextField()
-	fecha=models.DateTimeField(auto_now=True)
+	fecha=models.DateTimeField()
 	direccion=models.TextField()
 	logo=models.ImageField(upload_to='logos',null=True,blank=True)
 	portada=models.ImageField(upload_to='eventos',null=True,blank=True)
