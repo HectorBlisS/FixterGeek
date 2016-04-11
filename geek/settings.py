@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'iv5%rh+iwj1)&hv015rp#*&q+llqg52zihv$#ino%7x@)u!$20'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -141,8 +141,8 @@ AUTHENTICATION_BACKENDS = (
     'social.backends.google.GoogleOAuth2',
 
     )
-SOCIAL_AUTH_FACEBOOK_KEY='1676483482640193'#Facebook app ID
-SOCIAL_AUTH_FACEBOOK_SECRET='0ae224c3d8c3bee9dd3f22f39884bb24'# Facebook App secret
+SOCIAL_AUTH_FACEBOOK_KEY='421914394679473'#Facebook app ID
+SOCIAL_AUTH_FACEBOOK_SECRET='64351e9c281191cf774af476479a566a'# Facebook App secret
 SOCIAL_AUTH_FACEBOOK_SCOPE=['email',]
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'locale': 'ru_RU',
