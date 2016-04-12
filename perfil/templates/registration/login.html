@@ -1,62 +1,27 @@
 {%extends 'base.html'%}
+{%load static%}
+
+{%block nav%}{%endblock nav%}
 
 {%block content%}
 
-<section class="section">
-<article class="container center">
-
-
-
-
-<h1>¡Bienvenido!</h1>
-<h2>Fixter.Geek</h2>
-
-<div class="divider"></div>
-{%if form.errors%}
-	<p class="error">Tu usuario y Contraseña no Funcionan!. Prueba de nuevo.</p>
-{%else%}
-	<h5>Porfavor Introduce tu Usuario y Contraseña:</h5>
-{%endif%}
-	<form action="." method="post">
-		
-		{%csrf_token%}
-		<div class="login-container">
-		{{form.as_p}}
-		<input type="hidden" name="next" value="{{next}}">
-		<input class="btn orange waves-effect" type="submit" value="Entrar">
-		</div>
-			</form>
-
-
-
+<div class="valign-wrapper todo fondo">
+   <div style="width:100%;"class="valign center">
+   		<img class="responsive-img" src="{%static 'assets/logo_geek.png'%}">
+<div class="fondito">
+   		<h3 class="white-text">Inicia Sesión con tu Facebook:</h3>
+   				<div class="divider"></div>
+   		<h4 class="white-text">El futuro llegó a Pachuca.</h4>
+   		<h5 class="white-text">¿Te gustaría ser parte?</h5>
+   		<a href="{%url 'social:begin' 'facebook'%}" class="choncho flow-text btn-large waves-effect blue"><i class="fa fa-facebook-official"></i>
+						¡Quiero ser Parte!</a>
 		<div class="divider"></div>
+{# <h5>Fixter.org solamente utiliza las cuentas de Facebook para generar usuarios a fin de acceder a la plataforma fácilmente. Nunca compartiremos tu información con terceras empresas ni publicaremos en tu nombre ningun video raro en tu muro.</h5> #}
+
+</div>
+   		
+   </div>
+</div>
 
 
-			<p>
-		<a href="{%url 'password_reset'%}">
-		Olvidaste tu password?
-		</a>
-	</p>
-
-	<p>
-		No tienes cuenta? Crea una aquí: 
-		<a href="{# {%url 'register'%} #}">
-			Registrate
-		</a>
-	</p>
-
-		<h4>También puedes entrar con tus redes Sociales:</h4>
-		<a href="{%url 'social:begin' 'facebook'%}" class="waves-effect waves-light btn blue">
-						<i class="fa fa-facebook-official"></i>
-						Facebook</a>
-		<a href="{%url 'social:begin' 'twitter'%}" class="waves-effect waves-light btn light-blue">
-						<i class="fa fa-twitter"></i>
-						Twitter
-					</a>
-
-<div class="divider"></div>
-
-
-</article>
-</section>
 {%endblock content%}

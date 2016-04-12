@@ -24,9 +24,11 @@
 </head>
 <body class="grey lighten-4">
 
+{%block nav%}
+
 	 <nav class="white">
     <div class="nav-wrapper">
-      <a href="{%url 'dashboard'%}">
+      <a href="{%url 'main:home'%}">
       <img class="logo-nav" src="{%static 'assets/logo_geek.png'%}">
       </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
@@ -43,7 +45,7 @@
         </li>
         {%else%}
         <li>
-          <a href="{%url 'login'%}" class="black-text">Inicia Sesión</a>
+          <a href="{%url 'dashboard'%}" class="black-text">Inicia Sesión</a>
         </li>
         {%endif%}
       </ul>
@@ -51,14 +53,25 @@
       <ul class="side-nav" id="mobile-demo">
 
         <li><a href="http://fixter.org" class="black-text">FixTeR.org</a></li>
-        <li><a href="#!" class="black-text">Eventos</a></li>
-        <li><a href="mobile.html" class="black-text">Tu Perfil</a></li>
+        <li><a href="{%url 'eventos:todos'%}" class="black-text">Eventos</a></li>
+                {%if request.user.is_authenticated%}
+        <li>
+          <a href="{%url 'dashboard'%}" class="black-text">Tu Perfil</a>
+        </li>
+        <li>
+          <a href="{%url 'logout'%}" class="red-text">Cerrar Sesión</a>
+        </li>
+        {%else%}
+        <li>
+          <a href="{%url 'dashboard'%}" class="black-text">Inicia Sesión</a>
+        </li>
+        {%endif%}
       </ul>
 
     </div>
   </nav>
 
-
+{%endblock nav%}
 
 
 	{%block content%}

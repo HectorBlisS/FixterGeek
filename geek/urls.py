@@ -6,12 +6,17 @@ from django.conf.urls.static import static
 from perfil import urls as PerfilUrls
 from eventos import urls as EventosUrls
 from mailin import urls as MailinUrls
+from main import urls as MainUrls
 
 from social.apps.django_app import urls as socialUrls
 
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    url(r'^',
+        include(MainUrls, namespace='main')),
 
     url(r'^perfil/',
     	include(PerfilUrls)),

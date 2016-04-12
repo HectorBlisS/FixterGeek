@@ -12,7 +12,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'iv5%rh+iwj1)&hv015rp#*&q+llqg52zihv$#ino%7x@)u!$20'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
     'eventos',
     'mailin',
+    'main',
 
     ]
 
@@ -149,8 +150,8 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'fields': 'id, name, email, age_range'
 }
 
-SOCIAL_AUTH_TWITTER_KEY = '6oetLg6z7sJcPZObHvomDl64z' #consumer key
-SOCIAL_AUTH_TWITTER_SECRET = 'JQXyI1x7FLOCZJORXng6MmjH0pNNRlQpF0glVYjxIxXRM36R9x' #Consumer secret
+SOCIAL_AUTH_TWITTER_KEY = 'Qyzcr8N3UJgQgQpFeXaiVKxXp' #consumer key
+SOCIAL_AUTH_TWITTER_SECRET = '9uLpRrVdIA5NX9c5rEjg7mkjVGRIbkqJSfy2H7TfGxQe00gpGS' #Consumer secret
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '773946138609-lrt0vme6hr6kbqgavvaerov44pcu9mo8.apps.googleusercontent.com' #Google consumer key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '-5iamsoiKaBnlZWZ3kp1ArHF' #secret
@@ -168,4 +169,17 @@ EMAIL_HOST_PASSWORD = 'Poweroso77'
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 DEFAULT_FROM_EMAIL=False
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'social.pipeline.user.create_user',
+    'perfil.pipelines.save_profile_picture',  # <--- set the import-path to the function
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details'
+)
 

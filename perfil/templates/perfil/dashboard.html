@@ -16,7 +16,8 @@
 	<img class="perfil-img col m3 s12"src="{%static 'assets/logo_geek.png'%}">
 	<div class="col m9 s12">
 	<h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
-	<h4>Suscripción Gratuita <span class="green-text">Activo</span></h4>
+	<h4>Miembro <span class="green-text">Activo</span></h4>
+	<p>{{request.user.email}}</p>
 	</div>
 	</div>
 	</div>
