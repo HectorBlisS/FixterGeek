@@ -29,4 +29,4 @@ def save_profile_picture(backend, user, response, is_new,  *args, **kwargs):
              #                     save=False
              #                     )
 				user_profile.photo=url
-            	user_profile.save()
+				user_profile.save()
