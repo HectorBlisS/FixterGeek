@@ -9,15 +9,14 @@ def save_profile_picture(backend, user, response, is_new,  *args, **kwargs):
 		user_model=user
 		user_profile=UserProfile()
 		user_profile.user=user_model
-	if user_profile.photo:
-		pass
-	else:
 		# url = 'http://graph.facebook.com/{0}/picture'.format(response['id'])
 		ide=response['id']
 		print(ide)
+
 		try:
 			user_profile.ide=ide
 			user_profile.save()
 
 		except ConnectionError:
 			pass
+			print("Error de conexión")
