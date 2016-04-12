@@ -13,7 +13,7 @@
 
 	<div class="valign container white-text">
 	<div class="row">
-	<img class="perfil-img col m3 s12"src="{%static 'assets/logo_geek.png'%}">
+	<img class="perfil-img col m3 s12"src="{{request.user.userprofile.photo}}">
 	<div class="col m9 s12">
 	<h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
 	<h4>Miembro <span class="green-text">Activo</span></h4>
