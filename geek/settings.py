@@ -198,13 +198,13 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.user.user_details'
 )
 
-BROKER_HOST = "localhost"
-BROKER_PORT = 5672
-BROKER_USER = "root"
-BROKER_PASSWORD = "root"
-BROKER_VHOST = "localhost"
+# BROKER_HOST = "localhost"
+# BROKER_PORT = 5672
+# BROKER_USER = "root"
+# BROKER_PASSWORD = "root"
+# BROKER_VHOST = "localhost"
 
-BROKER_URL = "amqp://guest:guest@localhost:5672//"
+# BROKER_URL = "amqp://guest:guest@localhost:5672//"
 
-CELERY_RESULT_BACKEND = "amqp"
+# CELERY_RESULT_BACKEND = "amqp"
 
