@@ -1,6 +1,5 @@
 from celery import task
 from django.core.mail import send_mail
-from django import settings
 
 @task
 def saludo(saludo):
