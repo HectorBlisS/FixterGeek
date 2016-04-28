@@ -32,6 +32,6 @@ def save_profile_picture(backend, user, response, is_new,  *args, **kwargs):
 			'usuario':user
 			}
 			mails.welcome_mail(datos,correo)
-			# print("enviando correo a: ",correo)
+			
 		except:
-			print("No se envio el correo")
+			print("error en envio")
