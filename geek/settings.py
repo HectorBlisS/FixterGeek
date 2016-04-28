@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'geek.wsgi.application'
 # import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
-if DEBUG:
+if not DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',

@@ -4,7 +4,7 @@ from django.core.mail import send_mail
 
 
 
-
+@task
 def saludo(saludo):
 	print("morro")
 	subject='Probando Celery on aws'
