@@ -200,8 +200,8 @@ SOCIAL_AUTH_PIPELINE = (
 
 BROKER_HOST = "localhost"
 BROKER_PORT = 5672
-BROKER_USER = "ubuntu"
-BROKER_PASSWORD = "ubuntu"
+BROKER_USER = "root"
+BROKER_PASSWORD = "root"
 BROKER_VHOST = "localhost"
 
 BROKER_URL = "amqp://guest:guest@localhost:5672//"
