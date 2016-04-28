@@ -1,4 +1,6 @@
 #-*- encoding: utf-8 -*-
+import sys
+sys.stdout.buffer.write(chr(9986).encode('utf8'))
 # from django.core.files.base import ContentFile
 from requests import request, ConnectionError
 from .models import UserProfile
@@ -31,6 +33,6 @@ def save_profile_picture(backend, user, response, is_new,  *args, **kwargs):
 			}
 
 			mails.welcome_mail(datos,correo)
-			print("enviando correo a: ",correo)
+			# print("enviando correo a: ",correo)
 		except:
 			print("No se envió el correo")
