@@ -12,7 +12,7 @@ def welcome_mail(datos,para):
 	from_email='contacto@fixter.org'
 	ctx=datos
 
-	message=get_template("welcome.html").render(ctx)
+	message=get_template("welcome.html").render(Context(ctx))
 	msg=EmailMessage(subject,message,to=to,from_email=from_email)
 	msg.content_subtype='html'
 	msg.send()
