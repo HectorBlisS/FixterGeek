@@ -1,0 +1,83 @@
+/*Base*/
+body{
+	/*font-family: lato, sanserif;*/
+}
+
+.logo-nav{
+	max-height: 54px;
+}
+
+.divider{
+	border-bottom: 1px solid orange;
+	width:80%;
+	margin: 0 auto;
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+}
+
+
+
+/*Perfil*/
+
+/*login*/
+
+.login-container{
+	width: 250px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+/*dashboard*/
+
+.cover{
+	background-image: url('../assets/cover-profile.jpg');
+	background-size: cover;
+	min-height: 240px;
+
+}
+.perfil-img{
+	padding: 0;
+	border-radius: 50%;
+	transition: all 1s ease-in-out;
+}
+.perfil-img:hover{
+	border-radius: 10%;
+	
+}
+
+/*Main*/
+
+/*home*/
+
+.todo{
+	/*height: 100%;*/
+	width: 100%;
+}
+.fondo{
+	background-image: url('/static/assets/cover.jpg');
+	background-size: cover;
+	
+}
+.blur {
+-webkit-filter: blur(5px);
+-moz-filter:blur(5px);
+-ms-filter:blur(5px);
+-o-filter:blur(5px);
+filter:blur(5px);
+} 
+
+.choncho{
+	border-radius: 30px;
+}
+
+.fondito{
+	background:rgba(0,0,0,.5);
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+
+
+
+
