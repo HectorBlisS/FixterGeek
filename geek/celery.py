@@ -4,7 +4,7 @@ from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE','geek.settings')
 
-app=Celery('geek',backend='amqp', broker='amqp://')
+app=Celery('geek')
 
 app.config_from_object('django.conf:settings')
 
