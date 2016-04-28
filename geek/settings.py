@@ -210,5 +210,5 @@ SOCIAL_AUTH_PIPELINE = (
 
 BROKER_URL = 'amqp://bliss:poweroso@localhost:5672//'
 
-
+file_charset = 'utf-8'
 
