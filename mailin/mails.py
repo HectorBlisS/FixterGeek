@@ -1,3 +1,4 @@
+#-*- encoding: utf-8 -*-
 from django.template import Context
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
