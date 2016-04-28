@@ -15,5 +15,5 @@ class DashBoard(View):
 		context={
 		
 		}
-		saludo('Hola blissi')
+		saludo.delay('Hola blissi')
 		return render(request,template,context)
