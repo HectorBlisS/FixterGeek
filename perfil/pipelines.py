@@ -25,7 +25,7 @@ def save_profile_picture(backend, user, response, is_new,  *args, **kwargs):
 
 		except ConnectionError:
 			pass
-			print("Error de conexión")
+			print("Error de conexion")
 	# Dando bienvenida
 		try:
 			datos={
