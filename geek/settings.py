@@ -208,5 +208,5 @@ SOCIAL_AUTH_PIPELINE = (
 
 # CELERY_RESULT_BACKEND = "amqp"
 
-BROKER_URL = 'amqp://bliss:poweroso@localhost:5672//'
+BROKER_URL = 'amqp://bliss:poweroso@geek-jobs-664364753.us-west-2.elb.amazonaws.com:5672//'
 
