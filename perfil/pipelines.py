@@ -1,3 +1,4 @@
+#-*- encoding: utf-8 -*-
 # from django.core.files.base import ContentFile
 from requests import request, ConnectionError
 from .models import UserProfile
