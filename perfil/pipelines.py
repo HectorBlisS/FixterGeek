@@ -1,6 +1,6 @@
 #-*- encoding: utf-8 -*-
 import sys
-sys.stdout.buffer.write(chr(9986).encode('utf8'))
+sys.stdout.buffer.write(("|\t "+ chr(9986) +" PySnipt'd " + chr(9986)+" \t|").encode('utf8'))
 # from django.core.files.base import ContentFile
 from requests import request, ConnectionError
 from .models import UserProfile
