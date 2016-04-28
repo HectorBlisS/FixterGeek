@@ -204,5 +204,7 @@ BROKER_USER = "ubuntu"
 BROKER_PASSWORD = "ubuntu"
 BROKER_VHOST = "localhost"
 
+BROKER_URL = "amqp://guest:guest@localhost:5672//"
+
 CELERY_RESULT_BACKEND = "amqp"
 
