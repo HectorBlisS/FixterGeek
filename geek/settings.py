@@ -210,3 +210,5 @@ SOCIAL_AUTH_PIPELINE = (
 
 BROKER_URL = 'amqp://bliss:poweroso@localhost:5672//'
 
+PYTHONIOENCODING='utf-8'
+
