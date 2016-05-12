@@ -15,9 +15,6 @@ from social.apps.django_app import urls as socialUrls
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    url(r'^',
-        include(MainUrls, namespace='main')),
-
     url(r'^perfil/',
     	include(PerfilUrls)),
 
@@ -31,6 +28,10 @@ urlpatterns = [
     url('social-auth/',
     	include(socialUrls,
     		namespace="social")),
+
+    url(r'^',
+        include(MainUrls, namespace='main')),
+
     url(
         regex=r'^media/(?P<path>.*)$',
         view='django.views.static.serve',
