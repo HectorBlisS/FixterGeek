@@ -31,8 +31,13 @@ urlpatterns = [
     url('social-auth/',
     	include(socialUrls,
     		namespace="social")),
+    url(
+        regex=r'^media/(?P<path>.*)$',
+        view='django.views.static.serve',
+        kwargs={'document_root':settings.MEDIA_ROOT}
+        ),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL,
+#         document_root=settings.MEDIA_ROOT)
