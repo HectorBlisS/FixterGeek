@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+
+{%load static%}
+
+{%block titulo%}
+{{evento.titulo|upper}}
+{%endblock titulo%}
+
+
+
+{%block content%}
+<section class="section">
+<div class="portada">
+<img src="{{evento.portada.url}}" class="portada-img"/> <!--imagen de portada-->
+<div class="cuadro_negro"></div><!--cuadro negro-->
+<div class="portada-contenido">
+
+<h4>{{evento.titulo}}</h4>
+<div class="divider"></div>
+<p>{{evento.direccion}}</p>
+<p><strong class="grey-text">Iniciamos</strong>: {{evento.fecha}}</p>
+
+
+</div>
+
+</div><!--portada-->
+
+
+
+
+
+<article class="container">
+
+<!-- Your share button code -->
+<div style="margin-top:15px;" class="fb-like" data-href="http://geek.fixter.org/eventos/camp" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+<p class="btn-aplica-p">
+<button class="btn-aplica">Aplica</button>
+</p>
+
+</article>
+
+</section>
+{%endblock content%}
+
+{%block scripts%}
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=421914394679473";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{%endblock scripts%}

@@ -1,10 +1,10 @@
 from django.db import models
 from django.conf import settings
-from django.core.urlresolvers import reverse
+# from django.core.urlresolvers import reverse
 
 class Evento(models.Model):
 	titulo=models.CharField(max_length=50)
-	slug=models.SlugField(max_length=60,null=True,blank=True)
+	slug=models.SlugField(max_length=60,null=True,blank=True,unique=True)
 	descripcion=models.TextField()
 	detalles=models.TextField()
 	fecha=models.DateTimeField()
@@ -25,3 +25,13 @@ class Registro(models.Model):
 
 	def __str__(self):
 		return "{} se registro a {}".format(self.usuario,self.evento)
+
+class Aplicant(models.Model):
+	usuario = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="aplicantes")
+	motivos = models.TextField()
+	evento = models.OneToOneField(Evento)
+
+	def __str__(self):
+		return "{} Aplico a {}".format(self.usuario,self.evento)
+
+

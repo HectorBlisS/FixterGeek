@@ -15,6 +15,7 @@
 
 	{%for event in events%}
 
+<a style="color:black;" href="{%url 'eventos:detalle' event.slug%}">
 
     <li class="collection-item avatar">
       <img src="/media/{{event.logo}}" alt="" class="circle">
@@ -25,6 +26,7 @@
       <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
     </li>
 
+</a>
 {%empty%}
 
 <span>No hay Eventos próximos</span>
