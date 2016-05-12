@@ -9,9 +9,9 @@ urlpatterns=[
 		views.DetalleEvento.as_view(),
 		name="detalle"),
 
-	url(r'^todos/$',
-		views.Todos.as_view(),
-		name="todos"),
+	# url(r'^todos/$',
+	# 	views.Todos.as_view(),
+	# 	name="todos"),
 
 
 
