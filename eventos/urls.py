@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns=[
 
-	url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$',
+	url(r'^(?P<slug>[-\w]+)/$',
 		views.DetalleEvento.as_view(),
 		name="detalle"),
 

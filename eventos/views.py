@@ -15,9 +15,9 @@ class Todos(View):
 		return render(request,template,context)
 
 class DetalleEvento(View):
-	def get(self,request,slug,id):
+	def get(self,request,slug):
 		template = "eventos/detalle.html"
-		evento = get_object_or_404(Evento,slug=slug,id=id)
+		evento = get_object_or_404(Evento,slug=slug)
 		context = {
 		'evento':evento,
 		}
