@@ -10,7 +10,7 @@ class Todos(View):
 		template='eventos/todos.html'
 		eventos=Evento.objects.all()
 		context={
-			'events':eventos
+		'events':eventos,
 		}
 		return render(request,template,context)
 

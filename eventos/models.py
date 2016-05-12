@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 
 class Evento(models.Model):
 	titulo=models.CharField(max_length=50)
-	slug=models.SlugField(max_length=60,null=True,blank=True,unique=True)
+	slug=models.SlugField(max_length=60)
 	descripcion=models.TextField()
 	detalles=models.TextField()
 	fecha=models.DateTimeField()
