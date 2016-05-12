@@ -16,7 +16,7 @@ class Evento(models.Model):
 		return self.titulo
 
 	def get_absolute_url(self):
-		return reverse('eventos:detalle',args=[self.slug])
+		return reverse('eventos:detalle',args=[self.pk,self.slug])
 
 class Registro(models.Model):
 	usuario=models.OneToOneField(settings.AUTH_USER_MODEL)

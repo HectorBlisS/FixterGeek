@@ -15,11 +15,13 @@ class Todos(View):
 		return render(request,template,context)
 
 class DetalleEvento(View):
-	def get(self,request,slug):
+	def get(self,request,slug,id):
 		template = "eventos/detalle.html"
-		evento = get_object_or_404(Evento,slug=slug)
+		evento = get_object_or_404(Evento,slug=slug,id=id)
 		context = {
 		'evento':evento,
 		}
 		return render(request,template,context)
+
+
 
