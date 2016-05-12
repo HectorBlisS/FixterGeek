@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-# from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse
 
 class Evento(models.Model):
 	titulo=models.CharField(max_length=50)
@@ -15,8 +15,8 @@ class Evento(models.Model):
 	def __str__(self):
 		return self.titulo
 
-	# def get_absolute_url(self):
-	# 	return reverse()
+	def get_absolute_url(self):
+		return reverse('eventos:detalle',args=[self.slug])
 
 class Registro(models.Model):
 	usuario=models.OneToOneField(settings.AUTH_USER_MODEL)

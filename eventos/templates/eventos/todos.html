@@ -15,7 +15,7 @@
 
 	{%for event in events%}
 
-<a style="color:black;" href="{%url 'eventos:detalle' slug=event.slug%}">
+<a style="color:black;" href="{{event.get_absolute_url}}">
 
     <li class="collection-item avatar">
       <img src="/media/{{event.logo}}" alt="" class="circle">
