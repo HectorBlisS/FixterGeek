@@ -122,7 +122,7 @@ filter:blur(5px);
 .portada{
 	position: relative;
 	width: 100%;
-	height: 30%;
+	height: 50%;
 	overflow: hidden;
 }
 @media(min-width: 800px){
@@ -176,6 +176,7 @@ width: 100%;
 	width: 200px;
 	height: 40px;
 	cursor: pointer;
+	transition: all .3s ease-in-out;
 }
 .btn-aplica:hover{
 	color:red;
@@ -184,6 +185,21 @@ width: 100%;
 }
 .btn-aplica:active{
 	background-color: transparent;
+}
+
+.play{
+	border-radius: 50%;
+	border: 3px solid white;
+	font-size: 5rem;
+	padding: 1rem;
+	position: relative;
+	top:10px;
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+}
+.play:hover{
+	color: orange;
+	border-color: orange;
 }
 
 
