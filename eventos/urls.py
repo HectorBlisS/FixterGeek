@@ -6,7 +6,7 @@ urlpatterns=[
 		views.Todos.as_view(),
 		name="todos"),
 
-	url(r'^(?P<slug>[\w-]+)/',
+	url(r'^(?P<slug>[-\w]+)/$',
 		views.DetalleEvento.as_view(),
 		name="detalle"),
 ]
