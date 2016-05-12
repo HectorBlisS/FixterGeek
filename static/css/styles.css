@@ -2,6 +2,7 @@
 body{
 	/*font-family: lato, sanserif;*/
 	height: 100vh;
+	background-color: grey;
 }
 
 .logo-nav{
@@ -48,8 +49,9 @@ body{
 }
 
 .coffe{
-	background: url(/static/assets/people-coffee-tea-meeting.jpg) no-repeat;
+	background: url(/static/assets/pattern41.png) repeat;
 	background-size: cover;
+
 	position: absolute;
 	top:-10px;
 	right: -10px;
@@ -124,6 +126,8 @@ filter:blur(5px);
 	width: 100%;
 	height: 50%;
 	overflow: hidden;
+
+
 }
 @media(min-width: 800px){
 	.portada{
@@ -159,9 +163,11 @@ width: 100%;
 	text-align: center;
 
 
+
 }
 .section{
 		padding: 0;
+		background: url(/static/assets/pattern41.png) repeat;
 }
 
 .btn-aplica-p{
