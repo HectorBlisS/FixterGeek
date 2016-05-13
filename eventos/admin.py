@@ -15,3 +15,4 @@ class EventoAdmin(ImportExportMixin, admin.ModelAdmin):
 admin.site.register(models.Evento, EventoAdmin)
 
 admin.site.register(models.Registro)
+admin.site.register(models.Aplicant)

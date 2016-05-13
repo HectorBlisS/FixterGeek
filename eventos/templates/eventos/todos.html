@@ -6,7 +6,7 @@
 {%endblock titulo%}
 
 {%block content%}
-<section class="section">
+<section class="section toda">
 <article class="container">
 
 
@@ -17,14 +17,14 @@
 
 
 
-    <li class="collection-item avatar">
-      <a href="{{event.get_absolute_url}}">
+    <li style="text-align:left;" class="collection-item avatar">
+      <a style="color:black;" href="{{event.get_absolute_url}}">
       <img src="/media/{{event.logo}}" alt="" class="circle">
       <h4 class="title">{{event.titulo}}</h4>
       <p>{{event.fecha}}<br>
-         {{event.slug}}
+         {{event.boton}}
       </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+      <a href="#!" class="orange-text secondary-content"><i class="material-icons">info_outline</i></a>
       </a>
     </li>
 

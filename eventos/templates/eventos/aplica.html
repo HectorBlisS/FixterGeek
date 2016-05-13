@@ -35,6 +35,8 @@
 
 <body>
 	<section class="container relativo">
+
+
 		<a href="{%url 'eventos:todos'%}">
 		<i class="tache fa fa-times-circle" aria-hidden="true"></i>
 		</a>
@@ -43,14 +45,28 @@
 		<div class="centrado tope">
 		<img src="{%static 'assets/logo_geek.png'%}">
 		<p>Aplicación para participar en</p>
-		<h4>{{evento.titulo}}</h4>
+		<h6>{{evento.titulo}}</h6>
 
-		<form action="." method="post">
+
+{%if not recibido%}
+
+	<h4>Hola {{request.user.first_name}} {{request.user.last_name}}</h4>
+
+		<form action="{%url 'eventos:aplicacion' evento.slug%}" method="post">
 			{%csrf_token%}
 			{{form.as_p}}
 			<input class="button" type="submit" value="Aplicar">
 		</form>
 		</div>
+{%else%}
+
+<h3>¡Gracias por Aplicar!</h3>
+<h4>Estás más cerca de ser parte de Fixter.Geek</h4>
+<h5>Entrarás en un proceso de selección. Te mantendremos informado, ya que si pasas el primer filtro buscaremos tener una entrevista contigo.</h5>
+<h6>Si tienes más dudas puedes mandarnos un correo a: <br>
+<a href="mailto:contacto@fixter.org">contacto@fixter.org</a></h6>
+
+{%endif%}
 
 
 	</section>

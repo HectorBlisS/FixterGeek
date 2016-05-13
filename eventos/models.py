@@ -38,12 +38,13 @@ class Aplicant(models.Model):
 		(True,'Si la necesito'),
 		(False,'No, que la aproveche alguien más'),
 		)
-	usuario = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="aplicantes")
-	motivos = models.TextField()
-	evento = models.OneToOneField(Evento)
-	beca = models.BooleanField(choices=Choices, default=False)
+	usuario = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="aplicantes")
+	motivos = models.TextField(blank=True,null=True)
+	evento = models.ForeignKey(Evento)
+	beca = models.BooleanField(choices=Choices, default='Beca 20%')
 	tipo = models.CharField(max_length=50, choices=BECA_CHOICES,blank=True,null=True)
 	porque = models.TextField(blank=True,null=True)
+	tel = models.CharField(max_length=10,blank=True,null=True)
 
 
 	def __str__(self):

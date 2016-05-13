@@ -42,3 +42,21 @@ class Aplicacion(View):
 		return render(request,template,context)
 
 
+	def post(self,request,evento):
+		evento = get_object_or_404(Evento,slug=evento)
+		form = AplicaForm(request.POST)
+		if form.is_valid():
+			f = form.save(commit=False)
+			f.evento = evento
+			try:
+				f.usuario = request.user
+				f.save()
+			except:
+				pass
+		template = 'eventos/aplica.html'
+
+		return render(request,template,{'recibido':True})
+
+
+
+

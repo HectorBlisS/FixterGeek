@@ -7,11 +7,12 @@ class AplicaForm(forms.ModelForm):
 
 	class Meta:
 		model = Aplicant
-		fields = ['motivos','beca','tipo','porque']
+		fields = ['motivos','tel','beca','tipo','porque']
 		labels={
-		'motivos':_('Dínos, ¿porqué quieres entrar a Fixter.Camp?'),
+		'motivos':_('Dinos, ¿porqué quieres entrar a Fixter.Camp?'),
 		'beca':_('¿Crees que necesitas una Beca?'),
-		'porque':_('Explicanos porque necesitas la beca de descuento:')
+		'porque':_('¿Porque consideras que mereces la beca de descuento?'),
+		'tel':_('Proporcionanos un Teléfono donde podamos contactarte')
 		}
 		widgets = {
             'beca': forms.RadioSelect(attrs={'class':'.beca'})
