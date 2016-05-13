@@ -41,8 +41,8 @@ class Aplicant(models.Model):
 	usuario = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="aplicantes")
 	motivos = models.TextField(blank=True,null=True)
 	evento = models.ForeignKey(Evento)
-	beca = models.BooleanField(choices=Choices, default='Beca 20%')
-	tipo = models.CharField(max_length=50, choices=BECA_CHOICES,blank=True,null=True)
+	beca = models.BooleanField(choices=Choices, default=False)
+	tipo = models.CharField(max_length=50, choices=BECA_CHOICES,default='Beca 20%',blank=True,null=True)
 	porque = models.TextField(blank=True,null=True)
 	tel = models.CharField(max_length=10,blank=True,null=True)
 
