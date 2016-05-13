@@ -3,6 +3,12 @@ from django.views.generic import View
 from .models import Evento
 from django.shortcuts import get_object_or_404
 
+from .forms import AplicaForm
+
+# Herramienta para restringir acceso
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+
 
 
 class Todos(View):
@@ -23,5 +29,16 @@ class DetalleEvento(View):
 		}
 		return render(request,template,context)
 
+class Aplicacion(View):
+	@method_decorator(login_required(login_url='login'))
+	def get(self,request,evento):
+		evento = get_object_or_404(Evento,slug=evento)
+		form = AplicaForm()
+		template = 'eventos/aplica.html'
+		context = {
+		'form':form,
+		'evento':evento,
+		}
+		return render(request,template,context)
 
 

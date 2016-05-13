@@ -12,6 +12,7 @@ from social.apps.django_app import urls as socialUrls
 
 
 
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
@@ -37,6 +38,8 @@ urlpatterns = [
         view='django.views.static.serve',
         kwargs={'document_root':settings.MEDIA_ROOT}
         ),
+
+
 ]
 
 # if settings.DEBUG:

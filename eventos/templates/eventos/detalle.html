@@ -1,6 +1,7 @@
 {%extends 'base.html'%}
 
 {%load static%}
+{% load markdown_deux_tags %}
 
 {%block titulo%}
 {{evento.titulo|upper}}
@@ -10,14 +11,19 @@
 
 {%block content%}
 <section class="section">
+
 <div class="portada">
 <img src="{{evento.portada.url}}" class="portada-img"/> <!--imagen de portada-->
 <div class="cuadro_negro"></div><!--cuadro negro-->
 <div class="portada-contenido">
 
-<h4>{{evento.titulo}}
+
 	<i class="play fa fa-youtube-play" aria-hidden="true"></i>
+
+<h4>
+	{{evento.titulo}}
 </h4>
+<h5>{{evento.detalles}}</h5>
 <div class="divider"></div>
 <p>{{evento.direccion}}</p>
 <p><strong class="grey-text">Iniciamos</strong>: {{evento.fecha}}</p>
@@ -34,11 +40,31 @@
 <article class="container">
 
 <!-- Your share button code -->
-<div style="margin-top:15px;" class="fb-like" data-href="http://geek.fixter.org/eventos/camp" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+<div style="margin-top:15px;" class="fb-like" data-href="{{evento.get_absolute_url}}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 
 <p class="btn-aplica-p">
-<button class="btn-aplica">Aplica</button>
+<a href="{%url 'eventos:aplicacion' evento.slug%}" class="btn-aplica">{{evento.boton}}</a>
 </p>
+
+{% markdown STYLE %}  
+
+	{{evento.descripcion}}
+
+{% endmarkdown %}
+<div class="divider"></div>
+
+<p class="precio">
+<span style="font-size:1.5rem;">Costo del programa: </span>
+$ {{evento.precio}}MXN
+
+</p>
+
+
+<p class="btn-aplica-p">
+<a href="{%url 'eventos:aplicacion' evento.slug%}" class="btn-aplica">Aplica para una beca</a>
+</p>
+
+
 
 </article>
 

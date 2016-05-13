@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width:device-width">
+	<title>Aplica</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/normalize.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/skeleton.css'%}">
+  <!--Fa fa icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<style>
+	.tope{
+		padding-top: 100px;
+	}
+		.centrado{
+	margin: 0 auto;
+	text-align: center;
+}
+.relativo{
+	position: relative;
+}
+.tache{
+	position: absolute;
+	top:50px;
+	right: 0px;
+	z-index: 1;
+	color: black;
+	font-size: 6rem;
+}
+	</style>
+
+</head>
+
+<body>
+	<section class="container relativo">
+		<a href="{%url 'eventos:todos'%}">
+		<i class="tache fa fa-times-circle" aria-hidden="true"></i>
+		</a>
+
+
+		<div class="centrado tope">
+		<img src="{%static 'assets/logo_geek.png'%}">
+		<p>Aplicación para participar en</p>
+		<h4>{{evento.titulo}}</h4>
+
+		<form action="." method="post">
+			{%csrf_token%}
+			{{form.as_p}}
+			<input class="button" type="submit" value="Aplicar">
+		</form>
+		</div>
+
+
+	</section>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$('#id_tipo').hide();
+$('#id_porque').hide();
+$('p').slice(-2).hide();
+
+$("#id_beca_0").click(function() { 
+	$('p').slice(-2).fadeIn(); 
+        $('#id_tipo').fadeIn();
+         $('#id_porque').fadeIn();
+    });  
+$("#id_beca_1").click(function() { 
+	$('p').slice(-2).fadeOut(); 
+        $('#id_tipo').fadeOut();
+         $('#id_porque').fadeOut();
+    }); 
+
+
+});
+</script>
+</body>
+</html>

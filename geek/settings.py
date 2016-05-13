@@ -36,9 +36,11 @@ INSTALLED_APPS = [
     'eventos',
     'mailin',
     'main',
+    'markdown_deux',
 
 
     ]
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -212,4 +214,6 @@ SOCIAL_AUTH_PIPELINE = (
 # CELERY_RESULT_BACKEND = "amqp"
 
 BROKER_URL = 'amqp://bliss:poweroso@localhost:5672//'
+
+
 
