@@ -55,7 +55,7 @@ class Aplicacion(View):
 				pass
 		template = 'eventos/aplica.html'
 
-		return render(request,template,{'recibido':True})
+		return render(request,template,{'recibido':True,'evento':evento})
 
 
 
