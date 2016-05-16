@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.views.generic import View
 
 
@@ -46,4 +46,32 @@ def email_masivo():
 	msg=EmailMessage(subject,message,to=to,from_email=from_email)
 	msg.content_subtype='html'
 	msg.send()
+
+def email_gracias(lista):
+	subject="Fixter.Geek"
+	to=lista
+	from_email='contacto@fixter.org'
+	ctx={}
+
+	# message=get_template("email1.html").render(Context(ctx))
+	message=get_template("email_post_curso.html").render(ctx)
+	msg=EmailMessage(subject,message,bcc=to,from_email=from_email)
+	msg.content_subtype='html'
+	msg.send()
+
+
+class Gracias(View):
+	def get(self,request):
+		template = 'mailin/gracias.html'
+		return render(request,template)
+	def post(self,request):
+		vlista = request.POST.get('correos')
+		print('vlista: ',vlista)
+		lista = vlista.split(',')
+		print('lista: ',lista)
+		try:
+			email_gracias(lista)
+			return HttpResponse('Ya')
+		except:
+			return HttpResponse('Error al enviar')
 

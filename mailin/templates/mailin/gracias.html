@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width:device-width">
+	<title>Aplica</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/normalize.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/skeleton.css'%}">
+  <!--Fa fa icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<style>
+	.tope{
+		padding-top: 100px;
+	}
+		.centrado{
+	margin: 0 auto;
+	text-align: center;
+}
+.relativo{
+	position: relative;
+}
+.tache{
+	position: absolute;
+	top:50px;
+	right: 0px;
+	z-index: 1;
+	color: black;
+	font-size: 6rem;
+}
+	</style>
+
+</head>
+
+<body>
+	<section class="container relativo">
+
+
+
+		<div class="centrado tope">
+		<img src="{%static 'assets/logo_geek.png'%}">
+		<p>Enviar Agradecimiento</p>
+		<h5>Python</h5>
+		<form action="." method="post">
+			{%csrf_token%}
+			<textarea name="correos" placeholder="introduce los correos separados por coma (,)"></textarea>
+			<br>
+			<input type="submit" class="button" value="Enviar correos">
+		</form>
+
+
+
+
+	</section>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</body>
+</html>
