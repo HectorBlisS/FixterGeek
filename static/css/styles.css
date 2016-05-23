@@ -123,6 +123,45 @@ nav{
 	z-index: 9999;
 }
 
+.fondillo{
+	background: url(/static/assets/girl.jpg) no-repeat;
+	background-size:cover;
+	height: 368px;
+}
+
+@media(min-width: 1200px){
+	.fondillo{
+		height: 600px;
+	}
+
+}
+
+.accion{
+	text-align: center;
+	position: relative;
+	top:30%;
+	background: rgba(0,0,0,.5);
+
+}
+
+.puntero{
+	cursor: pointer;
+}
+
+.big{
+	color: orange;
+	font-size: 5rem;
+}
+.big-w{
+	color:white;
+	font-size: 5rem;
+}
+.card{
+	padding: 6rem;
+	margin-left: 6rem;
+}
+
+
 /*todos los eventos*/
 .toda{
 	min-height: 760px;

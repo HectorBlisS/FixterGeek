@@ -1,24 +1,154 @@
 {%extends 'base.html'%}
 {%load static%}
-{%block titulo%}Geek.Fixter{%endblock titulo%}
+{%block titulo%}Fixter.Camp{%endblock titulo%}
 
 
-{%block nav%}
-{%endblock nav%}
+
 
 {%block content%}
 
-<div class="valign-wrapper todo fondo">
-   <div style="width:100%;"class="valign center">
-   		<img class="responsive-img" src="{%static 'assets/logo_geek.png'%}">
-<div class="fondito">
-   		<h2 class="white-text">El futuro llegó a Pachuca.</h2>
-   		<h4 class="white-text">¿Te gustaría ser parte?</h4>
-   		<a href="{%url 'dashboard'%}" class="choncho flow-text btn-large waves-effect orange">¡Quiero ser Parte!</a>
+
+<section class="fondillo">
+<article class="accion">
+
+<h2 class="white-text">Summer Fixter.Camp</h2>
+<h4 class="white-text">Play 
+	<i class="puntero fa fa-play-circle-o" aria-hidden="true"></i>
+ Video</h4>
+ <h5 class="white-text">Un recorrido guiado y estructurado para convertirte en desarrollador</h5>
+
+
+</article>
+
+
+</section>
+
+<section class="grey lighten-3 center">
+<br>
+	<p class="flow-text">Invierte tan solo 10 semanas construyendo Apps y cambia tu vida.</p>
+	<a href="{%url 'eventos:aplicacion' 'camp'%}" class="btn orange">Aplicar</a>
+<br><br><br>
+</section>
+
+<section class="section center">
+<article class="container">
+<h3>¡Codéate un futuro nuevo!</h3>
+<div class="divider"></div>
+<h5>
+Fixter.Camp es el primer Bootcamp en pachuca de corta duración 100% inmersivo que transforma principiantes en desarrolladores web full-stack en solo 10 semanas.<br>(on-site 3hr/día de 6pm a 9pm)</h5>
+</article>
+<br><br>
+
+<div class="row container">
+
+<div style="text-align:left;" class=" hoverable col m6">
+<i class="big fa fa-leanpub" aria-hidden="true"></i>
+<p><h5><strong>Aprende</strong></h5></p>
+<p class="flow-text">
+Aprende los fundamentos del desarrollo web, la maquetación con html5, los estilos y animaciones con css, juntalo todo y hazlo interactivo con javascript, y sirviendo un backend con Python usnado django como framework con desarrollo ágil y metodología test-driven</p>
+
+</div> <!--Card-->
+
+
+<div style="text-align:left;" class=" hoverable col m6">
+<i class="big fa fa-file-code-o" aria-hidden="true"></i>
+<p><h5><strong>Practica</strong></h5></p>
+<p class="flow-text">
+Practica lo que haz aprendido mediante retos interactivos de código. Este estilo de practica te permitirá retener toda la información que haz obtenido y podrás aplicarla a tus futuros proyectos</p>
+
+</div> <!--Card-->
+
+</div><!--row-->
+
+<div class="row container">
+
+
+<div style="text-align:left;" class=" hoverable col m6">
+<i class="big fa fa-shield" aria-hidden="true"></i>
+<p><h5><strong>Gana</strong></h5></p>
+<p class="flow-text">
+Conforme vayas conociendo las herramientas que te ayudarán a construir Apps geniales, irás ganando Insignias, las cuales serán el indicador de que ahora las dominas</p>
+
+</div> <!--Card-->
+
+<div style="text-align:left;" class=" hoverable col m6">
+<i class="big fa fa-connectdevelop" aria-hidden="true"></i>
+<p><h5><strong>Conécta</strong></h5></p>
+<p class="flow-text">
+Aprenderás a trabajar en equipo con metodologías ágiles, conocerás gente igual de apasionada que tú y exploraras junto a tu increible instructor el mundo de los lenguajes de programacion detras de app increibles como twitter o The New York Times</p>
+
+</div> <!--Card-->
+
+
+
+
+
+
 </div>
-   		
-   </div>
-</div>
+
+
+
+
+</section>
+
+<section class="center section orange">
+<article class="container">
+
+<br>
+<a href="{%url 'eventos:aplicacion' 'camp'%}" class="btn white"><span class="flow-text orange-text">Cómo Aplicar</span></a>
+<p class="flow-text white-text">Buscamos personas que estén apasionadas por aprender a programar, que quieran cambiar el mundo o que tengan grandes ideas, no importa tu edad ni tu genero, no discriminamos a nadie. <br>¡Pero buscamos personas con la actitud correcta! </p>
+<div class="divider"></div>
+<h3 class="white-text">Preguntas Frecuentes</h3>
+<br><br><br>
+
+<div class="white-text row">
+
+<div style="text-align:center;" class=" hoverable col m6">
+<i class=" big-w fa fa-filter" aria-hidden="true"></i>
+<p><h5><strong>¿A quién seleccionan?</strong></h5></p>
+<p class="flow-text">
+Buscamos diversidad, queremos personalidades diferentes con muchas ganas de aprender y cambiar su futuro, no toleramos la negatividad por eso el único factor para seleccionar es la actitud correcta, así que aplica con la mejor actitud</p>
+
+</div> <!--Card-->
+
+<div style="text-align:center;" class=" hoverable col m6">
+<i class="big-w fa fa-laptop" aria-hidden="true"></i>
+<p><h5><strong>¿Tengo que llevar mi laptop?</strong></h5></p>
+<p class="flow-text">
+¡Si! en el transcurso del Fixter.Camp harémos muchisimos ejercicios, trabajarás en equipo y habrá mucha información que procesar así que necesitaras tu computadora a la mano siempre aún en tu casa</p>
+
+</div> <!--Card-->
+
+</div><!--row-->
+<div class="white-text row">
+
+<div style="text-align:center;" class=" hoverable col m6">
+<i class="big-w fa fa-graduation-cap" aria-hidden="true"></i>
+<p><h5><strong>¿Necesito algun nivel de estudio o experiencia?</strong></h5></p>
+<p class="flow-text">
+Definitivamente ¡NO!, no importa si no haz escrito nunca 1 sola linea de código, o si eres todo un hacker, el Fixter.Camp es para cualquiera que le apasione aprender a programar sin importar que no hayas ido a la escuela formal</p>
+
+</div> <!--Card-->
+
+<div style="text-align:center;" class=" hoverable col m6">
+<i class="big-w fa fa-star" aria-hidden="true"></i>
+
+<p><h5><strong>¿Puedo tener acceso a una Beca?</strong></h5></p>
+<p class="flow-text">
+¡Claro que sí!, sabemos que tienes el talento para aprovechar nuestro Fixter.Camp pero a veces no los recursos, por eso tenemos un sistema de becas para que no te quedes fuera de esta gran experiencia, si necesitas una beca aplica e indica porque la necesitas</p>
+
+</div> <!--Card-->
+
+
+</div><!--row-->
+
+
+<a href="{%url 'eventos:aplicacion' 'camp'%}" class="btn white"><span class="flow-text orange-text">Aplica para una Beca</span></a>
+<br><br><br>
+</article>
+</section>
+
+
 
 
 
