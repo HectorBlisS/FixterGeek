@@ -12,9 +12,11 @@
 <article class="accion">
 
 <h2 class="white-text">Summer Fixter.Camp Pachuca</h2>
+<a href="#modal1" class="modal-trigger">
 <h4 class="white-text">Play 
 	<i class="puntero fa fa-play-circle-o" aria-hidden="true"></i>
  Video</h4>
+ </a>
  <h5 class="white-text">Un recorrido guiado y estructurado para convertirte en desarrollador</h5>
 
 <a href="{%url 'eventos:aplicacion' 'camp'%}" class="btn orange">Aplicar</a>
@@ -179,6 +181,26 @@ Definitivamente ¡NO!, no importa si no haz escrito nunca 1 sola linea de códig
 
 
 
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Fixter.Camp Trailer</h4>
+      
+<div class="video-container">
+        <iframe width="853" height="480" src="//www.youtube.com/embed/Yqbb3SnzmEE?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+  </div>
+
+
+
+
+
 {%endblock content%}
 
 {%block scripts%}
@@ -190,4 +212,11 @@ Definitivamente ¡NO!, no importa si no haz escrito nunca 1 sola linea de códig
   js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=421914394679473";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+<script>
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+</script>
 {%endblock scripts%}
