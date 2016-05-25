@@ -226,7 +226,7 @@ nav{
 
 @media(max-width: 600px){
 	.accion{
-		top:10%;
+		top:0;
 	}
 }
 
