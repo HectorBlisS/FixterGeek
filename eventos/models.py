@@ -38,6 +38,10 @@ class Aplicant(models.Model):
 		(True,'Si la necesito'),
 		(False,'No, que la aproveche alguien más'),
 		)
+	Paths = (
+		('backend path','Backend Path'),
+		('frontend path','Frontend Path'),
+		)
 	usuario = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="aplicantes")
 	motivos = models.TextField(blank=True,null=True)
 	evento = models.ForeignKey(Evento)
@@ -45,6 +49,7 @@ class Aplicant(models.Model):
 	tipo = models.CharField(max_length=50, choices=BECA_CHOICES,default='Beca 20%',blank=True,null=True)
 	porque = models.TextField(blank=True,null=True)
 	tel = models.CharField(max_length=10,blank=True,null=True)
+	path = models.CharField(max_length=140,blank=True,null=True,choices=Paths,default="Frontend Path")
 
 
 	def __str__(self):

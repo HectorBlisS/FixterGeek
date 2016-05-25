@@ -17,7 +17,7 @@ admin.site.register(models.Evento, EventoAdmin)
 admin.site.register(models.Registro)
 
 class AplicantAdmin(admin.ModelAdmin):
-	list_display = ('usuario','beca','tipo','tel')
+	list_display = ('usuario','beca','tipo','path','tel')
 	list_filter = ('beca','tipo')
 	search_fields =('tel',)
 admin.site.register(models.Aplicant, AplicantAdmin)
