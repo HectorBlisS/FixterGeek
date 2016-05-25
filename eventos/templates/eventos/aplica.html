@@ -52,6 +52,14 @@
 
 	<h4>Hola {{request.user.first_name}} {{request.user.last_name}}</h4>
 
+	<h5>
+
+		<a href="#frontend">
+			Revisar los Temarios: 
+		</a>
+
+	</h5>
+
 		<form action="{%url 'eventos:aplicacion' evento.slug%}" method="post">
 			{%csrf_token%}
 			{{form.as_p}}
@@ -71,6 +79,54 @@
 
 	</section>
 
+
+<div class="row container">
+
+
+    <!-- Modal Structure -->
+  <div id="frontend" class="modal six columns">
+    <div class="modal-content">
+      <h4>FRONTEND DEVELOPER PATH</h4>
+      
+    <ol class="flow-text green-text">
+      <li>Fundamentos del Frontend (HTML, CSS, Typografía)</li>
+      <li>Usabilidad (user-related web pages)</li>
+      <li>Animación e interactividad (CSS, JQuery)</li>
+      <li>Diseño para Mobiles (Responsive-Desing)</li>
+      <li>Arquitectura de software (MVC)</li>
+      <li>Introducción a la programación (Javascript)</li>
+      <li>Frameworks Web (Ember, Backbone, Angular, Polymer, React)</li>
+      <li>Proyecto Final</li>
+    </ol>
+
+    </div>
+
+  </div>
+
+
+      <!-- Modal Structure -->
+  <div id="backend" class="modal six columns">
+    <div class="modal-content">
+      <h4>BACKEND DEVELOPER PATH</h4>
+      
+    <ol class="flow-text orange-text">
+      <li>Bienvenido a Linux</li>
+      <li>Fundamentos de la programación</li>
+      <li>Paradigmas de Programación</li>
+      <li>Sintaxis (Python, Ruby, PHP)</li>
+      <li>Algoritmos</li>
+      <li>Programación Orientada a Objetos</li>
+      <li>Servidores y arquitecturas web (AWS, Heroku, Digital Ocean, MVC)</li>
+      <li>Frameworks(Django, Rails, Laravel)</li>
+      <li>Proyecto Final</li>
+    </ol>
+
+    </div>
+
+  </div>
+
+
+</div><!--row-->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -94,5 +150,7 @@ $("#id_beca_1").click(function() {
 
 });
 </script>
+
+
 </body>
 </html>
