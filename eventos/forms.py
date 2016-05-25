@@ -7,11 +7,12 @@ class AplicaForm(forms.ModelForm):
 
 	class Meta:
 		model = Aplicant
-		fields = ['motivos','tel','beca','tipo','porque']
+		fields = ['motivos','tel','path','beca','tipo','porque']
 		labels={
 		'motivos':_('Dinos, ¿porqué quieres entrar a Fixter.Camp?'),
 		'beca':_('¿Crees que necesitas una Beca?'),
 		'porque':_('¿Porque consideras que mereces la beca de descuento?'),
+		'path':_('¿Qué camino te intereza más?'),
 		'tel':_('Proporcionanos un Teléfono donde podamos contactarte')
 		}
 		widgets = {
