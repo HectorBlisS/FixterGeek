@@ -188,6 +188,20 @@ nav{
 }
 .azulito:hover{
 	background: #2196f3;
+
+
+}
+.mapsito{
+	border: 2px dashed #2196f3;
+	border-left: 4px solid #2196f3;
+	transition:all .5s ease-in-out;
+	margin-bottom: 1rem;	
+}
+.mapsito:hover{
+	/*background: #2196f3;*/
+	background: url(/static/assets/parque.png) no-repeat;
+	background-size:cover;
+	
 }
 .verdesin{
 	border: 2px dashed #4caf50;
