@@ -79,7 +79,7 @@ body{
 
 }
 article.container{
-	z-index: 9999;
+	/*z-index: 9999;*/
 	position: relative;
 	text-align: center;
 }
