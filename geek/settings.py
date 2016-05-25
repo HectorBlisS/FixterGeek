@@ -91,8 +91,8 @@ if not DEBUG:
             'NAME':'geek',
             'USER':'admin',
             'PASSWORD':'Poweroso77',
-            'HOST':'localhost',
-            'PORT':'',
+            'HOST':'54.213.147.140',
+            'PORT':'5432',
         }
     }
 else:
