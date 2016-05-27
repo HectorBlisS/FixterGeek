@@ -4,11 +4,21 @@
 <html>
 <head>
 	<title>BlisS</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'skeleton.css'%}">
 </head>
 <body>
-	<h1>Los Posts</h1>
+	
+<div class="row">
+<aside class="two columns">
+		{%show_posts 2%}
+</aside>
+<article class="ten columns">
+<h1>Los Posts</h1>
+</article>
+</div>
 
-	{%show_posts%}
+
+
 
 </body>
 </html>
