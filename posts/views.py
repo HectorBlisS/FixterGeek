@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import View
+from django.views.generic import View, TemplateView
 from .forms import PostForm, ComentarioForm
 from django.contrib import messages
 
@@ -8,7 +8,6 @@ class Home(View):
 	def get(self,request):
 		template_name = 'posts/home.html'
 		form1 = PostForm()
-		
 		context={
 		'form1':form1,
 
@@ -23,6 +22,10 @@ class Home(View):
 		else:
 			messages.error(request,'Algo Falló, post no guardad X_X')
 		return redirect('home')
+
+
+class Exp(TemplateView):
+	template_name = 'posts/experimento.html'
 
 
 

@@ -1,0 +1,12 @@
+<ul>
+	{%for post in posts%}
+	<li>
+		<h3>{{post.titulo}}</h3>
+	</li>
+	<li>
+		<h5>{{post.cuerpo}}</h5>
+	</li>
+	{%empty%}
+	<h4>No existen posts U_U</h4>
+	{%endfor%}
+</ul>

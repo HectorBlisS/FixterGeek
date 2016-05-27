@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {%load static%}
+{%load posts_tags%}
 <html>
 <head>
 	<title>Blog</title>
@@ -29,7 +30,8 @@
 	{% endif %}
 
 
-<h1>My Blog morros!</h1>
+<h1>My Blog morros! <p>Posts Totales: 
+	{%total_posts%} hasta ahora.</p></h1>
 
 <form action="." method="post">
 {%csrf_token%}
@@ -37,6 +39,9 @@
 
 <input class="button-primary"type="submit" value="Publicar">
 </form>
+
+<h3>********* posts **********</h3>
+{%show_posts 6%}
 </section>
 	
 

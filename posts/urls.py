@@ -6,4 +6,8 @@ urlpatterns=[
 	url(r'^$',
 		views.Home.as_view(),
 		name="home"),
+	
+	url(r'^experimento/$',
+		views.Exp.as_view(),
+		name="baia_baia"),
 ]
