@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width:device-width">
+	<title>Aplica</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/normalize.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/skeleton.css'%}">
+  <!--Fa fa icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<style>
+	.tope{
+		padding-top: 100px;
+	}
+		.centrado{
+	margin: 0 auto;
+	text-align: center;
+}
+.relativo{
+	position: relative;
+}
+.tache{
+	position: absolute;
+	top:50px;
+	right: 0px;
+	z-index: 1;
+	color: black;
+	font-size: 6rem;
+}
+	</style>
+
+</head>
+
+<body>
+	<section class="container relativo">
+
+
+		<a href="{%url 'main:home' %}">
+		<i class="tache fa fa-times-circle" aria-hidden="true"></i>
+		</a>
+
+
+		<div class="centrado tope">
+		<img src="{%static 'assets/logo_geek.png'%}">
+		<p>Aplicación para participar en</p>
+		<h5>{{evento.titulo}}</h5>
+
+
+{%if not recibido%}
+
+	<h4>Hola {{request.user.first_name}} {{request.user.last_name}}</h4>
+
+	<h5>
+
+		<a href="#frontend">
+			Revisar los Temarios: 
+		</a>
+
+	</h5>
+
+		<form action="{%url 'eventos:aplicacion' evento.slug%}" method="post">
+			{%csrf_token%}
+			{{form.as_p}}
+			<input class="button" type="submit" value="Aplicar">
+		</form>
+		</div>
+{%else%}
+
+<h3>¡Gracias por Aplicar!</h3>
+<h4>Estás más cerca de ser parte de Fixter.Geek</h4>
+<h5>Entrarás en un proceso de selección. Te mantendremos informado, ya que si pasas el primer filtro buscaremos tener una entrevista contigo.</h5>
+<h6>Si tienes más dudas puedes mandarnos un correo a: <br>
+<a href="mailto:contacto@fixter.org">contacto@fixter.org</a></h6>
+
+{%endif%}
+
+
+	</section>
+
+
+<div class="row container">
+
+
+    <!-- Modal Structure -->
+  <div id="frontend" class="modal six columns">
+    <div class="modal-content">
+      <h4>FRONTEND DEVELOPER PATH</h4>
+      
+    <ol class="flow-text green-text">
+      <li>Fundamentos del Frontend (HTML, CSS, Typografía)</li>
+      <li>Usabilidad (user-related web pages)</li>
+      <li>Animación e interactividad (CSS, JQuery)</li>
+      <li>Diseño para Mobiles (Responsive-Desing)</li>
+      <li>Arquitectura de software (MVC)</li>
+      <li>Introducción a la programación (Javascript)</li>
+      <li>Frameworks Web (Ember, Backbone, Angular, Polymer, React)</li>
+      <li>Proyecto Final</li>
+    </ol>
+
+    </div>
+
+  </div>
+
+
+      <!-- Modal Structure -->
+  <div id="backend" class="modal six columns">
+    <div class="modal-content">
+      <h4>BACKEND DEVELOPER PATH</h4>
+      
+    <ol class="flow-text orange-text">
+      <li>Bienvenido a Linux</li>
+      <li>Fundamentos de la programación</li>
+      <li>Paradigmas de Programación</li>
+      <li>Sintaxis (Python, Ruby, PHP)</li>
+      <li>Algoritmos</li>
+      <li>Programación Orientada a Objetos</li>
+      <li>Servidores y arquitecturas web (AWS, Heroku, Digital Ocean, MVC)</li>
+      <li>Frameworks(Django, Rails, Laravel)</li>
+      <li>Proyecto Final</li>
+    </ol>
+
+    </div>
+
+  </div>
+
+
+</div><!--row-->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$('#id_tipo').hide();
+$('#id_porque').hide();
+$('p').slice(-2).hide();
+
+$("#id_beca_0").click(function() { 
+	$('p').slice(-2).fadeIn(); 
+        $('#id_tipo').fadeIn();
+         $('#id_porque').fadeIn();
+    });  
+$("#id_beca_1").click(function() { 
+	$('p').slice(-2).fadeOut(); 
+        $('#id_tipo').fadeOut();
+         $('#id_porque').fadeOut();
+    }); 
+
+
+});
+</script>
+
+
+</body>
+</html>

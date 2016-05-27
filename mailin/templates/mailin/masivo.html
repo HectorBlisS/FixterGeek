@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block titulo%}Envio de Correo{%endblock titulo%}
+
+{%block content%}
+<section class="section">
+<article class="container">
+
+
+	<form action="." method="post">
+		{%csrf_token%}
+		<input class="btn green" type="submit" value="Enviar Emails">
+	</form>
+
+
+
+</article>
+</section>
+
+
+
+{%endblock content%}
+
