@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{%load static%}
+{%load posts_tags%}
+<html>
+<head>
+	<title>Blog</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'skeleton.css'%}">
+
+	<style type="text/css">
+	.success{
+		background: lightgreen;
+		color:white;
+		width: 100%;
+	}
+	.error{
+		background: red;
+		color:white;
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+
+<section class="container">
+	{% if  messages %}
+	{% for message in messages %}
+		<h5 class="{{message.tags}}">{{message | safe}}</h5>
+	{% endfor %}
+		
+	{% endif %}
+
+
+<h1>My Blog morros! <p>Posts Totales: 
+	{%otro_nombre%} hasta ahora.</p></h1>
+
+<form action="." method="post">
+{%csrf_token%}
+{{form1.as_p}}
+
+<input class="button-primary"type="submit" value="Publicar">
+</form>
+
+<h3>********* posts **********</h3>
+
+{%todos_posts 5 as posts%}
+
+{%for post in posts%}
+
+	<h2>{{post.titulo}}</h2>
+
+{%endfor%}
+
+</section>
+	
+
+</body>
+</html>
