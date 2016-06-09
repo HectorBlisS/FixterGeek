@@ -55,4 +55,23 @@ class Aplicant(models.Model):
 	def __str__(self):
 		return "{} Aplico a {}".format(self.usuario,self.evento)
 
+class Mes(models.Model):
+	Opciones = (
+			('enero','Enero'),
+			('febrero','Febrero'),
+
+		)
+	nombre = models.CharField(max_length=140,blank=True,null=True,choices=Opciones)
+
+class Dia(models.Model):
+	num = models.CharField(max_length=140,blank=True,null=True)
+	mes = models.ForeignKey(Mes)
+
+
+
+
+
+
+
+
 

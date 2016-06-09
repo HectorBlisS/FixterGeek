@@ -9,3 +9,7 @@ class SocialAuthExceptionMiddleware(SocialAuthExceptionMiddleware):
 			return redirect('main:home')
 		else:
 			raise exception
+
+# class SocialAuthBaseException(SocialAuthBaseException): 
+# 	def process_exception(self,request,exception):
+# 		if hasattr()

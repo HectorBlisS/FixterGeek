@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<form action="." method='post'>
+	{%csrf_token%}
+	{{formm.as_p}}
+	{{formd.as_p}}
+<input class="btn"value="subale"type="submit">
+
+</form>
+
+{%endblock content%}
