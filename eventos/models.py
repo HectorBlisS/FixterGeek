@@ -50,6 +50,7 @@ class Aplicant(models.Model):
 	porque = models.TextField(blank=True,null=True)
 	tel = models.CharField(max_length=10,blank=True,null=True)
 	path = models.CharField(max_length=140,blank=True,null=True,choices=Paths,default="Frontend Path")
+	fecha = models.DateTimeField(auto_now=True,blank=True,null=True)
 
 
 	def __str__(self):
