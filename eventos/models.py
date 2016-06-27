@@ -33,6 +33,8 @@ class Aplicant(models.Model):
 	BECA_CHOICES = (
 		('Beca 20%','Beca 20%'),
 		('Beca 50%', 'Beca 50%'),
+		('Beca 80%', 'Beca 80%'),
+		('Beca 100%', 'Beca 100%')
 		)
 	Choices=(
 		(True,'Si la necesito'),
@@ -51,10 +53,10 @@ class Aplicant(models.Model):
 	tel = models.CharField(max_length=10,blank=True,null=True)
 	path = models.CharField(max_length=140,blank=True,null=True,choices=Paths,default="Frontend Path")
 	fecha = models.DateTimeField(auto_now=True,blank=True,null=True)
-	notas = models.TextField(null=True,blank=True)
-	pago = models.BooleanField(null=True,blank=True,default=False)
-	inscrito = models.BooleanField(null=True,blank=True,default=False)
-	contactado = models.BooleanField(null=True,blank=True,default=False)
+	notas = models.CharField(max_length=500, null=True,blank=True)
+	pago = models.NullBooleanField(null=True,blank=True,default=False)
+	inscrito = models.NullBooleanField(null=True,blank=True,default=False)
+	contactado = models.NullBooleanField(null=True,blank=True,default=False)
 
 
 	def __str__(self):
