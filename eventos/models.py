@@ -56,7 +56,7 @@ class Aplicant(models.Model):
 	notas = models.CharField(max_length=500, null=True,blank=True)
 	pago = models.NullBooleanField(null=True,blank=True,default=False)
 	inscrito = models.NullBooleanField(null=True,blank=True,default=False)
-	contactado = models.NullBooleanField(null=True,blank=True,default=False)
+	contactado = models.BooleanField(default=False)
 	fecha_de_contacto = models.DateTimeField(null=True,blank=True)
 
 	def __str__(self):
