@@ -43,6 +43,7 @@ class Aplicant(models.Model):
 	Paths = (
 		('backend path','Backend Path'),
 		('frontend path','Frontend Path'),
+		('Full-Stack / Sabatino','Full-Stack / Sabatino')
 		)
 	usuario = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="aplicantes")
 	motivos = models.TextField(blank=True,null=True)
