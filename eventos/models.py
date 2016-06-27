@@ -57,7 +57,7 @@ class Aplicant(models.Model):
 	pago = models.NullBooleanField(null=True,blank=True,default=False)
 	inscrito = models.NullBooleanField(null=True,blank=True,default=False)
 	contactado = models.NullBooleanField(null=True,blank=True,default=False)
-	fecha_de_contacto = models.DateTimeField(auto_now_add=True,null=True,blank=True)
+	fecha_de_contacto = models.DateTimeField(null=True,blank=True)
 
 	def __str__(self):
 		return "{} Aplico a {}".format(self.usuario,self.evento)
