@@ -52,6 +52,10 @@ class Aplicant(models.Model):
 	path = models.CharField(max_length=140,blank=True,null=True,choices=Paths,default="Frontend Path")
 	fecha = models.DateTimeField(auto_now=True,blank=True,null=True)
 	notas = models.TextField(null=True,blank=True)
+	pago = models.BooleanField(null=True,blank=True,default=False)
+	inscrito = models.BooleanField(null=True,blank=True,default=False)
+	contactado = models.BooleanField(null=True,blank=True,default=False)
+
 
 	def __str__(self):
 		return "{} Aplico a {}".format(self.usuario,self.evento)
