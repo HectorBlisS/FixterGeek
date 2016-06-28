@@ -18,7 +18,7 @@ admin.site.register(models.Registro)
 
 class AplicantAdmin(ImportExportMixin, admin.ModelAdmin):
 	list_display = ('usuario','beca','tipo','path','tel','notas','fecha','contactado','inscrito')
-	list_filter = ('beca','tipo','contactado','inscrito')
+	list_filter = ('beca','tipo','contactado','inscrito','path')
 	search_fields =('tel',)
 	list_editable = ['notas','tipo']
 admin.site.register(models.Aplicant, AplicantAdmin)
