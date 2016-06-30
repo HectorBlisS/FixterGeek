@@ -33,7 +33,7 @@ class Aplicant(models.Model):
 	BECA_CHOICES = (
 		('Beca 20%','Beca 20%'),
 		('Beca 50%', 'Beca 50%'),
-		('Beca 80%', 'Beca 80%'),
+		# ('Beca 80%', 'Beca 80%'),
 		# ('Beca 100%', 'Beca 100%')
 		)
 	Choices=(
