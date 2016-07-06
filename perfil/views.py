@@ -29,9 +29,9 @@ class DashBoard(View):
 			print(form)
 			if form.is_valid():
 				form.save()
-				messages.success(request,'Tus datos fuerón actualizados')
+				messages.success(request,'Tus datos fueron actualizados')
 		else:
-			print('no se actualiza')
+			messages.error(request,'Hubo un error, intenta más tarde')
 		return redirect('dashboard')
 
 

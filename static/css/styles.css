@@ -27,6 +27,13 @@ body{
 	font-size: 3rem;
 	text-align: center;
 }
+.error{
+	width: 100%;
+	background: red;
+	color:white;
+	font-size: 3rem;
+	text-align: center;
+}
 
 
 /*Perfil*/
