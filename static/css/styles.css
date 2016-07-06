@@ -18,6 +18,15 @@ body{
 	margin-bottom: 2rem;
 }
 
+/*Mensajes*/
+
+.success{
+	width: 100%;
+	background: green;
+	color:white;
+	font-size: 3rem;
+	text-align: center;
+}
 
 
 /*Perfil*/

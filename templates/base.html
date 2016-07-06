@@ -92,6 +92,15 @@ src="https://www.facebook.com/tr?id=1380363911990578&ev=PageView&noscript=1"
 
 {%endblock nav%}
 
+<!-- Mensajes del sistema -->
+  {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<!-- Mensajes del sistema -->
 
 	{%block content%}
 	{%endblock content%}

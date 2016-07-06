@@ -30,9 +30,13 @@
 {# <div class="cuadro_negro"></div> <!--Cuadro negro--> #}
 <article class="container">
 
-	<a onclick="Materialize.toast('Proximamente', 4000)" class="waves-effect waves-light btn orange">Modificar mi info</a>
+<!-- Modal Trigger -->
+	<a class="waves-effect waves-light btn orange modal-trigger" href="#modalData">Modificar mi info</a>
+<!-- Modal Trigger -->
 	<a href="{%url 'eventos:todos'%}"onclick="Materialize.toast('Proximamente', 4000)" class="waves-effect waves-light btn green">Tus Eventos</a>
 	<a onclick="Materialize.toast('Proximamente', 4000)" href="{%url 'eventos:aplicacion' 'camp'%}" class="waves-effect waves-light btn red">Aplica a Fixter.Camp</a>
+
+	
 
 
 
@@ -46,12 +50,33 @@
 
 </section>
 
+
+
+
+
+  <!-- Modal Structure -->
+  <div id="modalData" class="modal">
+    <div class="modal-content">
+      <form action="." method="post">
+      	{%csrf_token%}
+      	{{form.as_p}}
+      	<input type="hidden" name="updateInfo" value="True">
+      	<input class="orange btn" type="submit" value="Guardar">
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="btn red modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+    </div>
+  </div>
+
+
+
 {%endblock content%}
 
 {%block scripts%}
 <script>
   $(document).ready(function(){
-    
+    $('.modal-trigger').leanModal();
   });
 </script>
 
