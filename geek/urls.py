@@ -7,6 +7,7 @@ from perfil import urls as PerfilUrls
 from eventos import urls as EventosUrls
 from mailin import urls as MailinUrls
 from main import urls as MainUrls
+from pagos import urls as pagosUrls
 
 from social.apps.django_app import urls as socialUrls
 
@@ -29,6 +30,10 @@ urlpatterns = [
     url('social-auth/',
     	include(socialUrls,
     		namespace="social")),
+    # Pagos con conekta
+    url(r'^pagos/',
+        include(pagosUrls,
+            namespace="pagos")),
 
     url(r'^',
         include(MainUrls, namespace='main')),

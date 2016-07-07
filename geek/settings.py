@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'mailin',
     'main',
     'markdown_deux',
+    'pagos',
 
 
     ]
@@ -218,5 +219,5 @@ SOCIAL_AUTH_PIPELINE = (
 BROKER_URL = 'amqp://bliss:poweroso@localhost:5672//'
 
 # LOGIN_ERROR_URL = reverse_lazy('login')
-SOCIAL_AUTH_LOGIN_ERROR_URL = reverse_lazy('main:home')
+# SOCIAL_AUTH_LOGIN_ERROR_URL = reverse_lazy('main:home')
 

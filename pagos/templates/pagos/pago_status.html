@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<section class="section">
+<article class="container">
+
+
+
+
+
+{%if exito%}
+<h1>Tu pago fué recibido exitosamente</h1>
+<h3>¡Gracias!</h3>
+{%else%}
+<h1>Hubo un error en la transacción intentalo nuevamente</h1>
+<h2>{{charge.status}}</h2>
+{%endif%}
+
+
+
+</article>
+</section>
+{%endblock content%}

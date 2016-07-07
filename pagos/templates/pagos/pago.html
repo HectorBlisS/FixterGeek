@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Aplica</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/normalize.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'css/skeleton.css'%}">
+  <!--Fa fa icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<style>
+	.tope{
+		padding-top: 100px;
+	}
+		.centrado{
+	margin: 0 auto;
+	text-align: center;
+}
+.relativo{
+	position: relative;
+}
+.tache{
+	position: absolute;
+	top:50px;
+	right: 0px;
+	z-index: 1;
+	color: black;
+	font-size: 6rem;
+}
+	</style>
+
+</head>
+
+<body>
+	<section class="container relativo">
+
+
+		<a href="{%url 'dashboard' %}">
+		<i class="tache fa fa-times-circle" aria-hidden="true"></i>
+		</a>
+
+
+		<div class="centrado tope">
+		<img src="{%static 'assets/logo_geek.png'%}">
+		<h5>Información de Pago</h5>
+		
+	</div>
+</section>
+		
+<section class="container">
+<div class="row">
+
+<form style="" action="" method="POST" id="card-form">
+{%csrf_token%}
+  <span class="card-errors"></span>
+
+<h4>Monto total: $
+			<input value="{{amount}}" type="text" name="amount">MXN</h4>
+
+  <div class="form-row twoeleven column">
+    <label>
+      <span>Nombre del tarjetahabiente</span><br>
+      <input type="text" size="40" data-conekta="card[name]"/>
+    </label>
+  </div>
+
+  <div class="form-row three columns">
+    <label>
+      <span>Número de tarjeta de crédito</span><br>
+      <input type="text" size="20" data-conekta="card[number]"/>
+    </label>
+  </div>
+
+  <div class="form-row two columns">
+    <label>
+      <span>CVC</span><br>
+      <input type="text" size="4" data-conekta="card[cvc]"/>
+    </label>
+  </div>
+
+  <div class="form-row six columns">
+  	
+    <label >
+      <span>Fecha de expiración (MM/AAAA)</span><br>
+      <input type="text" size="2" data-conekta="card[exp_month]"/>
+    
+    
+    <span>/</span>
+    <input type="text" size="4" data-conekta="card[exp_year]"/>
+    </label>
+
+  </div>
+  <input class="one columns" type="checkbox" name="terminos" value="True">Acepto los Términos y Condiciones<br>
+<button type="submit" class="button-primary u-full-width">¡Pagar ahora!</button>
+<img id="loader" style="width:100px;display:block; true;margin:0 auto;" src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif">
+</form>
+  
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--Scripts de Conecta -->
+<script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.5.0/js/conekta.js"></script>
+
+<script type="text/javascript">
+ 
+ // Conekta Public Key
+  // Conekta.setPublishableKey('key_Ik4WxMhXctrriTvyfMAimyg');
+  $('#loader').hide();
+  Conekta.setPublicKey('key_Ik4WxMhXctrriTvyfMAimyg'); //v5+
+
+
+  var conektaErrorResponseHandler = function(response) {
+  var $form = $("#card-form");
+  
+  /* Muestra los errores en la forma */
+  $form.find(".card-errors").text(response.message_to_purchaser);
+  $form.find("button").fadeIn();
+	};
+
+
+	var conektaSuccessResponseHandler = function(token) {
+	  var $form = $("#card-form");
+
+	  /* Inserta el token_id en la forma para que se envíe al servidor */
+	  $form.append($("<input type='hidden' name='conektaTokenId'>").val(token.id));
+	 
+	  /* and submit */
+	  $form.get(0).submit();
+	};
+
+
+
+  $(function () {
+  $("#card-form").submit(function(event) {
+    var $form = $(this);
+
+    // Previene hacer submit más de una vez
+    $form.find("button").fadeOut();
+    $('#loader').show();
+    // Conekta.token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
+   Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler); //v5+
+   
+    // Previene que la información de la forma sea enviada al servidor
+    return false;
+  });
+});
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
