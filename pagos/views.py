@@ -24,6 +24,7 @@ class Pago(View):
 			amount = 2400
 		context = {'amount':amount}
 		return render(request,template_name,context)
+
 	@method_decorator(login_required)
 	def post(self,request):
 		template_name = "pagos/pago_status.html"
@@ -32,38 +33,46 @@ class Pago(View):
 		print(request.POST.get('conektaTokenId'))
 		print('el cargo: ',amount)
 		print('el tel: ',request.user.aplicantes.tel)
+
+		diccionario = {
+			  "description":"Fixter.Camp con Beca",
+			  "amount": amount,
+			  "currency":"MXN",
+			  "reference_id":"FixCamp001",
+			  "card": request.POST.get('conektaTokenId'),
+			  # "monthly_installments": 1,
+			  "details": {
+			    "name": request.user.first_name+' '+request.user.last_name ,
+			    "phone": request.user.aplicantes.tel,
+			    "email": request.user.email,
+			    "line_items": [{
+			      "name": "Fixter.Camp",
+			      "description": "Curso Presencial y en linea con beca de descuento",
+			      "unit_price": amount,
+			      "quantity": 1,
+			      "sku": "fixcamp001",
+			      "category": "course"
+			    }],
+
+			  }
+			}
+
+		if request.POST.get('meses'):
+			diccionario['monthly_installments'] = request.POST.get('meses')
+
+
 		try:
 			print('entre al try ',conekta.api_key)
 
-			charge = conekta.Charge.create({
-  "description":"Fixter.Camp con Beca",
-  "amount": amount,
-  "currency":"MXN",
-  "reference_id":"FixCamp001",
-  "card": request.POST.get('conektaTokenId'),
-  "monthly_installments": 3,
-  "details": {
-    "name": request.user.first_name+' '+request.user.last_name ,
-    "phone": request.user.aplicantes.tel,
-    "email": request.user.email,
-    "line_items": [{
-      "name": "Fixter.Camp",
-      "description": "Curso Presencial y en linea con beca de descuento",
-      "unit_price": amount,
-      "quantity": 1,
-      "sku": "fixcamp001",
-      "category": "course"
-    }],
+			charge = conekta.Charge.create(diccionario)
 
-  }
-})
 			print (charge.status)			
 			context = {'exito':True,'charge':charge}
 			request.user.aplicantes.pago = True
 			request.user.aplicantes.save()
 			return render(request,template_name,context)
 		except conekta.ConektaError as e:
-			print (e.message_to_purchaser)
+			print (e)
 			context = {'exito':False,}
 			return render(request,template_name,context)
 

@@ -59,6 +59,13 @@
 <h4>Monto total: $
 			<input value="{{amount}}" type="text" name="amount">MXN</h4>
 
+<select class="four columns" name="meses">
+  <option value="">De Contado</option>
+  <option value="3">3 Meses sin intereses</option>
+  <option value="6">6 Meses sin intereses</option>
+  <option value="12">12 Meses sin intereses</option>
+</select>
+
   <div class="form-row twoeleven column">
     <label>
       <span>Nombre del tarjetahabiente</span><br>
@@ -92,7 +99,12 @@
     </label>
 
   </div>
-  <input class="one columns" type="checkbox" name="terminos" value="True">Acepto los <a href="{%url 'pagos:terminos'%}">Términos y Condiciones</a><br>
+
+
+<div class="six columns">
+  <input id="check" type="checkbox" name="terminos" value="True">Acepto los <a href="{%url 'pagos:terminos'%}">Términos y Condiciones</a><br>
+</div>
+
 <button type="submit" class="button-primary u-full-width">¡Pagar ahora!</button>
 <img id="loader" style="width:100px;display:block; true;margin:0 auto;" src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif">
 </form>
@@ -119,6 +131,7 @@
  // Conekta Public Key
   // Conekta.setPublishableKey('key_Ik4WxMhXctrriTvyfMAimyg');
   $('#loader').hide();
+  $('button').hide();
   Conekta.setPublicKey('key_Ik4WxMhXctrriTvyfMAimyg'); //v5+
 
 
@@ -157,6 +170,19 @@
     return false;
   });
 });
+</script>
+
+<script type="text/javascript">
+
+$('#check').on('click',function(){
+  if ( $( '#check' ).prop( "checked" ) ){
+    $('button').show();
+  }else{
+    $('button').hide();
+  }
+  
+});
+
 </script>
 
 
