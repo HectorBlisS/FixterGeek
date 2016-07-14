@@ -35,7 +35,7 @@ class Pago(View):
 		amount = int(request.POST.get('amount'))*100
 		print(request.POST.get('conektaTokenId'))
 		print('el cargo: ',amount)
-		print('el tel: ',request.user.aplicantes.tel)
+		# print('el tel: ',request.user.aplicantes.tel)
 
 		diccionario = {
 			  "description":"Fixter.Camp con Beca",
@@ -71,8 +71,11 @@ class Pago(View):
 
 			print (charge.status)			
 			context = {'exito':True,'charge':charge}
-			request.user.aplicantes.pago = True
-			request.user.aplicantes.save()
+			try:
+				request.user.aplicantes.pago = True
+				request.user.aplicantes.save()
+			except:
+				pass
 			return render(request,template_name,context)
 		except conekta.ConektaError as e:
 			print (e)
