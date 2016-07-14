@@ -46,7 +46,7 @@ class Pago(View):
 			  # "monthly_installments": 1,
 			  "details": {
 			    "name": request.user.first_name+' '+request.user.last_name ,
-			    "phone": request.user.aplicantes.tel,
+			    "phone": 7712412825,
 			    "email": request.user.email,
 			    "line_items": [{
 			      "name": "Fixter.Camp",
