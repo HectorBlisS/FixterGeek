@@ -36,11 +36,11 @@
 	<a href="{%url 'eventos:todos'%}"onclick="Materialize.toast('Proximamente', 4000)" class="waves-effect waves-light btn green">Tus Eventos</a>
 	<a onclick="Materialize.toast('Proximamente', 4000)" href="{%url 'eventos:aplicacion' 'camp'%}" class="waves-effect waves-light btn blue">Aplica a Fixter.Camp</a>
 
-  {%if request.user.aplicantes.inscrito%}
+  {# {%if request.user.aplicantes.inscrito%} #}
 
   <a href="{%url 'pagos:pago' %}" class="waves-effect waves-light btn red">Realizar Pago</a>
 
-  {%endif%}
+  {# {%endif%} #}
 
 	
 

@@ -8,10 +8,48 @@
 <article class="container">
 
 
-	<form action="." method="post">
+	<form action="." method="post" class="row">
 		{%csrf_token%}
-		<input class="btn green" type="submit" value="Enviar Emails">
+
+	<div class="input-field col s6">
+          <input name="titulo" id="titulo" type="text">
+          <label for="email">Titulo</label>
+    </div>
+
+	<div class="input-field col s6">
+    <select name="path">
+      <option value="" disabled selected>Escoge Alumnos</option>
+      <option value="backend path">Alumnos BackEnd</option>
+      <option value="frontend path">Alumnos FrontEnd</option>
+      <option value="Full-Stack / Sabatino">Alumnos FullStack</option>
+      <option value="all">Todos los Alumnos</option>
+    </select>
+    <label>Destinatarios</label>
+  </div>
+
+  <div class="input-field col s12">
+          <textarea name="parrafo1" id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Parrafo1</label>
+  </div>
+    <div class="input-field col s12">
+          <textarea name="parrafo2" id="textarea2" class="materialize-textarea"></textarea>
+          <label for="textarea2">Parrafo2</label>
+  </div>
+    <div class="input-field col s12">
+          <textarea name="parrafo3" id="textarea3" class="materialize-textarea"></textarea>
+          <label for="textarea3">Parrafo3</label>
+  </div>
+
+		<input class="btn green col s12" type="submit" value="Enviar Emails">
 	</form>
+
+<input type="file" id="myFile">
+
+<button id="subele">Subele</button>
+
+<img style="width:300px;" id="laImagen" src="">
+
+<img style="display:none;" id="load" src="http://loadinggif.com/images/image-selection/27.gif">
 
 
 
@@ -21,4 +59,50 @@
 
 
 {%endblock content%}
+
+{%block scripts%}
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDeQWL-tvxsVjJLa1pPwXB_6mDAINPYARI",
+    authDomain: "project-2814539431132233166.firebaseapp.com",
+    databaseURL: "https://project-2814539431132233166.firebaseio.com",
+    storageBucket: "project-2814539431132233166.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
+	var storage = firebase.storage();
+	var storageRef = storage.ref();
+	var imagesRef = storageRef.child('geek');
+$('#subele').on('click',handleImage);
+function handleImage(e){
+	var file = $('#myFile').get(0).files[0];
+	$('#load').slideToggle();
+	var uploadTask = imagesRef.child(file.name).put(file);
+	uploadTask.on('state_changed',function(snapshot){},
+		function(error){
+			console.log(error);
+			$('#load').slideToggle();
+		},
+		function(){
+			var link = uploadTask.snapshot.downloadURL;
+			$('#laImagen').attr({src:link}).show();
+			$('form').append('<input name="imagen" type="hidden" value='+link+'>');
+			$('#load').slideToggle();
+		}
+	);
+}	
+	
+</script>
+{%endblock scripts%}
 

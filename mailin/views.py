@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.views.generic import View
+from eventos.models import Aplicant
+from django.contrib.auth.models import User
 
+from django.contrib import messages
 
 
 class Masivo(View):
@@ -11,12 +14,35 @@ class Masivo(View):
 		return render(request,template,context)
 
 	def post(self,request):
+		to=[]
+		print(request.POST.get('path'))
+		if request.POST.get('path')!='all':
+			alumnos = User.objects.filter(aplicantes__path=request.POST.get('path'))
+		else:
+			alumnos = User.objects.filter(aplicantes__inscrito=True)
 		try:
-			email_masivo()
+			for i in alumnos:
+				to.append(i.email)
+			print(to)
+		except Exception as e:
+			messages.error(request,'los correos son icorrectos',e)
+		context = {
+		'prueba':'prueba morro',
+		'titulo':request.POST.get('titulo'),
+		'to':to,
+		'parrafo1':request.POST.get('parrafo1'),
+		'parrafo2':request.POST.get('parrafo2'),
+		'parrafo3':request.POST.get('parrafo3'),
+		'imagen':request.POST.get('imagen')
+
+		}
+		try:
+			email_masivo(context)
 			print("Exito al enviar mails")
+			messages.success(request,'Correos enviados')
 		except Exception as e:
 			print ("Error al intentar enviar mails: ",e)
-
+			messages.error(request,'Error')
 		return redirect('mailin:masivo')
 
 
@@ -26,24 +52,15 @@ from django.template import Context
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 
-def email_masivo():
-	subject="Pachuca Django Meetup"
-	to=[
-	'bremin_11.20@hotmail.com',
-	'rotcehcm@hotmail.com',
-	'admin@fixter.org',
-	'administrador.otech@uaeh.edu.mx',
-	'restrell_2@hotmail.com',
-	'restrell@yahoo.com.mx',
-	'restrell.otech@uaeh.edu.mx',
-	'contacto@fixter.org'
-	]
+def email_masivo(data):
+	subject=data['titulo']
+	to=data['to']
 	from_email='contacto@fixter.org'
-	ctx={}
+	ctx=data
 
-	# message=get_template("email1.html").render(Context(ctx))
-	message=get_template("email1.html").render(ctx)
-	msg=EmailMessage(subject,message,to=to,from_email=from_email)
+	message=get_template("email1.html").render(Context(ctx))
+	# message=get_template("email1.html").render(ctx)
+	msg=EmailMessage(subject,message,bcc=to,from_email=from_email)
 	msg.content_subtype='html'
 	msg.send()
 
