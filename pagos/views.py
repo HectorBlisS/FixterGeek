@@ -14,15 +14,18 @@ class Pago(View):
 	@method_decorator(login_required)
 	def get(self,request):
 		template_name = "pagos/pago.html"
-		if request.user.aplicantes.tipo == 'Beca 20%':
-			amount = 9600
-		elif request.user.aplicantes.tipo == 'Beca 50%':
-			amount = 6000
-		elif request.user.aplicantes.tipo == 'Beca 70%':
-			amount = 3600
-		elif request.user.aplicantes.tipo == 'Beca 80%':
-			amount = 2400
-		context = {'amount':amount}
+		if request.user.aplicantes.tipo:
+			if request.user.aplicantes.tipo == 'Beca 20%':
+				amount = 9600
+			elif request.user.aplicantes.tipo == 'Beca 50%':
+				amount = 6000
+			elif request.user.aplicantes.tipo == 'Beca 70%':
+				amount = 3600
+			elif request.user.aplicantes.tipo == 'Beca 80%':
+				amount = 2400
+			context = {'amount':amount}
+		else:
+			context = {'amount':12000}
 		return render(request,template_name,context)
 
 	@method_decorator(login_required)
