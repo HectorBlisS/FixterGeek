@@ -31,7 +31,7 @@ class Pago(View):
 	@method_decorator(login_required)
 	def post(self,request):
 		template_name = "pagos/pago_status.html"
-		conekta.api_key = 'key_sqCLgHarDSoaR2PWKsTZoA'
+		conekta.api_key = 'key_osrUjhK6DPrmsMs5NRUjwA'
 		amount = int(request.POST.get('amount'))*100
 		print(request.POST.get('conektaTokenId'))
 		print('el cargo: ',amount)
