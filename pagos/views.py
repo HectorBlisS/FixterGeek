@@ -33,6 +33,7 @@ class Pago(View):
 		template_name = "pagos/pago_status.html"
 		conekta.api_key = 'key_osrUjhK6DPrmsMs5NRUjwA'
 		amount = int(request.POST.get('amount'))*100
+		tel = request.POST.get('tel')
 		print(request.POST.get('conektaTokenId'))
 		print('el cargo: ',amount)
 		# print('el tel: ',request.user.aplicantes.tel)
@@ -46,7 +47,7 @@ class Pago(View):
 			  # "monthly_installments": 1,
 			  "details": {
 			    "name": request.user.first_name+' '+request.user.last_name ,
-			    "phone": 7712412825,
+			    "phone": tel,
 			    "email": request.user.email,
 			    "line_items": [{
 			      "name": "Fixter.Camp",
