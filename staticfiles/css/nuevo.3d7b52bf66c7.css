@@ -1,0 +1,278 @@
+/*Nueva landing*/
+html, body{
+	margin: 0;
+	padding: 0;
+	/*background: #f57f17;*/
+	background: white;
+}
+button{
+	font-size: 20px;
+}
+.errorlist{
+	background: red;
+	color: white;
+}
+.nav{
+	z-index: 999;
+	width: 100%;
+	height: 34px;
+	text-align: left;
+	vertical-align: middle;
+	position: fixed;
+}
+.nav ul li{
+	list-style: none;
+	display: inline;
+	color:white;
+	float: right;
+	margin: 5px 20px 0 20px;
+}
+li a{
+	color:white;
+	text-decoration: none;
+}
+li a:hover{
+	color:#f57f17;
+	text-decoration: none;
+}
+.responsive-alto{
+	height: 90%;
+	width: auto;
+}
+.logo{
+	margin-left: 20px;
+	margin-top: 2px;
+	float: left;
+}
+
+/*colores*/
+.negro{
+	background-color: black;
+}
+.verde{
+	background-color: #81c784;
+}
+.azul{
+	background-color: #4dd0e1;
+}
+.blanco{
+	background-color: white;
+}
+.gris{
+	background: #eeeeee;
+}
+.naranja{
+	background: #f57f17;
+}
+
+
+/*Main*/
+
+.portada-dos{
+	color:white;
+	height: 70vh;
+	background-color: red;
+	background-image: url("../assets/cover.4ab28cf97fc0.jpg");
+	background-size: cover;
+	text-align: center;
+}
+.sombra{
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+.portada-dos{
+	width: 100%;
+}
+
+.portada-dos h4{
+	padding-top: 20%;
+	font-family: 'Dosis', sans-serif;
+	font-size: 3rem;
+	transition:all 1s ease;
+}
+.portada-dos h2{
+	font-size: 6rem;
+	font-family: 'Fredoka One', cursive;
+	transition:all 1s ease;
+}
+.portada-dos i{
+	font-size: 10rem;
+	margin-bottom: 4rem;
+	transition:all .5s ease;
+	cursor: pointer;
+}
+.portada-dos i:hover{
+	color:#f57f17;
+}
+@media (min-width: 1000px){
+	.portada-dos h4{
+		padding-top: 10%;
+		font-size: 6rem;
+	}
+	.portada-dos h2{
+		font-size: 12rem;
+	}
+}
+button{
+	color:white;
+}
+button:hover{
+	color:#f57f17;
+}
+.section{
+	width: 100%;
+	margin: 0;
+	/*background-image: url("fondo.c35721b5c1a8.png");*/
+}
+.card{
+	text-align: center;
+}
+.section h2{
+	margin-top: 6rem;
+	padding-top: 6rem;
+	font-family: 'Dosis', sans-serif;
+	color: white;
+	font-size: 3rem;
+	text-align: center;
+	transition:all 1.5s ease;
+}
+.section p{
+	text-align: center;
+	color: white;
+	font-size: 3rem;
+	font-family: 'Dosis', sans-serif;
+	margin-bottom: 6rem;
+
+}
+@media (min-width: 1000px){
+	.section h2{
+		font-size: 6rem;
+	}
+}
+.divider{
+	border: 1px solid white;
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 2rem;
+	
+}
+.card{
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+}
+.card i{
+	font-size: 10rem;
+	display: block;
+	color: #f57f17;
+	margin-bottom: 2rem;
+	transition:all .5s ease;
+}
+.card i:hover{
+	color:white;
+	margin: 0 auto;
+}
+.card span{
+	font-family: 'Fredoka One', cursive;
+	font-size: 2rem;
+	color:white;
+}
+.card p{
+	font-family: 'Dosis', sans-serif;
+	font-size: 2rem;
+	margin-top: 2rem;
+	color:white;
+	text-align: justify;
+}
+.contenedor{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 5rem;
+}
+
+.plan{
+	text-align: center;
+	border:0.5px solid grey;
+	color:black;
+	background-color: transparent;
+	padding:20px;
+	margin: 0 auto;
+	margin-right: 5px;
+	margin-left: 20px;
+	margin-bottom: 8rem;
+}
+.plan h5{
+	color: black;
+	font-size: 3rem;
+
+}
+.cantidad{
+	font-size: 4.5rem;
+	color:#f57f17;
+	padding-left: 10px;
+}
+.money{
+	position: relative;
+}
+.dinero{
+	color:#f57f17;
+	position: absolute;
+	top:20px;
+	font-size: 2rem;
+	margin-right: 2rem;
+}
+.plan .desc{
+	font-size: 1.5rem;
+	color:grey;
+	margin-bottom: 20px;
+}
+.plan p{
+	color:#f57f17;
+	font-size: 1.5rem;
+	margin: 0;
+	margin-bottom: 10px;
+}
+.plan button{
+	margin-top: 6rem;
+	border: 1px solid white;
+	color:white;
+	background-color: #f57f17;
+	transition:all 0.5s ease;
+}
+.plan button:hover{
+	background-color: grey;
+}
+.beca{
+	text-align: center;
+}
+.beca p{
+	text-align: center;
+	color:grey;
+}
+.beca button{
+	color:black;
+	margin-bottom: 50px;
+	transition:all 0.5s ease;
+	padding-top:0px;
+	padding-bottom:20px;
+}
+.beca button:hover{
+	color:#f57f17;
+	padding: 0 50px 0 50px;
+}
+.center{
+	text-align: center;
+}
+
+.perfil-img{
+	border-radius: 50%;
+	transition:all 0.5s ease;
+	height: 100px;
+	width: 100px;
+}
+.perfil-img:hover{
+	border-radius: 0;
+}
+
+
+
+/*Nueva landing*/

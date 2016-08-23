@@ -8,6 +8,7 @@ from eventos import urls as EventosUrls
 from mailin import urls as MailinUrls
 from main import urls as MainUrls
 from pagos import urls as pagosUrls
+from applys import urls as applyUrls
 
 from social.apps.django_app import urls as socialUrls
 
@@ -34,6 +35,9 @@ urlpatterns = [
     url(r'^pagos/',
         include(pagosUrls,
             namespace="pagos")),
+
+    url(r'^apply/',
+        include(applyUrls)),
 
     url(r'^',
         include(MainUrls, namespace='main')),

@@ -4,6 +4,8 @@
 {%block nav%}{%endblock nav%}
 
 {%block content%}
+<section class="contenedor">
+
 
 <div class="valign-wrapper todo fondo">
    <div style="width:100%;"class="valign center">
@@ -13,8 +15,11 @@
    				<div class="divider"></div>
    		<h4 class="white-text">El futuro llegó a Pachuca.</h4>
    		<h5 class="white-text">¿Quieres ser parte?</h5>
-   		<a href="{%url 'social:begin' 'facebook'%}" class="choncho flow-text btn-large waves-effect blue"><i class="fa fa-facebook-official"></i>
-						Si Quiero</a>
+   		<a href="{%url 'social:begin' 'facebook'%}" class="button button-primary">
+
+         <i class="fa fa-facebook-official"></i>
+						Si Quiero
+               </a>
 		<div class="divider"></div>
 
       <h5 class="flow-text white-text">Si tienes problemas con el inicio de sesión, <br> es posible que tu correo no este actualizado en facebook. <br> Cambia tu configuración en facebook o envíanos un correo electrónico a <a href="mailto:contacto@fixter.org">contacto@fixter.org</a></h5>
@@ -25,5 +30,5 @@
    </div>
 </div>
 
-
+</section>
 {%endblock content%}

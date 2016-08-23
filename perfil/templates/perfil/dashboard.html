@@ -7,83 +7,28 @@
 
 {%block content%}
 
+<section class="contenedor">
 
 
-<div class="cover valign-wrapper">
-
-	<div class="valign container white-text">
-	<div class="row">
-	<img class="perfil-img col m3 s12"src="http://graph.facebook.com/{{request.user.userprofile.ide}}/picture?type=large">
-	<div class="col m9 s12">
-	<h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
-	<h4>Miembro <span class="green-text">Activo</span></h4>
-	<p>{{request.user.email}}</p>
-	</div>
-	</div>
-	</div>
-
-
-</div>
-
-<section class="section toda">
-<div class="coffe"></div> <!--Img-->
-{# <div class="cuadro_negro"></div> <!--Cuadro negro--> #}
-<article class="container">
-
-<!-- Modal Trigger -->
-	<a class="waves-effect waves-light btn orange modal-trigger" href="#modalData">Modificar mi info</a>
-<!-- Modal Trigger -->
-	<a href="{%url 'eventos:todos'%}"onclick="Materialize.toast('Proximamente', 4000)" class="waves-effect waves-light btn green">Tus Eventos</a>
-	<a onclick="Materialize.toast('Proximamente', 4000)" href="{%url 'eventos:aplicacion' 'camp'%}" class="waves-effect waves-light btn blue">Aplica a Fixter.Camp</a>
-
-  {# {%if request.user.aplicantes.inscrito%} #}
-
-  <a href="{%url 'pagos:pago' %}" class="waves-effect waves-light btn red">Realizar Pago</a>
-
-  {# {%endif%} #}
-
+	<img class="perfil-img"src="http://graph.facebook.com/{{request.user.userprofile.ide}}/picture?type=large">
 	
+	<h2>{{request.user.first_name}} {{request.user.last_name}}</h2>
 
+	<p>{{request.user.email}}</p>
+  <a href="{%url 'apply' 1%}" class="button">Aplica a Fixter.Camp</a>
 
+  <a href="{%url 'pagos:pago' %}" class="button button-primary">Realizar Pago</a>
 
+  <br>
 
-
-
-
-
-
-	</article>
+        <form action="." method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="hidden" name="updateInfo" value="True">
+        <input class="button button-primary" type="submit" value="Guardar">
+      </form>
 
 </section>
 
 
-
-
-
-  <!-- Modal Structure -->
-  <div id="modalData" class="modal">
-    <div class="modal-content">
-      <form action="." method="post">
-      	{%csrf_token%}
-      	{{form.as_p}}
-      	<input type="hidden" name="updateInfo" value="True">
-      	<input class="orange btn" type="submit" value="Guardar">
-      </form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="btn red modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-    </div>
-  </div>
-
-
-
 {%endblock content%}
-
-{%block scripts%}
-<script>
-  $(document).ready(function(){
-    $('.modal-trigger').leanModal();
-  });
-</script>
-
-  {%endblock scripts%}

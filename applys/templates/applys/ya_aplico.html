@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{%block content%}
+
+<section style="" class="contenedor center">
+	<img src="{%static 'assets/logo_geek.png'%}">
+<h2>Ya aplicaste a este Fixter.Camp <br> {{request.user.username}}</h2>
+<h4>No te preocupes, nosotros te llamaremos.</h4>
+<h5>Si tienes preguntas siempre puedes mandarnos un correo electrónico:</h5>
+<a href="mailto:contacto@fixter.org">
+	contacto@fixter.org
+</a>
+
+<p>
+	<a class="plan" style="border:none;" href="{%url 'main:home'%}">
+		<button>Volver</button>
+	</a>
+</p>
+
+
+</section>
+
+
+{%endblock content%}

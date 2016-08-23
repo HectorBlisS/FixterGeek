@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{%block content%}
+
+<section style="" class="contenedor center">
+	<img src="{%static 'assets/logo_geek.png'%}">
+<h2>Hola {{request.user.username}} es genial que quieras ser parte del {{evento.titulo}}</h2>
+<form action="." method="post">
+	{%csrf_token%}
+	{{form.as_p}}
+	<input type="submit" value="Aplicar">
+</form>
+
+</section>
+
+
+{%endblock content%}
+
+
+
+
+
+
+{%block scripts%}
+<script type="text/javascript">
+
+$('#id_porque').parent().hide();
+
+$(document).on('change','#id_beca',function(){
+
+var beca = $('#id_beca').val()
+console.log(beca);
+
+if (beca === 'True'){
+	$('#id_porque').parent().slideToggle();
+}else{
+	$('#id_porque').parent().slideToggle();
+}
+
+
+
+
+});//docu
+</script>
+
+{%endblock scripts%}

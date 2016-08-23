@@ -3,24 +3,6 @@ from .models import Aplicant
 from django.utils.translation import ugettext_lazy as _
 
 
-class AplicaForm(forms.ModelForm):
-
-	class Meta:
-		model = Aplicant
-		fields = ['motivos','tel','path','beca','tipo','porque']
-		labels={
-		'motivos':_('Dinos, ¿porqué quieres entrar a Fixter.Camp?'),
-		'beca':_('¿Crees que necesitas una Beca?'),
-		'porque':_('¿Porque consideras que mereces la beca de descuento?'),
-		'path':_('¿Qué camino te intereza más?'),
-		'tel':_('Proporcionanos un Teléfono donde podamos contactarte')
-		}
-		widgets = {
-            'beca': forms.RadioSelect(attrs={'class':'.beca'})
-        }
-
-
-
 
 		# 'email':_('Introduce tu correo electrónico')
 		# }
