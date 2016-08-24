@@ -8,6 +8,18 @@ html, body{
 button{
 	font-size: 20px;
 }
+.success{
+	background: green;
+	width: 100%;
+	color:white;
+	padding-top: 4rem;
+}
+.error{
+	background: red;
+	width: 100%;
+	color:white;
+	padding-top: 4rem;
+}
 .errorlist{
 	background: red;
 	color: white;

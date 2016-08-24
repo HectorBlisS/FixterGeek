@@ -6,6 +6,7 @@ class UserProfile(models.Model):
 	user=models.OneToOneField(settings.AUTH_USER_MODEL)
 	photo=models.URLField(blank=True,null=True)
 	ide=models.CharField(max_length=50,null=True,blank=True)
+	correo = models.EmailField(blank=True,null=True)
 
 	def __str__(self):
 		return "Perfil de {}".format(self.user)

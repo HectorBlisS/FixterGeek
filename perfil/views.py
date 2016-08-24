@@ -15,7 +15,8 @@ class DashBoard(View):
 	@method_decorator(login_required)
 	def get(self,request):
 		template="perfil/dashboard.html"
-		form = ProfileForm(instance=request.user)
+		perfil = request.user.userprofile
+		form = ProfileForm(instance=perfil)
 
 		context={
 		'form':form,
@@ -24,16 +25,22 @@ class DashBoard(View):
 		return render(request,template,context)
 
 	def post(self,request):
-		if request.POST.get('updateInfo'):
-			form = ProfileForm(data = request.POST, instance = request.user)
-			print(form)
-			if form.is_valid():
-				form.save()
-
-				messages.success(request,'Tus datos fueron actualizados')
+		perfil = request.user.userprofile
+		form = ProfileForm(data = request.POST, instance = perfil)
+		if form.is_valid():	
+			form.save()
+			messages.success(request,'Tus datos fueron actualizados')
 		else:
-			messages.error(request,'Hubo un error, intenta más tarde')
-		return redirect('dashboard')
+			messages.error(request,'Hubo un error, intenta de nuevo')
+		
+		template="perfil/dashboard.html"
+		form = ProfileForm(instance=perfil)
+
+		context={
+		'form':form,
+		}
+		# saludo.delay('Hola blissi')
+		return render(request,template,context)
 
 
 

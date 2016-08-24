@@ -24,7 +24,6 @@
         <form action="." method="post">
         {%csrf_token%}
         {{form.as_p}}
-        <input type="hidden" name="updateInfo" value="True">
         <input class="button button-primary" type="submit" value="Guardar">
       </form>
 
