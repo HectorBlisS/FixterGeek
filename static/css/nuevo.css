@@ -207,15 +207,20 @@ button:hover{
 	color:black;
 	background-color: transparent;
 	padding:20px;
+
+}
+.plan h5{
+/*	color: black;
+	font-size: 3rem;*/
+
+}
+@media (min-width: 1000px){
+	.plan{
 	margin: 0 auto;
 	margin-right: 5px;
 	margin-left: 20px;
 	margin-bottom: 8rem;
 }
-.plan h5{
-	color: black;
-	font-size: 3rem;
-
 }
 .cantidad{
 	font-size: 4.5rem;
