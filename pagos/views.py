@@ -12,8 +12,11 @@ class Terminos(TemplateView):
 
 class Pago(View):
 	@method_decorator(login_required)
-	def get(self,request):
+	def get(self,request, monto=None):
 		template_name = "pagos/pago.html"
+		if monto:
+			context = {'amount':monto}
+			return render(request,template_name,context) 
 		try:
 			if request.user.aplicantes.tipo == 'Beca 20%':
 				amount = 9600

@@ -294,7 +294,42 @@ button:hover{
 .perfil-img:hover{
 	border-radius: 0;
 }
+.evento_portada img{
+	width: 100%;
+}
+.evento_portada_contenido{
+	text-align: center;
+}
+.evento_portada_contenido i{
+	font-size: 6rem;
+}
+.divider{
+	border: 1px solid grey;
+	width: 60%;
+	margin-bottom: 100px;
+	margin-top: 50px;
+}
+.aplica{
+	padding: 20px;
+	background: orange;
+	color:white;
+	font-family: 'Dosis', sans-serif;
+	font-size: 3rem;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 100px;
+	transition:all 0.5s ease;
+}
+.aplica:hover{
+	color:orange;
+	background: white;
+	border: 1px solid orange;
+}
 
-
+input[disabled] {
+    background:#ccc;
+    border-color: #ccc;
+    text-shadow:none;
+}
 
 /*Nueva landing*/

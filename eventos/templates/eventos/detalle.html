@@ -10,26 +10,76 @@
 
 
 {%block content%}
+
 <section class="section">
 
-<div class="portada">
+<div class="evento_portada">
 <img src="{{evento.portada.url}}" class="portada-img"/> <!--imagen de portada-->
 <div class="cuadro_negro"></div><!--cuadro negro-->
-<div class="portada-contenido">
+<div class="evento_portada_contenido">
+
+{# <i class="play fa fa-youtube-play" aria-hidden="true"></i> #}
+<h3>
+	Curso Completo de {{evento.titulo}}
+</h3>
+  <!-- Your embedded video player code -->
+  <div class="fb-video" data-href="https://www.facebook.com/fixterme/videos/1291360960927740/" data-width="500" data-show-text="false">
+    <div class="fb-xfbml-parse-ignore">
+      <blockquote cite="https://www.facebook.com/fixterme/videos/1291360960927740/">
+        <a href="https://www.facebook.com/fixterme/videos/1291360960927740/">Compartir</a>
+        <p>Compartir</p>
+        Posted by <a href="https://www.facebook.com/fixterme/">FixterGeek</a>
+      </blockquote>
+    </div>
+  </div>
 
 
-	<i class="play fa fa-youtube-play" aria-hidden="true"></i>
-
-<h4>
-	{{evento.titulo}}
-</h4>
 <h5>{{evento.detalles}}</h5>
+<p style="color:orange; width:80%;margin:0 auto;">
+	{{evento.descripcion}}
+</p>
+<!-- Your share button code -->
+<div style="margin-top:15px;" class="fb-like" data-href="http://www.fixter.org{{evento.get_absolute_url}}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
 <div class="divider"></div>
-<p>{{evento.direccion}}</p>
+<div class="row">
+<div class="six columns">
+<h4>
+<span style="font-size:1.5rem;">
+	Costo del Curso: 
+</span>
+$ {{evento.precio}}MXN
+</h4>
+
+<a href="{%url 'pagos:wework' 1500%}" class="aplica">{{evento.boton}}</a>
+</div> <!--columsn-->
+
+<div class="six columns">
+<h4>
+<span style="font-size:1.5rem;">
+	Promoción 2 personas: 
+</span>
+$ 2,000MXN
+</h4>
+
+<a href="{%url 'pagos:wework' 2000%}" class="aplica">Comprar Promo</a>
+</div> <!--columsn-->
+
+</div>
+<div class="divider"></div>
+<h3>¿Donde?... ¿donde más?</h3>
+<br><br>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.721813670092!2d-99.17011104917368!3d19.424421986824594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff49e05922bf%3A0xf5a129a2dab66b7c!2sWeWork+Varsovia!5e0!3m2!1ses!2smx!4v1473362977496" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+<p style="background:grey;">{{evento.direccion}}</p>
 <p><strong class="grey-text">Iniciamos</strong>: {{evento.fecha}}</p>
 
 
-</div>
+<h4>¿Tienes dudas? </h4>
+	
+<h5>envianos un mail a: <a href="mailto:admin@fixter.org">admin@fixter.org</a> </h5>
+
+</div> {# contenido #}
 
 </div><!--portada-->
 
@@ -39,30 +89,17 @@
 
 <article class="container">
 
-<!-- Your share button code -->
-<div style="margin-top:15px;" class="fb-like" data-href="{{evento.get_absolute_url}}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 
-<p class="btn-aplica-p">
-<a href="{%url 'eventos:aplicacion' evento.slug%}" class="btn-aplica">{{evento.boton}}</a>
-</p>
+
+
 
 {% markdown STYLE %}  
-
-	{{evento.descripcion}}
-
 {% endmarkdown %}
-<div class="divider"></div>
-
-<p class="precio">
-<span style="font-size:1.5rem;">Costo del programa: </span>
-$ {{evento.precio}}MXN
-
-</p>
 
 
-<p class="btn-aplica-p">
-<a href="{%url 'eventos:aplicacion' evento.slug%}" class="btn-aplica">Aplica para una beca</a>
-</p>
+
+
+
 
 
 
@@ -80,4 +117,14 @@ $ {{evento.precio}}MXN
   js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=421914394679473";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 {%endblock scripts%}

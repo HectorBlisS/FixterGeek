@@ -9,4 +9,7 @@ urlpatterns=[
 	url(r'^terminos/$',
 		views.Terminos.as_view(),
 		name="terminos"),
+	url(r'^pago/(?P<monto>\d+)/$',
+		views.Pago.as_view(),
+		name="wework"),
 ]

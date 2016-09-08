@@ -3,6 +3,23 @@ from django.views.generic import View
 from .models import Evento
 from django.shortcuts import get_object_or_404
 
+
+
+class Wework(View):
+	def get(self, request, slug):
+		evento = get_object_or_404(Evento, slug=slug)
+		template_name="eventos/detalle.html"
+		context = {
+		'evento':evento
+		}
+		return render(request, template_name, context)
+
+
+
+
+
+
+
 # from .forms import AplicaForm
 
 # # Herramienta para restringir acceso
