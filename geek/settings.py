@@ -13,7 +13,7 @@ SECRET_KEY = 'iv5%rh+iwj1)&hv015rp#*&q+llqg52zihv$#ino%7x@)u!$20'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -96,7 +96,8 @@ if not DEBUG:
             'NAME':'geek',
             'USER':'admin',
             'PASSWORD':'Poweroso77',
-            'HOST':'54.213.147.140',
+            # 'HOST':'54.213.147.140',
+            'HOST':'54.200.214.156',
             'PORT':'5432',
         }
     }
