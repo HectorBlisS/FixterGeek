@@ -3,6 +3,7 @@ from django.views.generic import View, TemplateView
 import conekta
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.contrib import messages
 
 
 
@@ -32,10 +33,11 @@ class Pago(View):
 		return render(request,template_name,context)
 
 	@method_decorator(login_required)
-	def post(self,request):
+	def post(self,request, monto=None):
 		template_name = "pagos/pago_status.html"
 		conekta.api_key = 'key_osrUjhK6DPrmsMs5NRUjwA'
-		amount = int(request.POST.get('amount'))*100
+		# amount = int(request.POST.get('amount'))*100
+		amount = int(monto)*100
 		tel = request.POST.get('tel')
 		print(request.POST.get('conektaTokenId'))
 		print('el cargo: ',amount)
@@ -75,6 +77,7 @@ class Pago(View):
 
 			print (charge.status)			
 			context = {'exito':True,'charge':charge}
+			messages.success(request, charge.status)
 			try:
 				request.user.aplicantes.pago = True
 				request.user.aplicantes.save()
@@ -83,6 +86,7 @@ class Pago(View):
 			return render(request,template_name,context)
 		except conekta.ConektaError as e:
 			print (e)
+			messages.error(request, e)
 			context = {'exito':False,}
 			return render(request,template_name,context)
 

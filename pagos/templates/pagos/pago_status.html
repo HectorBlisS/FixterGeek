@@ -12,8 +12,9 @@
 {%if exito%}
 <h1>Tu pago fué recibido exitosamente</h1>
 <h3>¡Gracias!</h3>
+<h5>Si tienes alguna duda o comentarios porfavor envianos un correo a: <a href="mailto:admin@fixter.org">admin@fixter.org</a> </h5>
 {%else%}
-<h1>Hubo un error en la transacción intentalo nuevamente</h1>
+<h1 style="margin-top:200px;">Hubo un error en la transacción intentalo nuevamente</h1>
 <h2>{{charge.status}}</h2>
 {%endif%}
 
