@@ -23,10 +23,10 @@
 	Curso Completo de {{evento.titulo}}
 </h3>
   <!-- Your embedded video player code -->
-  <div class="fb-video" data-href="https://www.facebook.com/fixterme/videos/1291360960927740/" data-width="500" data-show-text="false">
+  <div class="fb-video" data-href="{{evento.video}}" data-width="500" data-show-text="false">
     <div class="fb-xfbml-parse-ignore">
-      <blockquote cite="https://www.facebook.com/fixterme/videos/1291360960927740/">
-        <a href="https://www.facebook.com/fixterme/videos/1291360960927740/">Compartir</a>
+      <blockquote cite="{{evento.video}}">
+        <a href="{{evento.video}}">Compartir</a>
         <p>Compartir</p>
         Posted by <a href="https://www.facebook.com/fixterme/">FixterGeek</a>
       </blockquote>
@@ -51,7 +51,7 @@
 $ {{evento.precio}}MXN
 </h4>
 
-<a href="{%url 'pagos:wework' 1500%}" class="aplica">{{evento.boton}}</a>
+<a href="{%url 'pagos:wework' evento.precio|floatformat%}" class="aplica">{{evento.boton}}</a>
 </div> <!--columsn-->
 
 <div class="six columns">
@@ -59,10 +59,10 @@ $ {{evento.precio}}MXN
 <span style="font-size:1.5rem;">
 	Promoción 2 personas: 
 </span>
-$ 2,000MXN
+$ {{evento.precio_promo}}MXN
 </h4>
 
-<a href="{%url 'pagos:wework' 2000%}" class="aplica">Comprar Promo</a>
+<a href="{%url 'pagos:wework' evento.precio_promo|floatformat%}" class="aplica">Comprar Promo</a>
 </div> <!--columsn-->
 
 </div>
