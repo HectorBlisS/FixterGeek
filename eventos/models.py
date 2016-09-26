@@ -8,7 +8,7 @@ class Evento(models.Model):
 	descripcion=models.TextField()
 	detalles=models.CharField(max_length=140)
 	# precio = models.DecimalField(max_digits=10,decimal_places=2,default=0)
-	precio = models.IntegerField()
+	precio = models.CharField(max_length=50)
 	precio_promo=models.IntegerField()
 	fecha=models.DateTimeField()
 	direccion=models.TextField()
