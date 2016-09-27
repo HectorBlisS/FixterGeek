@@ -29,6 +29,12 @@
 	color: black;
 	font-size: 6rem;
 }
+.card-errors{
+  text-align: center;
+  background: red;
+  color:white;
+  font-size: 4rem;
+}
 	</style>
 
 </head>
@@ -52,13 +58,27 @@
 <section class="container">
 <div class="row">
 
+  <!--Codigo de descuento-->
+<div class="eight columns">
+  <input type="text" id="cupon" placeholder="ingresa el código">
+  <button id="descuento" class="button" style="background:yellow;">Aplicar Código de descuento</button>
+  <img id="loading" style="display:none;width:20px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/585d0331234507.564a1d239ac5e.gif">
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
 <form style="" action="" method="POST" id="card-form">
 {%csrf_token%}
-  <span class="card-errors"></span>
+  <p class="card-errors"></p>
 
 <h4>Monto total: $
 
-			<input disabled value="{{amount}}" type="text" name="amount">MXN</h4>
+			<input disabled value="{{amount}}" type="text" name="amount" id="amount">MXN 
+      <span style="background:yellow;color:black;display:none" id="aplicado">Descuento Aplicado</span>
+    </h4>
 
 <select class="four columns" name="meses">
   <option value="">De Contado</option>
@@ -66,6 +86,8 @@
 <!--   <option value="6">6 Meses sin intereses</option>
   <option value="12">12 Meses sin intereses</option> -->
 </select>
+
+
 
   <div class="form-row twoeleven column">
         <label>
@@ -111,7 +133,7 @@
   <input id="check" type="checkbox" name="terminos" value="True">Acepto los <a href="{%url 'pagos:terminos'%}">Términos y Condiciones</a><br>
 </div>
 
-<button type="submit" class="button-primary u-full-width">¡Pagar ahora!</button>
+<button id="pagar" type="submit" class="button-primary u-full-width">¡Pagar ahora!</button>
 <img id="loader" style="width:100px;display:block; true;margin:0 auto;" src="https://d13yacurqjgara.cloudfront.net/users/82092/screenshots/1073359/spinner.gif">
 </form>
   
@@ -140,7 +162,7 @@
  // Conekta Public Key
   // Conekta.setPublishableKey('key_Ik4WxMhXctrriTvyfMAimyg');
   $('#loader').hide();
-  $('button').hide();
+  $('#pagar').hide();
   Conekta.setPublicKey('key_WjR6vbjKGjpeL4sQCwJYCVw'); //v5+
 
 
@@ -149,7 +171,7 @@
   
   /* Muestra los errores en la forma */
   $form.find(".card-errors").text(response.message_to_purchaser);
-  $form.find("button").fadeIn();
+  $form.find("#pagar").fadeIn();
 	};
 
 
@@ -170,7 +192,7 @@
     var $form = $(this);
 
     // Previene hacer submit más de una vez
-    $form.find("button").fadeOut();
+    $form.find("#pagar").fadeOut();
     $('#loader').show();
     // Conekta.token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler);
    Conekta.Token.create($form, conektaSuccessResponseHandler, conektaErrorResponseHandler); //v5+
@@ -185,13 +207,45 @@
 
 $('#check').on('click',function(){
   if ( $( '#check' ).prop( "checked" ) ){
-    $('button').show();
+    $('#pagar').show();
   }else{
-    $('button').hide();
+    $('#pagar').hide();
   }
   
 });
 
+</script>
+
+<script>
+//Descuento
+
+$('#descuento').on('click',function(){
+  var url = '/eventos/descuento/{{amount}}/'+$('#cupon').val()+'/';
+  console.log(url);
+  $.ajax({
+    url:url,
+    method:'GET',
+    success:function(response){
+      console.log(response);
+      $('#amount').val(parseInt(response));
+      $('#aplicado').fadeIn();
+
+      // $('#amount').val(response.)
+    },
+    error:function(response){
+      console.log(response);
+    },
+    beforeSend:function(){
+      $('#loading').show();
+      $('#descuento').hide();
+    },
+    complete:function(){
+      $('#loading').hide();
+      // $('#descuento').show();
+    }
+
+  });
+});
 </script>
 
 

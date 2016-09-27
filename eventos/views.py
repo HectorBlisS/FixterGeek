@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
+from django.http import HttpResponseNotFound
 from django.views.generic import View
-from .models import Evento
+from .models import Evento, Cupon
 from django.shortcuts import get_object_or_404
+import json
 
 
 
@@ -13,6 +15,24 @@ class Wework(View):
 		'evento':evento
 		}
 		return render(request, template_name, context)
+
+class Descuento(View):
+	"""
+	Vista para Ajax
+	"""
+	def get(self, request,cupon=None,amount=None):
+		amount = int(amount)
+		if cupon and amount:
+			cupon = get_object_or_404(Cupon,nombre=cupon)
+			if cupon.cantidad:
+				precio_final = amount - cupon.cantidad
+			else:
+				precio_final = amount - (amount * cupon.porcentaje)
+			return HttpResponse(precio_final)
+		else:
+			return HttpResponseNotFound('El cupon no es valido')
+			
+		
 
 
 
