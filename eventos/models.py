@@ -23,10 +23,13 @@ class Evento(models.Model):
 	def get_absolute_url(self):
 		return reverse('eventos:detalle',args=[self.slug])
 
-# class Cupon(models.Model):
-# 	nombre = models.TextField()
-# 	def __str__(self):
-# 		return self.nombre
+class Cupon(models.Model):
+	nombre = models.CharField(max_length=20)
+	cantidad = models.IntegerField(blank=True,null=True)
+	porcentaje = models.FloatField(blank=True,null=True)
+	
+	def __str__(self):
+		return self.nombre
 
 
 
