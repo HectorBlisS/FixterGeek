@@ -10,6 +10,6 @@ class EventoAdmin(ImportExportMixin, admin.ModelAdmin):
 	prepopulated_fields={'slug':('titulo',)}
 
 admin.site.register(models.Evento, EventoAdmin)
-admin.site.register(models.Cupon)
+# admin.site.register(models.Cupon)
 
 
