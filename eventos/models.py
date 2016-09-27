@@ -24,10 +24,7 @@ class Evento(models.Model):
 		return reverse('eventos:detalle',args=[self.slug])
 
 class Cupon(models.Model):
-	nombre = models.CharField(max_length=20)
-	cantidad = models.IntegerField(null=True,blank=True)
-	porcentaje = models.FloatField(null=True,blank=True)
-
+	nombre = models.TextField()
 	def __str__(self):
 		return self.nombre
 
