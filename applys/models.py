@@ -8,8 +8,8 @@ class Apply(models.Model):
 	BECA_CHOICES = (
 		('Beca 20%','Beca 20%'),
 		('Beca 50%', 'Beca 50%'),
-		# ('Beca 70%', 'Beca 70%'),
-		# ('Beca 80%', 'Beca 80%')
+		('Beca 70%', 'Beca 70%'),
+		('Beca 80%', 'Beca 80%')
 		)
 	Choices=(
 		(True,'Si la necesito'),
