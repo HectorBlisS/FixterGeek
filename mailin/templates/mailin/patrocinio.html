@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<section class="container" style="padding-top:200px">
+
+<form action="." method="post">
+	{%csrf_token%}
+	<label>
+		Escribe los correos separados por coma:
+		<br>
+		<textarea name="mails" placeholder="ejemplo@mail.com, ejemplo@correo.com" ></textarea>
+	</label>
+	<input class="btn" type="submit" value="Enviar correos">
+</form>
+
+</section>
+
+{%endblock content%}

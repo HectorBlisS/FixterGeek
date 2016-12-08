@@ -4,9 +4,9 @@ from . import views
 
 urlpatterns=[
 
-	# url(r'^masivo/$',
-	# 	views.Masivo.as_view(),
-	# 	name="masivo"),
+	url(r'^patrocinio/$',
+		views.Patrocinio.as_view(),
+		name="patrocinio"),
 
 	# url(r'^gracias/por/venir/$',
 	# 	views.Gracias.as_view(),

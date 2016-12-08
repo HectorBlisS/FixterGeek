@@ -1,3 +1,61 @@
+from django.shortcuts import render, redirect
+from django.views.generic import View
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib import messages
+
+
+class Patrocinio(View):
+	@method_decorator(login_required)
+	def get(self, request):
+		template_name = "mailin/patrocinio.html"
+		return render(request,template_name)
+
+	def post(self, request):
+		mails = request.POST.get('mails').split(",")
+		try:
+			enviar_mails(mails)
+			messages.success(request,"correos enviados")
+		except:
+			messages.error(request, "Error al enviar, intentalo nuevamente")
+		return redirect('mailin:patrocinio')
+
+# # Funcion para enviar Email
+# from django.template import Context
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
+
+def enviar_mails(mails):
+	subject="Mesa de patrocinadores Hackaton 2016"
+	to=mails
+	from_email='admin@fixter.org'
+	# ctx=mails
+
+	# message=get_template("patrocinioMail.html").render(Context(ctx))
+	message=get_template("patrocinioMail.html").render()
+	# message=get_template("email1.html").render(ctx)
+	msg=EmailMessage(subject,message,bcc=to,from_email=from_email)
+	msg.content_subtype='html'
+	msg.send()
+
+def email_gracias(lista):
+	subject="Fixter.Geek"
+	to=lista
+	from_email='contacto@fixter.org'
+	ctx={}
+
+	# message=get_template("email1.html").render(Context(ctx))
+	message=get_template("email_post_curso.html").render(ctx)
+	msg=EmailMessage(subject,message,bcc=to,from_email=from_email)
+	msg.content_subtype='html'
+	msg.send()
+
+
+
+
+
+
+
 # from django.shortcuts import render, redirect, HttpResponse
 # from django.views.generic import View
 # from eventos.models import Aplicant

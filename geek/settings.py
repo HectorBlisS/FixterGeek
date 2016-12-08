@@ -189,11 +189,11 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '-5iamsoiKaBnlZWZ3kp1ArHF' #secret
 
 
 # Correo electronico
-EMAIL_HOST = 'smtpout.secureserver.net'
+EMAIL_HOST = 'p3plcpnl0061.prod.phx3.secureserver.net'
 # EMAIL_HOST='smtp.gmail.com'
 # EMAIL_PORT = '587'
 EMAIL_PORT='465'
-EMAIL_HOST_USER = 'contacto@fixter.org'
+EMAIL_HOST_USER = 'admin@fixter.org'
 # EMAIL_HOST_USER = 'tterrenofacil@gmail.com'
 EMAIL_HOST_PASSWORD = 'Poweroso77'
 # EMAIL_HOST_PASSWORD = 'Miguel741010'
