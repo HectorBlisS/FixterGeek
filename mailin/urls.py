@@ -8,6 +8,10 @@ urlpatterns=[
 		views.Patrocinio.as_view(),
 		name="patrocinio"),
 
+	url(r'^hackaton/$',
+		views.Hackaton.as_view(),
+		name="hackaton"),
+
 	# url(r'^gracias/por/venir/$',
 	# 	views.Gracias.as_view(),
 		# name="gracias_por_venir"),

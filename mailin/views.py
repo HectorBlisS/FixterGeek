@@ -20,19 +20,34 @@ class Patrocinio(View):
 			messages.error(request, "Error al enviar, intentalo nuevamente")
 		return redirect('mailin:patrocinio')
 
+class Hackaton(View):
+	@method_decorator(login_required())
+	def get(self,request):
+		template_name = "mailin/hackaton.html"
+		return render(request,template_name)
+
+	def post(self,request):
+		mails = request.POST.get('mails').split(",")
+		try:
+			enviar_mails(mails,"hackaton.html")
+			messages.success(request,"correos enviados")
+		except:
+			messages.error(request, "Error al envíar intentalo nuevamente")
+		return redirect('mailin:hackaton')
+
 # # Funcion para enviar Email
 # from django.template import Context
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 
-def enviar_mails(mails):
+def enviar_mails(mails,template="patrocinioMail.html"):
 	subject="Mesa de patrocinadores Hackaton 2016"
 	to=mails
 	from_email='admin@fixter.org'
 	# ctx=mails
 
 	# message=get_template("patrocinioMail.html").render(Context(ctx))
-	message=get_template("patrocinioMail.html").render()
+	message=get_template(template).render()
 	# message=get_template("email1.html").render(ctx)
 	msg=EmailMessage(subject,message,bcc=to,from_email=from_email)
 	msg.content_subtype='html'

@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<section class="container" style="padding-top:200px">
+<h1>Envío de invitación para participar en el hackatón 2016</h1>
+<form action="." method="post">
+	{%csrf_token%}
+	<label>
+		Escribe los correos separados por coma:
+		<br>
+		<textarea cols="100" name="mails" placeholder="ejemplo@mail.com, ejemplo@correo.com" ></textarea>
+	</label>
+	<input class="btn" type="submit" value="Enviar correos">
+</form>
+
+</section>
+
+{%endblock content%}
