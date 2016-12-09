@@ -29,7 +29,7 @@ class Hackaton(View):
 	def post(self,request):
 		mails = request.POST.get('mails').split(",")
 		try:
-			enviar_mails(mails,"hackaton.html")
+			enviar_mails(mails,"hackaton.html","¡Lánzate al Hackatón navideño!")
 			messages.success(request,"correos enviados")
 		except:
 			messages.error(request, "Error al envíar intentalo nuevamente")
@@ -40,8 +40,8 @@ class Hackaton(View):
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 
-def enviar_mails(mails,template="patrocinioMail.html"):
-	subject="Mesa de patrocinadores Hackaton 2016"
+def enviar_mails(mails,template="patrocinioMail.html",subject="Mesa de patrocinadores Hackaton 2016"):
+	subject=subject
 	to=mails
 	from_email='admin@fixter.org'
 	# ctx=mails

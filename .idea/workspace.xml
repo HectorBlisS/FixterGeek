@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d9ca15-7caa-4a71-8ee0-ca68c9f015fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailin/urls.py" afterPath="$PROJECT_DIR$/mailin/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailin/views.py" afterPath="$PROJECT_DIR$/mailin/views.py" />
     </list>
     <ignored path="FixterGeek.iws" />
@@ -24,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mailin/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
+              <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -46,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geek/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -147,10 +146,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mailin/urls.py" />
-        <option value="$PROJECT_DIR$/mailin/views.py" />
         <option value="$PROJECT_DIR$/mailin/templates/mailin/hackaton.html" />
         <option value="$PROJECT_DIR$/templates/hackaton.html" />
         <option value="$PROJECT_DIR$/geek/settings.py" />
+        <option value="$PROJECT_DIR$/mailin/views.py" />
       </list>
     </option>
   </component>
@@ -608,16 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mailin/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mailin/templates/mailin/hackaton.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -681,6 +670,16 @@
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mailin/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
