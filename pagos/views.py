@@ -41,7 +41,10 @@ class Pago(View):
 		template_name = "pagos/pago_status.html"
 		conekta.api_key = 'key_osrUjhK6DPrmsMs5NRUjwA'
 		# amount = int(request.POST.get('amount'))*100
-		amount = int(monto)*100
+		if not monto:
+			amount = int(request.POST.get('amount'))*100
+		else:
+			amount = int(monto)*100
 		tel = request.POST.get('tel')
 		print(request.POST.get('conektaTokenId'))
 		print('el cargo: ',amount)
