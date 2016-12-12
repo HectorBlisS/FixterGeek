@@ -52,7 +52,7 @@ class Pago(View):
 
 		diccionario = {
 			  "description":"Fixter.Camp con Beca",
-			  "amount": amount,
+			  "amount": str(amount),
 			  "currency":"MXN",
 			  "reference_id":"FixCamp001",
 			  "card": request.POST.get('conektaTokenId'),
@@ -64,7 +64,7 @@ class Pago(View):
 			    "line_items": [{
 			      "name": "Fixter.Camp",
 			      "description": "Curso Presencial y en linea con beca de descuento",
-			      "unit_price": amount,
+			      "unit_price": str(amount),
 			      "quantity": 1,
 			      "sku": "fixcamp001",
 			      "category": "course"
