@@ -9,7 +9,8 @@ class Apply(models.Model):
 		('Beca 20%','Beca 20%'),
 		('Beca 50%', 'Beca 50%'),
 		('Beca 70%', 'Beca 70%'),
-		('Beca 80%', 'Beca 80%')
+		('Beca 80%', 'Beca 80%'),
+		('Beca 99%', 'Beca 99%')
 		)
 	Choices=(
 		(True,'Si la necesito'),

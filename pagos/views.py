@@ -29,6 +29,8 @@ class Pago(View):
 				amount = 3600
 			elif tipo == 'Beca 80%':
 				amount = 2400
+			elif tipo == 'Beca 99%':
+				amount = 10
 			context = {'amount':amount}
 			print('lo logre')
 		except:
@@ -42,7 +44,10 @@ class Pago(View):
 		conekta.api_key = 'key_osrUjhK6DPrmsMs5NRUjwA'
 		# amount = int(request.POST.get('amount'))*100
 		if not monto:
+			#amount = int(request.POST.get('amount'))*100
+			print('a ver: ',request.POST)
 			amount = int(request.POST.get('amount'))*100
+
 		else:
 			amount = int(monto)*100
 		tel = request.POST.get('tel')

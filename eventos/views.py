@@ -21,8 +21,9 @@ class Descuento(View):
 	Vista para Ajax
 	"""
 	def get(self, request,cupon=None,amount=None):
-		amount = int(amount)
+		# amount = int(amount)
 		if cupon and amount:
+			amount = int(amount)
 			cupon = get_object_or_404(Cupon,nombre=cupon)
 			if cupon.cantidad:
 				precio_final = amount - cupon.cantidad

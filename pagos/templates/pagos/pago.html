@@ -70,15 +70,16 @@
 <br>
 <br>
 
-<form style="" action="." method="POST" id="card-form">
+<form style="" action="." method="post" id="card-form">
 {%csrf_token%}
   <p class="card-errors"></p>
 
 <h4>Monto total: $
 
-			<input disabled value="{{amount}}" type="text" name="amount" id="amount">MXN 
+			<input readonly value="{{amount}}" type="text" name="amount" id="amount">MXN
+      
       <span style="background:yellow;color:black;display:none" id="aplicado">Descuento Aplicado</span>
-    </h4>
+  </h4>
 
 <select class="four columns" name="meses">
   <option value="">De Contado</option>
@@ -219,33 +220,33 @@ $('#check').on('click',function(){
 <script>
 //Descuento
 
-$('#descuento').on('click',function(){
-  var url = '/eventos/descuento/{{amount}}/'+$('#cupon').val()+'/';
-  console.log(url);
-  $.ajax({
-    url:url,
-    method:'GET',
-    success:function(response){
-      console.log(response);
-      $('#amount').val(parseInt(response));
-      $('#aplicado').fadeIn();
+// $('#descuento').on('click',function(){
+//   var url = '/eventos/descuento/{{amount}}/'+$('#cupon').val()+'/';
+//   console.log(url);
+//   $.ajax({
+//     url:url,
+//     method:'GET',
+//     success:function(response){
+//       console.log(response);
+//       $('#amount').val(parseInt(response));
+//       $('#aplicado').fadeIn();
 
-      // $('#amount').val(response.)
-    },
-    error:function(response){
-      console.log(response);
-    },
-    beforeSend:function(){
-      $('#loading').show();
-      $('#descuento').hide();
-    },
-    complete:function(){
-      $('#loading').hide();
-      // $('#descuento').show();
-    }
+//       // $('#amount').val(response.)
+//     },
+//     error:function(response){
+//       console.log(response);
+//     },
+//     beforeSend:function(){
+//       $('#loading').show();
+//       $('#descuento').hide();
+//     },
+//     complete:function(){
+//       $('#loading').hide();
+//       // $('#descuento').show();
+//     }
 
-  });
-});
+//   });
+// });
 </script>
 
 
