@@ -17,9 +17,11 @@ class Apply(models.Model):
 		(False,'No, que la aproveche alguien más'),
 		)
 	Paths = (
-		('backend path','Backend Path'),
-		('videogames path','VideoGames Path'),
-		('mobileapps / sabatino','Mobileapps / Sabatino'),
+		('servers / Semanal','Backend & Servers / Semanal'),
+		('desarrollo_web / Semanal', 'Desarrollo Web / Semanal'),
+		('desarrollo_web / Sabatino','Desarrollo Web  / Sabatino'),
+		('intro_al_codigo / Semanal','Intro al código / Semanal'),
+		('intro_al_codigo / Sabatino','Intro al código / Sabatino')
 		)
 
 	motivos = models.TextField()

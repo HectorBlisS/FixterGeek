@@ -231,6 +231,12 @@ button:hover{
 	color:#f57f17;
 	padding-left: 10px;
 }
+.old-cantidad{
+	font-size: 2.5rem;
+	color:#f57f17;
+	padding-left: 10px;
+	text-decoration: line-through;
+}
 .money{
 	position: relative;
 }

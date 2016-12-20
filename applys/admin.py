@@ -3,7 +3,7 @@ from .models import Apply
 
 class ApplyAdmin(admin.ModelAdmin):
 	list_display = ['user','tel','tel2','path']
-	list_filter = ['path']
+	list_filter = ['path','evento']
 
 
 admin.site.register(Apply, ApplyAdmin)
