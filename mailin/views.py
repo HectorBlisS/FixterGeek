@@ -35,6 +35,21 @@ class Hackaton(View):
 			messages.error(request, "Error al envíar intentalo nuevamente")
 		return redirect('mailin:hackaton')
 
+class Fc3(View):
+		@method_decorator(login_required())
+		def get(self, request):
+			template_name = "mailin/xmas.html"
+			return render(request, template_name)
+
+		def post(self, request):
+			mails = request.POST.get('mails').split(",")
+			try:
+				enviar_mails(mails, "xmas.html", "Crea tus propias Apps como todo un pro")
+				messages.success(request, "correos enviados")
+			except:
+				messages.error(request, "Error al envíar intentalo nuevamente")
+			return redirect('mailin:fc3')
+
 # # Funcion para enviar Email
 # from django.template import Context
 from django.template.loader import get_template
