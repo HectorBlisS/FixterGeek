@@ -1,1 +1,115 @@
-medium.html
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/bulma.css'%}">
+	<style type="text/css">
+		.vitrina{
+			/*width:400px;*/
+			border:1px solid red;
+			overflow:scroll;
+			/*display:inline-block;*/
+		}
+	</style>
+</head>
+
+<body>
+<section class="box container">
+
+<!-- Mensajes del sistema -->
+  {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<!-- Mensajes del sistema -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        Selector de Templates
+      </h1>
+      <h2 class="subtitle">
+        Correos personalizados by BlisS
+      </h2>
+    </div>
+  </div>
+</section>
+
+<article class="columns">
+
+<div class="column is-2">
+	{%include 'mailin/menu_templates.html'%}
+</div>
+
+<nav class="level column">
+  <div class="level-item has-text-centered">
+    <p class="heading">www.fixter.org</p>
+    <p class="title">BlisS</p>
+  </div>
+  <div>
+  {%include template.template%}
+  </div>
+
+</nav>
+
+
+</article>
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!--	// Experimento medium-->
+
+<!-- para ver el resultado en frontend -->
+<link rel="stylesheet" href="{%static 'bower_components/medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin-frontend.min.css' %}">
+
+
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="{%static 'bower_components/medium-editor/dist/css/medium-editor.min.css'%}">
+<link rel="stylesheet" href="{%static 'bower_components/medium-editor/dist/css/themes/default.css'%}">
+<link rel="stylesheet" href="{%static 'bower_components/medium-editor-insert-plugin/dist/css/medium-editor-insert-plugin.min.css'%}">
+
+<!-- JS -->
+<script src="{%static 'bower_components/jquery/dist/jquery.min.js'%}"></script>
+<script src="{%static 'bower_components/medium-editor/dist/js/medium-editor.js'%}"></script>
+<script src="{%static 'bower_components/handlebars/handlebars.runtime.min.js'%}"></script>
+<script src="{%static 'bower_components/jquery-sortable/source/js/jquery-sortable-min.js'%}"></script>
+<script src="{%static 'bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js'%}"></script>
+<script src="{%static 'bower_components/blueimp-file-upload/js/jquery.iframe-transport.js'%}"></script>
+<script src="{%static 'bower_components/blueimp-file-upload/js/jquery.fileupload.js'%}"></script>
+<script src="{%static 'bower_components/medium-editor-insert-plugin/dist/js/medium-editor-insert-plugin.min.js'%}"></script>
+
+<script>
+
+
+var editor = new MediumEditor('.editable');
+
+$(function () {
+    $('.editable').mediumInsert({
+        editor: editor
+    });
+});
+
+</script>
+
+</body>
+</html>
+
+

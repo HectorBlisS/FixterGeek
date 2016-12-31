@@ -1,8 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import View
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib import messages
+
+from .models import Template
 
 
 class Patrocinio(View):
@@ -84,18 +86,68 @@ def email_gracias(lista):
 
 
 
-
-"""
+class New(View):
+	"""
 	1.- subir imagenes con tamaño definido
 	2.- colocar texto en diferentes secciones segun template
 	3.- titulos
 	4.- agregar dinamicamente secciones
 	5.- cambiar colores y diseño
-	6.- try markdown
+	6.- try markdown *DONE*
 	7.- get emails automaticamente
 
-	Doing: 6
+	Doing: 2
 """
+	def get(self, request, pk=None):
+
+		template_name = "mailin/medium.html"
+		templates = Template.objects.all()
+		context = {
+			'templates':templates,
+		}
+
+		if pk:
+			t = get_object_or_404(Template, id=pk)
+			context['section'] = t.nombre
+			context['template'] = t
+
+		return render(request, template_name, context)
+
+	def post(self, request):
+		# mark = request.POST.get('mark')
+		mark = request.POST
+		ctx = {
+		'mensaje':mark
+		}
+		
+		print(medium_mail(ctx))
+		messages.success(request, 'se envió')
+		# except:
+		# 	messages.error(request, 'no se envió')
+		return redirect('mailin:new')
+
+
+def medium_mail(
+	ctx={},
+	to=['contacto@fixter.org'],
+	from_email="admin@fixter.org",
+	subject="test",
+	):
+	# subject="Fixter.Geek"
+	# to=lista
+	# from_email='contacto@fixter.org'
+	# ctx={}
+
+	# message=get_template("email1.html").render(Context(ctx))
+	message=get_template("correos/medium_mail.html").render(ctx)
+	msg=EmailMessage(subject,message,bcc=to,from_email=from_email)
+	msg.content_subtype='html'
+	return msg.send()
+
+
+
+
+
 
 
 

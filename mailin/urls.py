@@ -16,6 +16,16 @@ urlpatterns=[
 		views.Fc3.as_view(),
 		name="fc3"),
 
+	url(r'^new/(?P<pk>\d+)/$',
+		views.New.as_view(),
+		name="preview"),
+
+	url(r'^new/$',
+		views.New.as_view(),
+		name="new"),
+
+
+
 	# url(r'^gracias/por/venir/$',
 	# 	views.Gracias.as_view(),
 		# name="gracias_por_venir"),
