@@ -85,6 +85,21 @@ def email_gracias(lista):
 
 
 
+"""
+	1.- subir imagenes con tamaño definido
+	2.- colocar texto en diferentes secciones segun template
+	3.- titulos
+	4.- agregar dinamicamente secciones
+	5.- cambiar colores y diseño
+	6.- try markdown
+	7.- get emails automaticamente
+
+	Doing: 6
+"""
+
+
+
+
 
 # from django.shortcuts import render, redirect, HttpResponse
 # from django.views.generic import View
