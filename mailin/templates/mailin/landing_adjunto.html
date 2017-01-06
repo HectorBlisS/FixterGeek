@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Temario FixterCamp3</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'css/bulma.css'%}">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		.fondo{
+			background-image:url('/static/assets/cover.jpg');
+			background-size: cover;
+			background-repeat:no-repeat;  
+		}
+		.opaco{
+			background: rgba(0,0,0,0.7);
+		}
+	</style>
+</head>
+<body>
+
+
+{%if messages%}
+{%for m in messages%}
+
+<article class="has-text-centered message {%if m.tags == 'success'%} is-success {%else%} is-danger {%endif%}">
+  <div class="message-header">
+    <p>{{m.message}}</p>
+    <button class="delete"></button>
+  </div>
+</article>
+
+{%endfor%}
+{%endif%}
+
+<section class="hero is-dark is-fullheight fondo">
+  <div class="hero-body opaco">
+    <div class="container has-text-centered">
+      <h1 class="title">
+      	<img width="100" src="{%static 'assets/logo_geek.png'%}">
+      	<br>
+        Fixter Camp3 está aquí
+      </h1>
+      <h2 class="subtitle">
+        ¡Conviertete en desarrollador en tan solo 8 semanas!
+      </h2>
+
+      <h2>¿Quieres saber mas?</h2>
+      <h3>Escribe tu correo para enviarte el temario con toda la información:</h3>
+      <br>
+      <form action="." method="post" class="columns is-multiline">
+		{%csrf_token%}
+
+		<div class="column is-one-third is-offset-one-third">
+		<p class="control">
+		  <input name="mail" class="input" type="email" placeholder="Tu correo electónico" required>
+		</p>
+
+		<p class="control">
+		  <input name="name" class="input" type="text" placeholder="Tu Nombre completo" required>
+		</p>
+ 
+		<p class="control">
+		  <input name="tel" class="input" type="tel" placeholder="Tu teléfono" required>
+		</p>
+		</div>
+		<br>
+		
+		<button id="enviar" type="submit" class="button is-large is-success column is-4 is-offset-4 is-mobile">Recibir Temario</button>
+
+
+</form>
+
+
+
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>FixterCamp</strong> by <a href="http://fixter.camp">FixterGeek</a>. Tus datos están protegidos por la
+        <a href="http://www.diputados.gob.mx/LeyesBiblio/pdf/LFPDPPP.pdf">Ley Federal de Protección de Datos Personales</a>. Aviso de privacidad.
+      </p>
+      <p>
+        <a class="icon" href="https://facebook.com/fixterme/">
+		<i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+</section>
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	var form = $('form')
+	$('#enviar').on('click', function(){
+		if(form[0].checkValidity()){
+			$('#enviar').addClass('is-loading');
+			$('#enviar').addClass('is-disabled');
+		}
+		
+	});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

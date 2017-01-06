@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib import messages
 
-from .models import Template
+from .models import Template, Suscriptor
 
 
 class Patrocinio(View):
@@ -146,9 +146,46 @@ def medium_mail(
 
 
 
+class Temario(View):
+	def get(self, request, token=None):
+		if token:
+			template_name = 'mailin/adjunto.html'
+		else:
+			template_name = 'mailin/landing_adjunto.html'
+		# return redirect('/static/pdf_files/Temario.pdf')
+		return render(request, template_name)
+
+	def post(self, request):
+		mail = request.POST.get('mail')
+		name = request.POST.get('name')
+		tel = request.POST.get('tel')
+		try:
+			adjunto([mail])
+			Suscriptor.objects.create(name=name, tel=tel, email=mail)
+			messages.success(request, "El temario fué enviado a tu correo =D verificalo!")
+		except:
+			messages.error(request, "El correo no pudo enviarse, prueba con otro correo")
+		return redirect('mailin:temario')
 
 
 
+
+def adjunto(
+	to=['contacto@fixter.org'],
+	from_email="admin@fixter.org",
+	subject="Temario FixterCamp3",
+	ctx={},
+	):
+	# subject="Fixter.Geek"
+	# to=lista
+	# from_email='contacto@fixter.org'
+	# ctx={}
+
+	# message=get_template("email1.html").render(Context(ctx))
+	message=get_template("correos/temario.html").render(ctx)
+	msg=EmailMessage(subject,message,bcc=to,from_email=from_email)
+	msg.content_subtype='html'
+	msg.send()
 
 
 

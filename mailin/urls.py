@@ -24,6 +24,16 @@ urlpatterns=[
 		views.New.as_view(),
 		name="new"),
 
+	url(r'^temario/(?P<token>[-\w]+)/$',
+		views.Temario.as_view(),
+		name="temario_token"),
+
+	url(r'^temario/$',
+		views.Temario.as_view(),
+		name="temario"),
+
+	
+
 
 
 	# url(r'^gracias/por/venir/$',
