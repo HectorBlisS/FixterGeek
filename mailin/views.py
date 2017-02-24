@@ -189,6 +189,38 @@ def adjunto(
 
 
 
+class Mensaje(View):
+	def post(self, request):
+		datos = {
+		'nombre':request.POST.get('nombre'),
+		'email':request.POST.get('email'),
+		'tel':request.POST.get('tel'),
+		'msj':request.POST.get('msj')
+		}
+		if not request.POST.get('msj'):
+			datos['msj'] = 'Quiero recibir más información porfavor'
+		print(datos)
+		try:
+			mensajeSend(datos)
+			messages.success(request, 'Tu mensaje ha sido enviado con éxito pronto nos comunicaremos contigo')
+		except:
+			messages.error(request, 'Tu mensaje no se puedo enviar, vuelve a intentar')
+		return redirect('main:home')
+
+
+
+
+def mensajeSend(datos):
+	to=['admin@fixter.org']
+	from_email='admin@fixter.org'
+	subject="Mensaje nuevo Fixter.camp"
+	ctx=datos
+
+	# message=get_template("email1.html").render(Context(ctx))
+	message=get_template("mailin/mensaje.html").render(ctx)
+	msg=EmailMessage(subject,message,bcc=to,from_email=from_email)
+	msg.content_subtype='html'
+	return msg.send()
 
 # from django.shortcuts import render, redirect, HttpResponse
 # from django.views.generic import View

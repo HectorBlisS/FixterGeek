@@ -43,5 +43,15 @@ class Apply(models.Model):
 	def __str__(self):
 		return "{} aplico a {}".format(self.user,self.evento)
 
+class Inscription(models.Model):
+	user = models.ForeignKey(User, related_name='inscripciones')
+	nombre = models.CharField(max_length=140)
+	email = models.CharField(max_length=140)
+	tel = models.CharField(max_length=140)
+	path = models.CharField(max_length=140)
+	beca = models.CharField(max_length=2, default="no")
+	why = models.TextField(blank=True, null=True)
 
+	def __str__(self):
+		return "{} se inscribió a {}".format(self.user, self.path)
 

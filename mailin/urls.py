@@ -32,6 +32,10 @@ urlpatterns=[
 		views.Temario.as_view(),
 		name="temario"),
 
+	url(r'^mensaje/$',
+		views.Mensaje.as_view(),
+		name="mensaje"),
+
 	
 
 

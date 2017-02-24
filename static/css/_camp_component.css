@@ -1,0 +1,234 @@
+
+.cuadrado{
+	background-image:url('https://images.pexels.com/photos/30112/pexels-photo.jpg?w=1260&h=750&auto=compress&cs=tinysrgb');
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	height:70%;
+	position:relative;
+}
+.cuadrado2{
+	background-image:url('https://images.pexels.com/photos/109371/pexels-photo-109371.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	height:70%;
+	position:relative;
+}
+.espacio{
+	position:absolute;
+	width:50%;
+	left:25%;
+	top:30px;
+	text-align:center;
+}
+.cubierta{
+	background: rgba(147,206,222,0.26);
+	background: -moz-linear-gradient(top, rgba(147,206,222,0.26) 0%, rgba(73,165,191,0.26) 0%, rgba(117,189,209,0.28) 41%, rgba(117,189,209,0.3) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(147,206,222,0.26)), color-stop(0%, rgba(73,165,191,0.26)), color-stop(41%, rgba(117,189,209,0.28)), color-stop(100%, rgba(117,189,209,0.3)));
+	background: -webkit-linear-gradient(top, rgba(147,206,222,0.26) 0%, rgba(73,165,191,0.26) 0%, rgba(117,189,209,0.28) 41%, rgba(117,189,209,0.3) 100%);
+	background: -o-linear-gradient(top, rgba(147,206,222,0.26) 0%, rgba(73,165,191,0.26) 0%, rgba(117,189,209,0.28) 41%, rgba(117,189,209,0.3) 100%);
+	background: -ms-linear-gradient(top, rgba(147,206,222,0.26) 0%, rgba(73,165,191,0.26) 0%, rgba(117,189,209,0.28) 41%, rgba(117,189,209,0.3) 100%);
+	background: linear-gradient(to bottom, rgba(147,206,222,0.26) 0%, rgba(73,165,191,0.26) 0%, rgba(117,189,209,0.28) 41%, rgba(117,189,209,0.3) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93cede', endColorstr='#75bdd1', GradientType=0 );
+	height:100%;
+	width: 100%;
+}
+.hr{
+	border:solid 2px white;
+	width:150px;
+	margin:0 auto;
+	border-radius:5px;
+}
+.name{
+	font-family: 'Barrio', cursive;
+	color:white;
+}
+.puesto{
+	margin:10px 0px;
+	color:white;
+	font-family: 'Barrio', cursive;
+}
+.paths{
+	color:white;
+	margin-top:40px;
+	font-family: 'Dosis', sans-serif;
+	font-size:20px;
+}
+.instructor{
+	width:150px;
+	border-radius:50%;	
+	border:solid 4px white;
+}
+
+.path{
+	width:50%;
+	margin-left:25%;
+	margin-top:10%;
+	height:auto;
+}
+
+.containers{
+	width:80%;
+	margin-left:10%;
+	z-index:9999;
+	position:relative;
+
+}
+.containers>.row{
+
+	display:block;
+}
+.blanco{
+	background-color:white;
+	padding-bottom:10px;
+	height: 750px;
+	
+}
+.way{
+	font-size:40px;
+	font-family: 'Barrio', cursive;
+}
+.fecha{
+	margin:0px;
+	font-size:15px;
+	font-family: 'Dosis', sans-serif;
+}
+.temas{
+	text-align:center;
+	font-size:15px;
+	margin-top:10px;
+	font-family: 'Dosis', sans-serif;
+}
+.cards{
+	height:320px;
+	padding:0px;
+}
+
+.rectangulo2{
+	background-color:#93BECA;
+	height:30%;
+}
+.cuadrado3{
+
+	border: solid 2px black;
+	height:150px;
+	margin-bottom:10px;
+}
+.cuadrado4{
+
+	border: solid 2px black;
+	height:150px;
+	margin-top:10px;
+}
+.campamento{
+	background-color:rgba(255,224,178,.2);
+	background-color:#F4F4F4;
+	height:auto;
+	padding-bottom:70px;
+}
+button{
+		font-family: Gotam;
+
+}
+.btn_in{
+	padding-top: 10px;
+	position:absolute;
+	width:50%;
+	bottom:-5px;
+	left:25%;
+	height:50px;
+	transition:all .5s ease;
+	z-index:-1;
+	background-color: #8BBFC8;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+	font-size: 1.8rem;
+	letter-spacing: 1.5px;
+	font-family: Gotam;
+	cursor:pointer;
+
+}
+
+.blanco:hover > a .btn_in {
+	transform:translateY(40px);
+}
+.movil{
+	display:none;
+}
+.fafa{
+	padding-top:4px;
+	margin:0 5px;
+}
+.espacio span{
+	color:white;
+	font-size:30px;
+}
+.movil i{
+	cursor:pointer;
+}
+.divider{
+	margin:70px 0;
+}
+@media(max-width: 780px){
+	.espacio{
+		top:5px;
+		width:90%;
+		left:5%;
+	}
+	.paths{
+		font-size:18px;
+	}
+	.btn_in{
+		bottom:-45px;	
+	}
+	.blanco:hover > a .btn_in{
+		transform:translateY(0);
+	}
+	.fecha{
+		margin-bottom:30px;
+	}
+	.pesta{
+		display:none;
+
+	}
+	.movil{
+		display:flex;
+
+	}
+	.containers{
+		margin-bottom:30px;
+	}
+	.cuadrado, .cuadrado2{
+		height:60%;
+	}
+	.divider{
+		margin: 60px 0;
+	}
+}
+
+@media(max-width: 430px){
+	.espacio{
+		top:0px;
+	}
+	.paths{
+		font-size:18px;
+	}
+	.cuadrado, .cuadrado2{
+		height:65%;
+	}
+	
+}
+@media(max-width: 380px){
+	.paths{
+		font-size:16px;
+	}
+
+}
+
+
+
+
+

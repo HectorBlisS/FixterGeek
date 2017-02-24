@@ -1,0 +1,109 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block content%}
+
+<section class='campamento'>
+	<h3 style="font-family: 'Dosis', sans-serif; font-size:60px; margin: 0px;" class='titulin center'>FixterCamp#4</h3>
+	<div class='containers'><hr style="color:black; size:3px">
+		<div class='row'>
+			<div class='blanco col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12'>
+				
+					<div class='cuadrado'>
+						<div class='cubierta'>
+							<div class='espacio'>
+								<img class='instructor' src="{%static 'assets/fotos/bliss1-01.png'%}">
+								<h3 class='name'>Héctor Bliss</h3>
+								<div class='hr'></div>
+								<p class='puesto'>Fullstack Developer</p>
+								<p class='paths'>
+									Crea apps nativas con Android, en este path aprenderás su estructura, entorno de desarrollo, fragmentos y vistas, recursos de diseño (animaciones y material design), consumo database desde Firebase, pushnotifications y más.
+								</p>
+								<span class="download glyphicon glyphicon-save" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Descargar temario"></span>
+							</div>
+						</div>	
+					</div>
+				
+				<div class='cursito'>
+					<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
+						<h4 class='way'>Mobile Apps Path</h4>
+						<p class='fecha'>25 de Marzo al 13 de Abril</p>
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
+						<img class='path' src="{%static 'assets/camp/java-01.png'%}">
+						<p class='temas'>Java</p>
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
+						<img class='path' src="{%static 'assets/images/android-01.png'%}">
+						<p class='temas'>Android Studio</p>
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
+						<img class='path' src="{%static 'assets/camp/git-01.png'%}">
+						<p class='temas'>GitHub</p>
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
+						<img class='path' src="{%static 'assets/camp/fire-01.png'%}">
+						<p class='temas'>Firebase</p>
+					</div>
+				</div>
+				<a href="#/inscripcion">
+					<button class='btn_in'>Inscribirme</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="divider"></div>
+	<div class='containers'>
+		<div class='row'>
+			<div class=' blanco col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12'>
+				
+					<div class='cuadrado2'>
+						<div class='cubierta'>
+							<div class='espacio'>	
+								<img class='instructor' src="{%static 'assets/fotos/david2-01.png'%}">
+								<h3 class='name'>David Zavala</h3>
+								<div class='hr'></div>
+								<p class='puesto'>Frontend Developer</p>
+								<p class='paths'>
+								Aprende a desarrollar apps en Javascript de forma optimizada y organizada con React.js, la librería creada por Facebook. React es una librería que te ayudará a desarrollar de forma rápida, ligera y escalable.	
+								</p>
+								<span class="download glyphicon glyphicon-save" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Descargar temario">
+								</span>
+							</div>
+						</div>	
+					</div>
+				
+				<div class='cursito'>
+					<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
+						<h4 class='way'>Frontend
+						<br> Path</h4>
+						<p class='fecha'>25 de Marzo al 13 de Abril</p>
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
+						<img class='path' src="{%static 'assets/camp/react.png'%}">
+						<p class='temas'>React</p>
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
+						<img class='path' src="{%static 'assets/camp/ecm-01.png'%}">
+						<p class='temas'>ECMAScript 6</p>
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
+						<img class='path' src="{%static 'assets/camp/git-01.png'%}">
+						<p class='temas'>GitHub</p>
+					</div>
+					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
+						<img class='path' src="{%static 'assets/camp/fire-01.png'%}">
+						<p class='temas'>Firebase</p>
+					</div>
+				</div>
+				<a href="#/inscripcion" >
+					<button class='btn_in'>Inscribirme</button> 
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+{%endblock content%}

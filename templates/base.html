@@ -24,6 +24,8 @@
 
     <!--Normaliza-->
     <link rel="stylesheet" type="text/css" href="{%static 'css/normalize.css'%}">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barrio|Bahiana|Dosis" rel="stylesheet">
 	<!--Materialize-->
 	  <!-- Compiled and minified CSS -->
 {#   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> #}
@@ -32,11 +34,11 @@
   <!--Fa fa icons-->
   {# <link rel="stylesheet" type="text/css" href="{%static 'css/skeleton.css'%}"> #}
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <link rel="stylesheet" type="text/css" href="{%static 'css/skeleton.css'%}">
-  <!--Estilos fixter-->
-<link rel="stylesheet" type="text/css" href="{%static 'css/nuevo.css'%}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" type="text/css" href="{%static 'css/main.css'%}">
 
 <meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css?family=Anton|Dosis" rel="stylesheet">
@@ -44,37 +46,66 @@
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 
 
-
+ <!--Import jQuery before materialize.js-->
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+   
+<!--estilos para los mensajes-->
+<style type="text/css">
+  .error{
+    background: red;
+    color:white;
+    width: 100%;
+    text-align: center;
+  }
+  .success{
+    background: lightgreen;
+    color:black;
+    width: 100%;
+    text-align: center;
+  }
+</style>
       
 
 </head>
 <body>
 
 {%block nav%}
+    <section>
+    <div class='inicio'>
 
-{# <div class="navbar-fixed"> #}
-	 <nav class="nav negro">
-      <img class="logo responsive-alto" src="{%static 'assets/logo_geek.png'%}">
-      <ul>
+        <div class='row'>
+            <div class='col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-6 col-sm-offset-1  col-xs-7'>
+               <a href="{%url 'main:home'%}"> <img class='logo' style='height:70px' src="{%static 'assets/images/LOGIS-01.png'%}"></a>
+            </div>
+            <div class='col-lg-4 col-lg-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-xs-5  '>
+                <a href="{%url 'apply' 3%}">
+                        <button class='btn sesion2'>
+                            Inscribirme
+                        </button></a>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class='barra'>
+        <div class='movil'>
+            <span class='fafa'><i class="fa fa-bars" aria-hidden="true"></i></span>
+            <span>Menu</span>    
+        </div>
+                <div id='mobil_bar' class='row pesta'>
+                    <a href="{%url 'main:next'%}"><div class='pestana col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+                        Próximo FixterCamp<span></span></div></a>
+                    <a href="{%url 'main:tour'%}"><div class='pestana col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+                    FixterTour<span></span></div></a>
+                    
+                    <a href="#!"><div class='pestana col-lg-4 col-md-3 col-sm-4 col-xs-12'>
+                        Plataforma online<span></span></div></a>
+                </div>
         
-        {%if not request.user.is_authenticated%}
-        <li>
-          <a href="{%url 'login'%}">Iniciar Sesión</a>
-        </li>
-        {%else%}
-        <li>
-          <a href="{%url 'logout'%}">Cerrar Sesión</a>
-        </li>
-        <li>
-          <a href="{%url 'dashboard'%}">Tu Perfil</a>
-        </li>
-        {%endif%}
-        <li>
-          <a href="{%url 'main:home'%}">Home</a>
-        </li>
-      </ul>
-  </nav>
-{# </div> #}
+        </div>
+
 
 {%endblock nav%}
 
@@ -92,23 +123,85 @@
 	{%endblock content%}
 
 
+  <footer class='footer'>
 
 
- <!--Import jQuery before materialize.js-->
-<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-      
- <!-- Compiled and minified JavaScript -->
-  {#<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>#}
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="contactanos section-heading">¿Tienes alguna duda? Contactanos</h2>
+                    <h3 class="form section-subheading text-muted">Completa el formulario</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form method='post' action="{%url 'mailin:mensaje'%}" name="sentMessage" id="contactForm">
+                      {%csrf_token%}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name='nombre' type="text" class="form-control" placeholder="Nombre *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input name='email' type="email" class="form-control" placeholder=" Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input name='tel' type="tel" class="form-control" placeholder="Teléfono *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea name='msj' class="form-control" placeholder="Mensaje *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button name='fixter' style="padding:5px 10px;" type="submit" class="btn btn-xl">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class=" copy container">
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-1 col-md-3">
+                    <p style='color:white' class="center copyright">Copyright &copy; Your Website 2016</p>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <ul class="icons list-inline social">
+                        <li class='icon'><a href="#"><i class="iconos fa fa-twitter"></i></a>
+                        </li>
+                        <li class='icon'><a href="#"><i class="iconos fa fa-facebook"></i></a>
+                        </li>
+                        <li class='icon'><a href="#"><i class="iconos fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3  col-md-3">
+                    <ul class="list-inline politicas center">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <script>
-  $( document ).ready(function(){
-  	// $(".button-collapse").sideNav();
-    
-  }) 
-
-  </script>
 
 
+
+   
+<!--Bootstrap-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--Google Analitics-->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -119,9 +212,17 @@
   ga('create', 'UA-67070506-5', 'auto');
   ga('send', 'pageview');
 
+
+
 </script>
 <!--Google analitics-->
   {%block scripts%}{%endblock scripts%}
   
+
+  <script>
+  $(function () {
+   $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
 </body>
 </html>

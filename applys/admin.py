@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Apply
+from .models import Apply, Inscription
 
 class ApplyAdmin(admin.ModelAdmin):
 	list_display = ['user','tel','tel2','path']
@@ -7,3 +7,5 @@ class ApplyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Apply, ApplyAdmin)
+
+admin.site.register(Inscription)

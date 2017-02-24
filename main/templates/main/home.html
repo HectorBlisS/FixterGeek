@@ -1,164 +1,388 @@
 {%extends 'base.html'%}
 {%load static%}
-{%block titulo%}Fixter.Camp{%endblock titulo%}
-
-
-
-
 {%block content%}
 
-
-
-<section class="portada-dos">
-  <div class="sombra">
-    <h4>Si te gusta la tecnología;</h4>
-    <h2>¡Dominala!</h2>
-    <div class="trailer">
-      <a  target="_blank" href="https://youtu.be/Q3YeO1tufb4">
-      <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-      </a>
+<section class='intro'>
+ 
+    <div class='formulario'>
+      <div class='f'>
+        <h3 class='titulos'>Para recibir informacion del próximo Fixter Camp completa el formulario</h3>
+      </div>
+      <form method='post' action="{%url 'mailin:mensaje'%}" class='recuadro' name="sentMessage" id="contactForm">
+        {%csrf_token%}
+                <div class="row" style="margin-right:0">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input name='nombre' type="text" class="form-control" placeholder="Nombre *" id="name" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class='row'>
+                            <div class='col-lg-6'>
+                                <div class="form-group">
+                                    <input name='email' type="email" class="form-control" placeholder=" Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class='col-lg-6'>
+                                <div class="form-group">
+                                    <input name='tel' type="tel" class="form-control" placeholder="Teléfono *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                        <button name='fixter' style="padding:5px 10px" type="submit" class="btn btn-xl">Enviar</button>
+                    </div>
+                </div>
+            </form>
     </div>
-    <a href="{%url 'apply' 3%}">
-    <button>Aplica</button>
-    </a>
+
+</section>
+<section id='nosotros'>
+  <div class='row rowsi'>
+    <div class='libros gifi col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1  col-xs-12'>
+      <img class=' gif' src="{%static 'assets/images/image-01.png'%}">
+    </div>
+    <div class='text col-lg-5 col-md-5 col-sm-5 col-xs-12'>
+      <div>
+        <h3 class='titulin separa'>¿Que es el FixterCamp?</h3>
+        <div class='textin'>
+          <div>
+            <p>
+              El FixterCamp es un bootcamp que tiene como objetivo enseñar a los curiosos por el código los lenguajes de programación más modernos de forma profesional y divertida.
+            </p>
+            <br>
+            <p>
+              No es una escuela tradicional, es un lugar en donde en comunidad y de la mano de nuestros expertos aprenderás las buenas practicas de la programacion.
+            </p>
+          </div>
+        </div>
+        <a href="{%url 'apply' 3%}" class='btn boton'>Inscribirme</a>
+      </div>
+    </div>
   </div>
-  <!-- Your share button code -->
-<div class="fb-like" data-href="https://www.fixter.camp" data-width="200px" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
-  <!-- Your share button code -->
+</section>
+<section class='pasos'>
+  <div id='paso'>
+    <h3 class='titulin center'>We made easy!</h3>
+    <div class='row'>
+      <div class='col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-6 col-xs-6'>
+        <img class='gif' src="{%static 'assets/images/1.1-01.png'%}">
+        <div class='descripcion'>
+          <p class='titulos'>Inscribete</p>
+          <p class='textito'>Crea un perfil de usuario e inscribete al path que más te gusta.</p>
+        </div>
+      </div>
+      <div class='col-lg-2 col-md-2 col-sm-6 col-xs-6'>
+        <img class='gif' src="{%static 'assets/images/lap2-01.png'%}">
+        <div class='descripcion'>
+          <p class='titulos'>Asiste FixterCamp</p>
+          <p class='textito'>Pasa 8 semanas con nuestro equipo aprendiendo nuevas tecnologías.</p>
+        </div>
+      </div>
+      <div class='col-lg-2 col-md-2 col-sm-6 col-xs-6'>
+        <img class='gif' src="{%static 'assets/images/ven5-01.png'%}">
+        <div class='descripcion'>
+          <p class='titulos'>Plataforma online</p>
+          <p class='textito'>Hazte acredor a cursos online gratuitos y muchos descuentos.</p>
+        </div>
+      </div>
+      <div class='col-lg-2  col-md-2 col-sm-6 col-xs-6'>
+        <img class='gif' src="{%static 'assets/images/ven11-01.png'%}">
+        <div class='descripcion'>
+          <p class='titulos'>Comunidad</p>
+          <p class='textito'>Se parte de nuestra comunidad (meetups, conferencias, posadas y mucho código).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class='cursos'>
+  <h3 class='titulin center'>¿Que puedes aprender en el Fixter.Camp?</h3>
+  <div class='row'>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/images/icono1-01.png'%}">  
+        </div>
+        <div class='  col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class=' definicion'>
+            <p >Python</p>
+            <p >Python es un lenguaje orientado a objetos e interpretado. Es uno de los lenguajes más poderosos por lo que es utilizado para Inteligencia Artificial, Maching Learning y Big Data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/images/angular-01.png'%}"> 
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class=' definicion'>
+            <p>AngularJS</p>
+            <p>Es un proyecto de código abierto, realizado en Javascript que contiene un conjunto de librerías útiles para el desarrollo de aplicaciones web. Es el framework mas popular a nivel mundial además de estar soportado por Google.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- termina primer row -->
+  <div class='row'>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/images/django-01.png'%}">  
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class='definicion'>
+            <p>Django</p>
+            <p>Django es un framework para aplicaciones web gratuito y open source, escrito en Python. Es un WEB framework - un conjunto de componentes que te ayudan a desarrollar sitios web más fácil y rápidamente. Es usado en Youtube, NYT, Instagram, Pinterest. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/images/unity-01.png'%}"> 
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class='definicion'>
+            <p>Unity</p>
+            <p>Motor de desarrollo para la creación de juegos y contenidos 3D interactivos, con las características que es completamente integrado y que ofrece innumerables funcionalidades para facilitar el desarrollo de videojuegos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- termina segundo row -->
+  <div class='row'>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/images/ruby-01.png'%}">  
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class='definicion'>
+            <p>Ruby on Rails</p>
+            <p>Entorno de desarrollo web de código abierto para la productividad sostenible. Te permite escribir un buen código evitando que repitas y favoreciendo la convención antes que la configuración.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/images/ember-01.png'%}"> 
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class='definicion'>
+            <p>Ember</p>
+            <p>Framework JavaScript para crear aplicaciones web basado en la arquitectura modelo-vista-controlador (MVC). Permite a los desarrolladores crear aplicaciones de una sola pagina (single-page) escalables.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- termina tercer row -->
+  <div class='row'>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/images/swift-01.png'%}"> 
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class='definicion'>
+            <p>Swift</p>
+            <p>Lenguaje de programación poderoso e intuitivo para desarrollar apps de iOS, Mac, Apple TV y Apple Watch.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/images/android-01.png'%}">
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class='definicion'>
+            <p>Android Studio</p>
+            <p>Entorno de desarrollo integrado (IDE) oficial para el desarrollo de aplicaciones para Android. Ofrece editor de códigos, herramientas para desarrolladores de IntelliJ, funciones que aumentan tu productividad durante la compilación de apps.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- termina cuarto row -->
+</section>
+<section class='pasos '>
+  <div class=' container'>
+    <div class='row'>
+      <h3 class='titulin center'>Team Fixter</h3>
+    </div>
+    <div class='row'>
+      <div class='col-lg-3 col-lg-offset-3 col-md-4 col-sm-3 col-xs-6'>
+        <div class="team-member">
+          <img class=" foto img-responsive img-circle" src="https://scontent.fmex6-1.fna.fbcdn.net/v/t31.0-8/12973213_959123054183083_6891840471045756081_o.jpg?oh=07f55c798deb0fd0c5d4a7fcfbadde8d&oe=594B344B">
+          <h4>Brenda Ortega</h4>
+                    <p class="text-muted">CEO Fixter</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://www.facebook.com/brenda.ortega.7121"><i style="font-size:22px" class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://github.com/BrendaOrtega"><i style="font-size:30px" class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>    
+                    </ul>
+         </div>
+      </div>
+      <div class='col-lg-3 col-md-4 col-sm-3 col-xs-6'>
+        <div class="team-member">
+          <div class='bliss'></div>
+          <h4>Héctor Bliss</h4>
+                    <p class="text-muted">CTO Fixter</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://www.facebook.com/hector.bliss?fref=ts"><i style="font-size:22px" class="fa fa-facebook"></i></a>
+                        </li>
+                      <li><a href="https://github.com/HectorBlisS"><i style="font-size:30px" class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+         </div>
+      </div>
+    </div>
+<!--    Segunda fila -->
+    <div class='row'>
+      <div class='col-lg-3 col-md-4 col-sm-3 col-xs-6'>
+        <div class="team-member">
+          <div class='david'></div>
+          <h4>David Zavala</h4>
+                    <p class="text-muted">Product Manager</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://www.facebook.com/david.pzmck?fref=ts"><i style="font-size:22px" class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://github.com/DeividZavala"><i style="font-size:30px" class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>    
+                    </ul>
+         </div>
+      </div>
+      <div class='col-lg-3 col-md-4 col-sm-3 col-xs-6'>
+         <div class="team-member">
+            <div class='oscar'></div>
+          <h4>Misael Estrada </h4>
+                    <p class="text-muted">Co-founder Fixter</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://www.facebook.com/oscaruve?fref=ts"><i style="font-size:22px" class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://github.com/ozobear"><i style="font-size:30px" class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>    
+                    </ul>
+         </div>
+      </div>
+      <div class='col-lg-3 col-md-4 col-sm-3 col-xs-6'>
+         <div class="team-member">
+          <div class='saul'></div>
+          <h4>Saul Sandoval</h4>
+                    <p class="text-muted">Mobile Developer</p>
+                    <ul class="list-inline social-buttons">
+                      <li><a href="https://www.facebook.com/SaulSandovalM?fref=ts"><i style="font-size:22px" class="fa fa-facebook"></i></a>
+                      </li>
+                      <li><a href="https://github.com/SaulSandovalM"><i style="font-size:30px" class="fa fa-github" aria-hidden="true"></i></a>
+                      </li>    
+                    </ul>
+         </div>
+      </div>
+      <div class='col-lg-3 col-md-4 col-sm-3 col-xs-6'>
+        <div class="team-member">
+          <div class='oswaldin'></div>
+          <h4>Oswaldo Martinez</h4>
+                    <p class="text-muted">Backend Developer</p>
+                    <ul class="list-inline social-buttons">
+                     <li><a href="https://www.facebook.com/oswwaldom?fref=ts"><i style="font-size:22px" class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://github.com/Oswaldinho24k"><i style="font-size:30px" class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                       
+                    </ul>
+         </div>
+      </div>
+    </div>
+  <!--  Tercer fila -->
+    <div class='row'>
+      <div class='col-lg-3 col-lg-offset-3 col-md-4 col-sm-3 col-xs-6'>
+        <div class="team-member">
+          <div class='topi'></div>
+          <h4>Topi Hernández</h4>
+                    <p class="text-muted">Fullstack Developer</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://www.facebook.com/TopiHdz?fref=ts"><i style="font-size:22px" class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://github.com/Topi99"><i style="font-size:30px" class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+        </div>
+      </div>
+      <div class='col-lg-3 col-md-4 col-sm-3 col-xs-6'>
+        <div class="team-member">
+          <div class='martin'></div>
+          <h4>Martin Melo</h4>
+                    <p class="text-muted">Fullstack Developer</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://www.facebook.com/martin.melo.godinez?fref=ts"><i style="font-size:22px" class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="https://github.com/MartinMelo97"><i style="font-size:30px" class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+        </div>
+      </div>  
+    </div>
+  </div>
+</section>
+<section class='tour'>
+  <h3 class='titulin center'>Fixter Tour</h3>
+  <div class='row'>
+    <div class='col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12'>
+      <div class=' info textin center'>
+        <p>
+          Fixter Tour estará en algunas ciudades de México como: Guanajuato, Guadalajara, Toluca, Puebla, Querétato y Cancún.
+        </p>
+        <p>
+          No pierdas la oportunidad de ser parte de este gran evento! Aparta tu lugar!!
+        </p>
+        <br>
+        <p>Próximo Camp: Guadalajara 5 de Junio al 30 de Junio 2017</p> 
+      </div>
+      <div class='center'>
+        <a href="{%url 'main:tour'%}">
+          <button class="botoncin btn-xl">Más información</button>
+        </a>
+      </div>
+    </div>
+    <div class=' col-lg-5 col-md-5 col-sm-10 col-xs-12'>
+      <img class='mundo' src="{%static 'assets/images/mundo-01.png'%}">
+    </div>
+  </div>
 </section>
 
-<section class="section negro">
-  <article class="row contenedor">
-    <h2>¿Que hace a Fixter.Camp Diferente?</h2>
-    <div class="divider"></div>
-    <p>Conviertete en desarrollador en tan solo 8 semanas</p>
-
-    <div class="five columns card">
-      <i class="fa fa-check-square-o" aria-hidden="true"></i>
-      <span>Generas habilidades de primer nivel</span>
-      <p>
-        Las herramientas y ejercicios que el Fixter.Camp utiliza estan pensadas para que todos los días aumentes tus habilidades, habilidades muy codiciadas por startups en todo el mundo.
-      </p>
-    </div>
-
-    <div class="five columns card">
-      <i class="fa fa-line-chart" aria-hidden="true"></i>
-      <span>Paths diseñados por profesionales</span>
-      <p>
-        Ve de 0 a 100 en la tecnología que te intereza agregando habilidades que te permitan obtener el empleo de tus sueños, crear proyectos de alto impacto entendiendo el porque de el desarrollo de software con las mejores practicas.
-      </p>
-    </div>
-
-    <div class="five columns card">
-      <i class="fa fa-ambulance" aria-hidden="true"></i>
-      <span>Ayuda inmediata</span>
-      <p>
-        Una de las grandes ventajas de Fixter.Camp es el instructor personal que te ayuda en cada paso del curso, respondiendo tus preguntas y retandote a cuestionarte e ir mas allá.
-      </p>
-    </div>
-
-    <div class="five columns card">
-      <i class="fa fa-laptop" aria-hidden="true"></i>
-      <span>Clases 100% prácticas</span>
-      <p>
-        El Fixter.Camp es un taller colaborativo donde aplicas inmediatamente lo que aprendes, provocando un aprendizaje sistemático y efectivo.
-      </p>
-    </div>
-
-  </article>
-</section>
-
-<section class="section blanco">
-  <article class="row">
-    <h2 style="color:grey;">¿Cuanto cuesta Fixter.Camp?</h2>
-    <div style="border:1px solid grey;" class="divider"></div>
-    <p style="color:grey;" >Tu puedes aplicar para una beca</p>
-
-    <div class="plan one-third column">
-      <h5>Backend y Servidores</h5>
-      <div class="money">
-      <span class="dinero">$</span>
-      <span class="cantidad">14,000.</span>
-      <span class="dinero">MXN</span>
-      </div>
-      <p class="desc">Este curso es para programadores Python que quieren subir al siguiente nivel en DevOps. Levanta servidores en AWS con Linux, con la seguridad y encriptación correcta y bases de datos PostgreSQL, configura NGINX como servidor y proxy orientado a eventos y aprende a hostear proyectos Django, Nodejs, y Angular en el mismo servidor.</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Practica todos los días</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Asesoría personalizada</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Un exelente ambiente y comunidad</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Puedes pagar a 12 meses sin intereses</p>
-      <a href="{%url 'apply' 3%}">
-      <button>Aplicar</button>
-      </a>
-    </div>
-
-    <div class="plan one-third column">
-      <h5>Desarrollo Web</h5>
-      <div class="money">
-      <span class="dinero">$</span>
-      <span class="cantidad">12,000.</span>
-      <span class="dinero">MXN</span>
-      </div>
-      <p class="desc">Aprende a diseñar paginas web espectaculares; con HTML5, CSS3 y JavaScript, te enseñaremos a usar AngularJs y Firebase, tendrás las habilidades para construir apps sin límites. </p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Practica todos los días</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Asesoría personalizada</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Un exelente ambiente y comunidad</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Puedes pagar a 12 meses sin intereses</p>
-      <a href="{%url 'apply' 3%}">
-      <button>Aplicar</button>
-      </a>
-    </div>
-
-    <div class="plan one-third column">
-      <h5>Introducción al Código</h5>
-      <div class="money">
-      <span class="dinero">$</span>
-      <span class="old-cantidad">12,000.</span>
-          <span class="cantidad">6,000.</span>
-      <span class="dinero">MXN</span>
-      </div>
-      <p class="desc">¡No hay nada mas emocionante y divertido que soñar con una gran herramienta tecnológica y convertirla en realidad! además, tu podrás entender como funciona la web y lo mejor; ¡Aprenderás a programar como un profesional! No importa si nunca has programado, empezaremos ¡desde cero!</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Practica todos los días</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Asesoría personalizada</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Un exelente ambiente y comunidad</p>
-      <p><i class="fa fa-check" aria-hidden="true"></i>Puedes pagar a 12 meses sin intereses</p>
-      <a href="{%url 'apply' 3%}">
-      <button>Aplicar</button>
-      </a>
-    </div>
-  </article>
-  <article class="contenedor">
-    <div class="beca">
-      <p>Tu puedes aplicar para una beca, solo tienes que describir el porque la necesitas, y podriamos otorgarte hasta 50% de descuento.<br> <strong>¡No te quedes fuera! Inténtalo.</strong></p>
-      <a href="{%url 'apply' 3%}">
-      <button>Aplica para una Beca</button>
-      </a>
-    </div>
-  </article>
-</section>
-
-
-
-
-
-
-
-
-{%endblock content%}
-
-{%block scripts%}
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=421914394679473";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 <script>
-$(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-  });
+  
+        $('.movil span i').click(function(){
+            $('#mobil_bar').toggleClass('pesta')
+
+        });
+        $('.pestana').click(function(){
+            $('#mobil_bar').toggleClass('pesta')
+        });
 </script>
-{%endblock scripts%}
+
+{%endblock content%}
