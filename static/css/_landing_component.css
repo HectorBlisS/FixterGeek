@@ -43,6 +43,7 @@ a:hover{
 	padding-top:3px;
 	background-color:#DA9569;
 }
+
 a:focus .pestana{
 	background-color:#DA9569;
 
@@ -355,6 +356,16 @@ textarea.form-control{
 	margin-top:25px;
 	text-align:justify;
 }
+.brendi{
+	background-image:url('/static/assets/fotos/brendi-01.png');
+	background-size:cover;
+
+	margin: 0 auto;
+    border: 7px solid white;
+    border-radius:50%;
+    width:150px;
+    height:150px;
+}
 .oswaldin{
 	background-image:url('/static/assets/fotos/oswaldo1-01.png');
 	background-size:cover;
@@ -429,7 +440,7 @@ textarea.form-control{
 	background-image:url('/static/assets/fotos/bliss2-01.png');
 }
 .oscar{
-	background-image:url('/static/assets/fotos/oscar-01.png');
+	background-image:url('/static/assets/fotos/misael-01.png');
 	background-size:cover;
 	margin: 0 auto;
     border: 7px solid white;
@@ -438,6 +449,7 @@ textarea.form-control{
     height:150px;
 	
 }
+
 /*Inicia medias*/
 @media (max-width: 1024px) {
 	.textin{
@@ -471,13 +483,10 @@ textarea.form-control{
 		text-align:center;
 	}
 	.formulario{
-		top:280px;
-		left: 0;
-		width: 100%;
-		z-index: 0;
-	}
-	.intro{
-		height: 100vh;
+		top:45%;
+		left:0%;
+		width:100%;
 	}
 
 }
+

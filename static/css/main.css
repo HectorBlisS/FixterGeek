@@ -2,6 +2,7 @@
 @import "_tour_component.css";
 @import "_inscripcion_component.css";
 @import "_camp_component.css";
+@import "_dashboard.css";
 
 /*.carga{
   position: fixed;

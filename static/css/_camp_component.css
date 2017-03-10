@@ -15,6 +15,14 @@
 	height:70%;
 	position:relative;
 }
+.cuadra3{
+	background-image:url('https://images.pexels.com/photos/123335/pexels-photo-123335.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	height:70%;
+	position:relative;
+}
 .espacio{
 	position:absolute;
 	width:50%;
@@ -140,7 +148,7 @@ button{
 	height:50px;
 	transition:all .5s ease;
 	z-index:-1;
-	background-color: #8BBFC8;
+	background-color:#B4C085;
 	border: none;
 	border-radius: 5px;
 	color: white;
@@ -172,6 +180,7 @@ button{
 .divider{
 	margin:70px 0;
 }
+
 @media(max-width: 780px){
 	.espacio{
 		top:5px;
@@ -199,6 +208,7 @@ button{
 
 	}
 	.containers{
+		height:800px;
 		margin-bottom:30px;
 	}
 	.cuadrado, .cuadrado2{
@@ -214,7 +224,7 @@ button{
 		top:0px;
 	}
 	.paths{
-		font-size:18px;
+		font-size:17px;
 	}
 	.cuadrado, .cuadrado2{
 		height:65%;
@@ -223,7 +233,7 @@ button{
 }
 @media(max-width: 380px){
 	.paths{
-		font-size:16px;
+		font-size:15px;
 	}
 
 }
