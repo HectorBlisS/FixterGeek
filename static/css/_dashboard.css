@@ -1,0 +1,62 @@
+
+
+.btn_aplicar{
+	width:40%;
+	border-radius:4px;
+	color:white;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.btn_uno{
+	margin-left:10%;
+	border:#8BBFC8;
+	border:.5px;
+	background-color:#8BBFC8;
+}
+.btn_dos{
+	border:#8BBFC8;
+	border:.5px;
+	background-color:#B4C085;
+}
+
+.btn_uno:hover{
+	color:#8BBFC8;
+	background-color:white;
+	border:.5px solid #8BBFC8;
+}
+.btn_dos:hover{
+	color:#B4C085;
+	background-color:white;
+	border:.5px solid #B4C085;
+}
+.btn_tres{
+	background-color:#CE7269;
+	border:solid 1px #CE7269;
+	color:white;
+	margin-left:30%;
+}
+.perf{
+	padding-top:50px;
+	
+	text-align:center;
+	color:#7c7c7c;
+	font-size:20px;
+	font-family:Gotams;
+	font-size:40px;
+}
+.card_perfil{
+	border-radius:10px;
+	border:solid 1px #e0e0e0;
+	background-color:white;
+	margin-bottom:100px;
+
+}
+.foto_perfil{
+	width:50%;
+	margin-left:25%;
+	height:auto;
+	margin-top:30px;
+}
+.mail_perfil{
+	padding-left:30px;
+}
