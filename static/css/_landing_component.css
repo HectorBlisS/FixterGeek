@@ -483,10 +483,23 @@ textarea.form-control{
 		text-align:center;
 	}
 	.formulario{
-		top:45%;
+		top:50%;
 		left:0%;
 		width:100%;
 	}
+	
 
+}
+
+@media (max-width: 320px){
+	.formulario{
+		top:55%;
+		left:0%;
+		width:100%;
+	}
+	.sesion2{
+		margin:10px 0px;
+		padding:2px 10px;
+	}
 }
 
