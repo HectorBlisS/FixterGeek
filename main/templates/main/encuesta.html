@@ -1,0 +1,141 @@
+{%extends 'base.html'%}
+{%load static%}
+
+
+{%block content%}
+
+
+<div class=' padding'>
+    <div class='inscribir'>
+    	<div class='forms'>
+    		<img class='fix' src="{%static 'assets/images/geek_circulo_logo.png'%}">
+    		<h3>Encuesta de Satisfacción</h3>
+    		<form method="post" action="." class='recuadro' name="sentMessage" id="contactForm">
+    			{%csrf_token%}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <p>¿Que Path cursaste?</p>
+                            <select required name="path" type="text" class='formas form-control' id="name" required data-validation-required-message="Please enter your name.">
+                                <option value="Desarrollo Web">Desarrollo Web</option>
+                                <option value="Backend y Servidores">Backend y Servidores</option>
+                            </select>                  
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <p>¿Te sientes satisfecho con el contenido del curso?</p>
+                                <select required name="satisfy" id='select' type="text" class='formas form-control' id="name" data-validation-required-message="Please enter your name.">
+                                    <option value='no'>No</option>
+                                    <option value='si'>Si</option>
+                                </select>
+                        </div>
+    				</div>
+    				<div class="col-md-12 ">
+                        <div class="form-group">
+                            <p>¿En general del 1 al 10 como calificas el curso?</p>
+                            <select required name="rank" type="text" class='formas form-control' id="name" required data-validation-required-message="Please enter your name.">
+                                <option value="no escogio" disabled>------------</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select> 
+                        </div>
+                    </div>
+    				<div class="col-md-12 ">
+                        <div class="form-group">
+                            <p>¿Puedes hacer algunas observaciones tanto positivas como negativas a tu instructor ?</p>
+                            <textarea required name="observations" class="formas form-control" placeholder="Mensaje *" id="message" data-validation-required-message="Please enter a message."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <p>¿Volverías a tomar un curso en Fixter?</p>
+                            <select required name="repeat" id='select' type="text" class='formas form-control' id="name" data-validation-required-message="Please enter your name.">
+                                    <option value='no'>No</option>
+                                    <option value='si'>Si</option>
+                             </select>
+                        </div>
+                    </div>
+
+                    <h4>Recuerda que al tomar el segundo camp, tienes un descuento adicional, y el costo es de $3,600.00</h4>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 text-center">
+                        <div id="success"></div>
+                            <button style="margin-bottom:30px; padding:5px 10px" type="submit" class="btn btn-xl">Enviar</button>
+                    </div>
+                </div>
+            </form>
+    	</div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+	$('.si').hide();
+		$('#select').change(function(){
+			var option = $(this).val();
+			console.log(option)
+			if (option == 'no'){
+				$('.si').slideToggle();
+			}
+			else if (option == 'si'){
+				$('.si').slideToggle();
+			}
+			
+		});
+
+</script>
+{%endblock content%}
+
+
+
+
+<section style="" class="contenedor center">
+	<img src="{%static 'assets/logo_geek.png'%}">
+<h2>Hola {{request.user.username}} es genial que quieras ser parte del {{evento.titulo}}</h2>
+<form action="." method="post">
+	{%csrf_token%}
+	{{form.as_p}}
+	<input type="submit" value="Aplicar">
+</form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+$('#id_porque').parent().hide();
+
+$(document).on('change','#id_beca',function(){
+
+var beca = $('#id_beca').val()
+console.log(beca);
+
+if (beca === 'True'){
+	$('#id_porque').parent().slideToggle();
+}else{
+	$('#id_porque').parent().slideToggle();
+}
+
+
+
+
+});//docu
+</script>
