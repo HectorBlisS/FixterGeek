@@ -12,3 +12,6 @@ class Next(TemplateView):
 
 class Tour(TemplateView):
 	template_name="main/tour.html"
+
+class Encuesta(TemplateView):
+	template_name="main/encuesta.html"

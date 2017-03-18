@@ -12,5 +12,8 @@ urlpatterns=[
 	url(r'^tour/',
 		views.Tour.as_view(),
 		name="tour"),
+	url(r'^encuesta/',
+		views.Encuesta.as_view(),
+		name="encuesta"),
 	
 ]
