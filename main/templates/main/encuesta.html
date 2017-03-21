@@ -16,17 +16,16 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <p>¿Que Path cursaste?</p>
-                            <select name="path" type="text" class='formas form-control' id="name" required data-validation-required-message="Please enter your name.">
-                                <option value="no escogio" disabled>------------</option>
+                            <select required name="path" type="text" class='formas form-control' id="name" required data-validation-required-message="Please enter your name.">
                                 <option value="Desarrollo Web">Desarrollo Web</option>
-                                <option value="Videogames Path/Pachuca">Backend y Servidores</option>
+                                <option value="Backend y Servidores">Backend y Servidores</option>
                             </select>                  
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <p>¿Te sientes satisfecho con el contenido del curso?</p>
-                                <select name="satisfaccion" id='select' type="text" class='formas form-control' id="name" data-validation-required-message="Please enter your name.">
+                                <select required name="satisfy" id='select' type="text" class='formas form-control' id="name" data-validation-required-message="Please enter your name.">
                                     <option value='no'>No</option>
                                     <option value='si'>Si</option>
                                 </select>
@@ -35,7 +34,7 @@
     				<div class="col-md-12 ">
                         <div class="form-group">
                             <p>¿En general del 1 al 10 como calificas el curso?</p>
-                            <select name="calificacion" type="text" class='formas form-control' id="name" required data-validation-required-message="Please enter your name.">
+                            <select required name="rank" type="text" class='formas form-control' id="name" required data-validation-required-message="Please enter your name.">
                                 <option value="no escogio" disabled>------------</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -53,14 +52,14 @@
     				<div class="col-md-12 ">
                         <div class="form-group">
                             <p>¿Puedes hacer algunas observaciones tanto positivas como negativas a tu instructor ?</p>
-                            <textarea name="why" class="formas form-control" placeholder="Mensaje *" id="message" data-validation-required-message="Please enter a message."></textarea>
+                            <textarea required name="observations" class="formas form-control" placeholder="Mensaje *" id="message" data-validation-required-message="Please enter a message."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <p>¿Volverías a tomar un curso en Fixter?</p>
-                            <select name="curso" id='select' type="text" class='formas form-control' id="name" data-validation-required-message="Please enter your name.">
+                            <select required name="repeat" id='select' type="text" class='formas form-control' id="name" data-validation-required-message="Please enter your name.">
                                     <option value='no'>No</option>
                                     <option value='si'>Si</option>
                              </select>
