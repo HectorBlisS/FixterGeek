@@ -181,6 +181,11 @@ button{
 	margin:70px 0;
 }
 
+.precio {
+	display:block;
+
+}
+
 @media(max-width: 780px){
 	.espacio{
 		top:5px;
@@ -208,7 +213,7 @@ button{
 
 	}
 	.containers{
-		height:800px;
+
 		margin-bottom:30px;
 	}
 	.cuadrado, .cuadrado2{
@@ -226,8 +231,15 @@ button{
 	.paths{
 		font-size:17px;
 	}
-	.cuadrado, .cuadrado2{
-		height:65%;
+	.cuadrado, .cuadrado2, .cuadra3{
+		height:60%;
+	}
+	.blanco{
+		height:900px;
+		margin-bottom:100px;
+	}
+	.precio span{
+		font-size:15px;
 	}
 	
 }
