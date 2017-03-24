@@ -4,29 +4,31 @@
 {%block content%}
 
 <section class='campamento'>
-	<h3 style="font-family: 'Dosis', sans-serif; font-size:60px; margin: 0px;" class='titulin center'>FixterCamp#4</h3>
-	<div class='containers'><hr style="color:black; size:3px">
-		<div class='row'>
-			<div class='blanco col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12'>
-				
-					<div class='cuadrado'>
-						<div class='cubierta'>
-							<div class='espacio'>
-								<img class='instructor' src="{%static 'assets/fotos/bliss1-01.png'%}">
-								<h3 class='name'>Héctor Bliss</h3>
-								<div class='hr'></div>
+	<h3 style="" class='text_camp center'>FixterCamp#4</h3>
+	<hr style="color:black; size:3px">
+
+	<div class='contenedores'>
+		<div class='row blanco'>
+			<div style="padding:0px" class=' col-lg-12'>
+				<div class='cuadrado'>
+					<div class='cubierta'>
+						<div class='informacion'>
+							<img class='instructor' src="{%static 'assets/fotos/bliss1-01.png'%}">
+							<h3 class='name'>Héctor Bliss</h3>
+							<div class='hr'></div>
 								<p class='puesto'>Fullstack Developer</p>
 								<p class='paths'>
 									Crea apps nativas con Android, en este path aprenderás su estructura, entorno de desarrollo, fragmentos y vistas, recursos de diseño (animaciones y material design), consumo database desde Firebase, pushnotifications y más.
 								</p>
-								<a href="{%static 'temario/Temario.pdf' %}" style="color:white">
+								<a href="{%static 'temario/Temario.pdf' %}" style="color:white; font-size:20px; padding: 200px 0px">
 									<span class="download glyphicon glyphicon-save" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Descargar temario"></span>
 								</a>
-							</div>
-						</div>	
-					</div>
-				
-				<div class='cursito row'>
+						</div>		
+					</div>	
+				</div>
+			</div>
+			<div class='col-lg-12'>
+				<div class='row'>
 					<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
 						<h4 class='way'>Mobile Apps Path</h4>
 						<p class='fecha'>8 de Abril al 27 de Mayo</p>
@@ -48,46 +50,46 @@
 						<p class='temas'>Firebase</p>
 					</div>
 				</div>
-				<br>
-				<div class='row precio'>
-					<div style="text-align:center; font-size:20px" class='col-lg-12'>
-							<span >Precio por promoción:</span> 
-							<span style='text-decoration: line-through;' >$12,000.00</span>
-							<span style="color:#B4C085">a $6,000.00</span>
-					</div>
-				</div>
-				<a href="{%url 'apply' 3%}">
-					<button class='btn_in'>Inscribirme</button>
-				</a>
 			</div>
+			<div class='precio'>
+					<div style="text-align:center; font-size:20px" class=''>
+							<span >Precio por promoción:</span> 
+							<span style="color:#B4C085">$6,000.00</span>
+					</div>
+			</div>
+			<br/>
+			
+			<a href="{%url 'apply' 3%}" class="btn_in">
+				Inscribirme
+			</a>
+			
 		</div>
 	</div>
-	<div class="divider"></div>
-	<div class='containers'>
-		<div class='row'>
-			<div class=' blanco col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12'>
-				
-					<div class='cuadrado2'>
-						<div class='cubierta'>
-							<div class='espacio'>	
-								<img class='instructor' src="{%static 'assets/fotos/david2-01.png'%}">
-								<h3 class='name'>David Zavala</h3>
-								<div class='hr'></div>
+	
+	<div class='contenedores'>
+		<div class='row blanco'>
+			<div style="padding:0px" class=' col-lg-12'>
+				<div class='cuadrado2'>
+					<div class='cubierta'>
+						<div class='informacion'>
+							<img class='instructor' src="{%static 'assets/fotos/david1-01.png'%}">
+							<h3 class='name'>David Zavala</h3>
+							<div class='hr'></div>
 								<p class='puesto'>Frontend Developer</p>
 								<p class='paths'>
-								Aprende a desarrollar apps en Javascript de forma optimizada y organizada con React.js, la librería creada por Facebook. React es una librería que te ayudará a desarrollar de forma rápida, ligera y escalable.	
+									Aprende a desarrollar apps en Javascript de forma optimizada y organizada con React.js, la librería creada por Facebook. React es una librería que te ayudará a desarrollar de forma rápida, ligera y escalable.
 								</p>
-								<a href="{%static 'temario/Temario.pdf' %}" style="color:white">
+								<a href="{%static 'temario/Temario.pdf' %}" style="color:white; font-size:20px; padding: 200px 0px">
 									<span class="download glyphicon glyphicon-save" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Descargar temario"></span>
 								</a>
-							</div>
-						</div>	
-					</div>
-				
-				<div class='cursito row'>
+						</div>		
+					</div>	
+				</div>
+			</div>
+			<div class='col-lg-12'>
+				<div class='row'>
 					<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
-						<h4 class='way'>Frontend
-						<br> Path</h4>
+						<h4 class='way'>Frontend Path</h4>
 						<p class='fecha'>8 de Abril al 27 de Mayo</p>
 					</div>
 					<div class='col-lg-2 col-md-2 col-sm-3 col-xs-3'>
@@ -107,43 +109,44 @@
 						<p class='temas'>Firebase</p>
 					</div>
 				</div>
-				<br>
-				<div class='row precio'>
-					<div style="text-align:center; font-size:20px; " class='col-lg-12'>
-							<span >Precio por promoción:</span> 
-							<span style='text-decoration: line-through;' >$12,000.00</span>
-							<span style="color:#B4C085">a $6,000.00</span>
-					</div>
-				</div>
-				<a href="{%url 'apply' 3%}" >
-					<button class='btn_in'>Inscribirme</button> 
-				</a>
 			</div>
+			<div class='precio'>
+					<div style="text-align:center; font-size:20px" class=''>
+							<span >Precio por promoción:</span> 
+							<span style="color:#B4C085"> $6,000.00</span>
+					</div>
+			</div>
+			<br/>
+			
+			<a href="{%url 'apply' 3%}" class="btn_in">
+				Inscribirme
+			</a>
+			
 		</div>
 	</div>
-	<div class="divider"></div>
-	<div class='containers'>
-		<div class='row'>
-			<div class=' blanco col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-12 col-xs-12'>
-				
-					<div class='cuadra3'>
-						<div class='cubierta'>
-							<div class='espacio'>	
-								<img class='instructor' src="{%static 'assets/fotos/saul1-01.png'%}">
-								<h3 class='name'>Saul Sandoval</h3>
-								<div class='hr'></div>
+
+		<div class='contenedores'>
+		<div class='row blanco'>
+			<div style="padding:0px" class=' col-lg-12'>
+				<div class='cuadra3'>
+					<div class='cubierta'>
+						<div class='informacion'>
+							<img class='instructor' src="{%static 'assets/fotos/saul2-01.png'%}">
+							<h3 class='name'>Saul Sandoval</h3>
+							<div class='hr'></div>
 								<p class='puesto'>Mobile Developer</p>
 								<p class='paths'>
 									Utilizando Unity adentrate en el mundo de la realidad virtual, crea  tus propios videojuegos en 2D y 3D (personajes, mapas, villanos),  y un sin fin de entornos virtuales.
 								</p>
-								<a href="{%static 'temario/Temario.pdf' %}" style="color:white">
+								<a href="{%static 'temario/Temario.pdf' %}" style="color:white; font-size:20px; padding: 200px 0px">
 									<span class="download glyphicon glyphicon-save" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Descargar temario"></span>
 								</a>
-							</div>
-						</div>	
-					</div>
-				
-				<div class='cursito row'>
+						</div>		
+					</div>	
+				</div>
+			</div>
+			<div class='col-lg-12'>
+				<div class='row'>
 					<div class='col-lg-4 col-md-4 col-sm-12 col-xs-12'>
 						<h4 class='way'>Videogames
 						<br> Path</h4>
@@ -166,19 +169,22 @@
 						<p class='temas'>Firebase</p>
 					</div>
 				</div>
-				<div style='padding-top:20px' class='row precio'>
-					<div style="text-align:center; font-size:20px" class='col-lg-12'>
-							<span >Precio por promoción:</span> 
-							<span style='text-decoration: line-through;' >$12,000.00</span>
-							<span style="color:#B4C085">a $5,000.00</span>
-					</div>
-				</div>
-				<a href="{%url 'apply' 3%}" >
-					<button class='btn_in'>Inscribirme</button> 
-				</a>
 			</div>
+			<div class='precio'>
+					<div style="text-align:center; font-size:20px" class=''>
+							<span >Precio por promoción:</span> 
+							<span style="color:#B4C085"> $6,000.00</span>
+					</div>
+			</div>
+			<br/>
+			
+			<a href="{%url 'apply' 3%}" class="btn_in">
+				Inscribirme
+			</a>
+			
 		</div>
 	</div>
+	
 </section>
 
 

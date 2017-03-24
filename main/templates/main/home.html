@@ -6,7 +6,7 @@
  
     <div class='formulario'>
       <div class='f'>
-        <h3 class='titulos'>Para recibir informacion del próximo Fixter Camp completa el formulario</h3>
+        <h3 class='titulos'>Para recibir información del próximo Fixter Camp completa el formulario</h3>
       </div>
       <form method='post' action="{%url 'mailin:mensaje'%}" class='recuadro' name="sentMessage" id="contactForm">
         {%csrf_token%}
@@ -48,15 +48,15 @@
     </div>
     <div class='text col-lg-5 col-md-5 col-sm-5 col-xs-12'>
       <div>
-        <h3 class='titulin separa'>¿Que es el FixterCamp?</h3>
+        <h3 class='titulin separa'>¿Qué es el FixterCamp?</h3>
         <div class='textin'>
           <div>
             <p>
-              El FixterCamp es un bootcamp que tiene como objetivo enseñar a los curiosos por el código los lenguajes de programación más modernos de forma profesional y divertida.
+              El FixterCamp es un bootcamp que busca enseñar a los curiosos por el código los lenguajes de programación más modernos de forma profesional y divertida.
             </p>
             <br>
             <p>
-              No es una escuela tradicional, es un lugar en donde en comunidad y de la mano de nuestros expertos aprenderás las buenas practicas de la programacion.
+              No es una escuela tradicional, es un lugar en donde en comunidad y de la mano de nuestros expertos aprenderás las buenas prácticas de la programación.
             </p>
           </div>
         </div>
@@ -72,8 +72,8 @@
       <div class='col-lg-2 col-lg-offset-2 col-md-2 col-md-offset-2 col-sm-6 col-xs-6'>
         <img class='gif' src="{%static 'assets/images/1.1-01.png'%}">
         <div class='descripcion'>
-          <p class='titulos'>Inscribete</p>
-          <p class='textito'>Crea un perfil de usuario e inscribete al path que más te gusta.</p>
+          <p class='titulos'>Inscríbete</p>
+          <p class='textito'>Crea un perfil de usuario e inscríbete al path que más te gusta.</p>
         </div>
       </div>
       <div class='col-lg-2 col-md-2 col-sm-6 col-xs-6'>
@@ -101,7 +101,7 @@
   </div>
 </section>
 <section class='cursos'>
-  <h3 class='titulin center'>¿Que puedes aprender en el Fixter.Camp?</h3>
+  <h3 class='titulin center'>¿Qué puedes aprender en el Fixter.Camp?</h3>
   <div class='row'>
     <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
       <div class='row'>
@@ -125,7 +125,7 @@
         <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
           <div class=' definicion'>
             <p>AngularJS</p>
-            <p>Es un proyecto de código abierto, realizado en Javascript que contiene un conjunto de librerías útiles para el desarrollo de aplicaciones web. Es el framework mas popular a nivel mundial además de estar soportado por Google.
+            <p>Es un proyecto de código abierto en Javascript que contiene un conjunto de librerías útiles para el desarrollo de aplicaciones web. Es el framework mas popular a nivel mundial, además de estar soportado por Google.
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@
         <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
           <div class='definicion'>
             <p>Django</p>
-            <p>Django es un framework para aplicaciones web gratuito y open source, escrito en Python. Es un WEB framework - un conjunto de componentes que te ayudan a desarrollar sitios web más fácil y rápidamente. Es usado en Youtube, NYT, Instagram, Pinterest. 
+            <p>Django es un framework para aplicaciones web gratuito y open source, escrito en Python. Es un WEB framework - conjunto de componentes que te ayudan a desarrollar sitios web más fácil y rápidamente. Es usado en Youtube, NYT, Instagram, Pinterest. 
             </p>
           </div>
         </div>
@@ -187,7 +187,7 @@
         <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
           <div class='definicion'>
             <p>Ember</p>
-            <p>Framework JavaScript para crear aplicaciones web basado en la arquitectura modelo-vista-controlador (MVC). Permite a los desarrolladores crear aplicaciones de una sola pagina (single-page) escalables.
+            <p>Framework JavaScript para crear aplicaciones web basado en la arquitectura modelo-vista-controlador (MVC). Permite a los desarrolladores crear aplicaciones de una sola página (single-page) escalables.
             </p>
           </div>
         </div>
@@ -226,6 +226,36 @@
     </div>
   </div>
 <!-- termina cuarto row -->
+  <div class='row'>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/camp/react.png'%}"> 
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class='definicion'>
+            <p>React</p>
+            <p>React.js es una librería Javascript creada por Facebook para construir interfaces de usuario, que permitan crear aplicaciones SPA(single page application) más eficientes y funciona tanto en el lado cliente como en el servidor.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6 col-lg-6 col-sm-12 col-xs-12'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-12'>
+          <img class='lenguaje img-responsive' src="{%static 'assets/camp/fire-01.png'%}">
+        </div>
+        <div class='col-lg-8 col-md-8 col-sm-8 col-xs-12'>
+          <div class='definicion'>
+            <p>Firebase</p>
+            <p>Firebase es una plataforma móvil que te permite desarrollar apps de alta calidad con rapidez, aumentar la cantidad de usuarios y ganar más dinero. Firebase contiene funciones complementarias que puedes combinar y adaptar según tus necesidades.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <section class='pasos '>
   <div class=' container'>
