@@ -29,7 +29,7 @@ a:hover{
 	height: 30px;
 	text-align:center;
 	background-color:#DA9569; 
-	z-index:9999;
+	/*z-index:9999;*/
 
 }
 
@@ -145,6 +145,7 @@ a:hover{
 	max-height:300px;
 	width:auto;
 	margin:0 auto;
+	margin-top:20px;
 }
 
  h3{
@@ -348,12 +349,7 @@ textarea.form-control{
 }
 .definicion{
 	font-family:Gotams;
-}
-/*.lenguage{
-	display:flex;
-}*/
-.definicion{
-	margin-top:25px;
+	margin-top:20px;
 	text-align:justify;
 }
 .brendi{
