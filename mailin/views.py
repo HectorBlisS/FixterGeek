@@ -199,7 +199,7 @@ class Mensaje(View):
 		}
 		if not request.POST.get('msj'):
 			datos['msj'] = 'Quiero recibir más información porfavor'
-		print(datos)
+		# print(datos)
 		try:
 			mensajeSend(datos)
 			messages.success(request, 'Tu mensaje ha sido enviado con éxito pronto nos comunicaremos contigo')
