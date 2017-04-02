@@ -22,7 +22,7 @@ class Patrocinio(View):
 			messages.error(request, "Error al enviar, intentalo nuevamente")
 		return redirect('mailin:patrocinio')
 
-class Hackaton(View):
+class Beca(View):
 	@method_decorator(login_required())
 	def get(self,request):
 		template_name = "mailin/hackaton.html"
@@ -31,13 +31,13 @@ class Hackaton(View):
 	def post(self,request):
 		mails = request.POST.get('mails').split(",")
 		try:
-			enviar_mails(mails,"hackaton.html","¡Lánzate al Hackatón navideño!")
+			enviar_mails(mails,"correos/beca.html","¡Felicidades!")
 			messages.success(request,"correos enviados")
 		except:
 			messages.error(request, "Error al envíar intentalo nuevamente")
-		return redirect('mailin:hackaton')
+		return redirect('mailin:beca')
 
-class Fc3(View):
+class Info(View):
 		@method_decorator(login_required())
 		def get(self, request):
 			template_name = "mailin/xmas.html"
@@ -46,18 +46,18 @@ class Fc3(View):
 		def post(self, request):
 			mails = request.POST.get('mails').split(",")
 			try:
-				enviar_mails(mails, "xmas.html", "Crea tus propias Apps como todo un pro")
+				enviar_mails(mails, "correos/info.html", "Crea tus propias Apps como todo un pro")
 				messages.success(request, "correos enviados")
 			except:
 				messages.error(request, "Error al envíar intentalo nuevamente")
-			return redirect('mailin:fc3')
+			return redirect('mailin:info')
 
 # # Funcion para enviar Email
 # from django.template import Context
 from django.template.loader import get_template
 from django.core.mail import EmailMessage
 
-def enviar_mails(mails,template="patrocinioMail.html",subject="Mesa de patrocinadores Hackaton 2016"):
+def enviar_mails(mails,template="correos/info.html",subject="Fixter Info"):
 	subject=subject
 	to=mails
 	from_email='admin@fixter.org'
