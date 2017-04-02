@@ -8,13 +8,13 @@ urlpatterns=[
 		views.Patrocinio.as_view(),
 		name="patrocinio"),
 
-	url(r'^hackaton/$',
-		views.Hackaton.as_view(),
-		name="hackaton"),
+	url(r'^beca/$',
+		views.Beca.as_view(),
+		name="beca"),
 
-	url(r'^fc3/$',
-		views.Fc3.as_view(),
-		name="fc3"),
+	url(r'^info/$',
+		views.Info.as_view(),
+		name="info"),
 
 	url(r'^new/(?P<pk>\d+)/$',
 		views.New.as_view(),
