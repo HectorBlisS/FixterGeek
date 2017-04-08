@@ -35,7 +35,7 @@ class Pago(View):
 			print('lo logre')
 		except:
 			print('except')
-			context = {'amount':12000}
+			context = {'amount':4800}
 		return render(request,template_name,context)
 
 	@method_decorator(login_required)
