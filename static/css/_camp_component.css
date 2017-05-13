@@ -113,7 +113,6 @@ button{
 }
 
 .campamento{
-	background-color:#F4F4F4;
 	height:auto;
 	padding-bottom:70px;
 	position: relative;
@@ -150,7 +149,8 @@ button{
 }
 
 .blanco{
-	background-color:white;
+	background-color: white;
+	border:1px solid #F4F4F4;
 	margin-bottom:70px;
 	height: auto;
 	position: relative;
@@ -196,7 +196,9 @@ button{
 		font-size:18px;
 	}
 	.btn_in{
-		bottom:-45px;	
+		bottom:-37px;
+		font-size: 1.5rem;
+		height: 40px;	
 	}
 	.blanco:hover > a {
 		transform:translateY(0);
