@@ -36,6 +36,10 @@ urlpatterns=[
 		views.Mensaje.as_view(),
 		name="mensaje"),
 
+	url(r'^recordatorio/$',
+		views.Recordatorio.as_view(),
+		name="recordatorio"),
+
 	
 
 
