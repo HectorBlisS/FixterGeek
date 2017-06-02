@@ -52,6 +52,21 @@ class Info(View):
 				messages.error(request, "Error al envíar intentalo nuevamente")
 			return redirect('mailin:info')
 
+class Recordatorio(View):
+		@method_decorator(login_required())
+		def get(self, request):
+			template_name = "mailin/xmas.html"
+			return render(request, template_name)
+
+		def post(self, request):
+			mails = request.POST.get('mails').split(",")
+			try:
+				enviar_mails(mails, "correos/recordatorio.html", "Tienes una cita con nosotros =D")
+				messages.success(request, "correos enviados")
+			except:
+				messages.error(request, "Error al envíar intentalo nuevamente")
+			return redirect('mailin:recordatorio')
+
 # # Funcion para enviar Email
 # from django.template import Context
 from django.template.loader import get_template
