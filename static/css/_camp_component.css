@@ -21,12 +21,12 @@
 	text-align:center;
 }
 
-.cuadrado{
-	background-image:url('https://images.pexels.com/photos/30112/pexels-photo.jpg?w=1260&h=750&auto=compress&cs=tinysrgb');
+.cuadra{
+	background-image:url('https://images.pexels.com/photos/247791/pexels-photo-247791.png?w=940&h=650&auto=compress&cs=tinysrgb');
 	background-size:cover;
 	background-position:center;
 	background-repeat:no-repeat;
-/*	height:70%;*/
+	/*height:70%;*/
 	position:relative;
 }
 .cuadrado2{
