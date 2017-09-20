@@ -44,6 +44,7 @@ class Apply(models.Model):
 		return "{} aplico a {}".format(self.user,self.evento)
 
 class Inscription(models.Model):
+	fecha = models.DateTimeField(auto_now=True,blank=True,null=True)
 	user = models.ForeignKey(User, related_name='inscripciones')
 	nombre = models.CharField(max_length=140)
 	email = models.CharField(max_length=140)

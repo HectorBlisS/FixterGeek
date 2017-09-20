@@ -8,6 +8,18 @@ html, body{
 button{
 	font-size: 20px;
 }
+.success{
+	background: green;
+	width: 100%;
+	color:white;
+	padding-top: 4rem;
+}
+.error{
+	background: red;
+	width: 100%;
+	color:white;
+	padding-top: 4rem;
+}
 .errorlist{
 	background: red;
 	color: white;
@@ -25,7 +37,7 @@ button{
 	display: inline;
 	color:white;
 	float: right;
-	margin: 5px 20px 0 20px;
+	margin: 5px 10px 0 10px;
 }
 li a{
 	color:white;
@@ -82,6 +94,7 @@ li a:hover{
 }
 .portada-dos{
 	width: 100%;
+	height: 80vh;
 }
 
 .portada-dos h4{
@@ -105,6 +118,9 @@ li a:hover{
 	color:#f57f17;
 }
 @media (min-width: 1000px){
+	.portada-dos{
+		height: 70vh;
+	}
 	.portada-dos h4{
 		padding-top: 10%;
 		font-size: 6rem;
@@ -195,20 +211,31 @@ button:hover{
 	color:black;
 	background-color: transparent;
 	padding:20px;
+
+}
+.plan h5{
+/*	color: black;
+	font-size: 3rem;*/
+
+}
+@media (min-width: 1000px){
+	.plan{
 	margin: 0 auto;
 	margin-right: 5px;
 	margin-left: 20px;
 	margin-bottom: 8rem;
 }
-.plan h5{
-	color: black;
-	font-size: 3rem;
-
 }
 .cantidad{
 	font-size: 4.5rem;
 	color:#f57f17;
 	padding-left: 10px;
+}
+.old-cantidad{
+	font-size: 2.5rem;
+	color:#f57f17;
+	padding-left: 10px;
+	text-decoration: line-through;
 }
 .money{
 	position: relative;
@@ -254,6 +281,7 @@ button:hover{
 	transition:all 0.5s ease;
 	padding-top:0px;
 	padding-bottom:20px;
+	font-size: 1.5rem;
 }
 .beca button:hover{
 	color:#f57f17;
@@ -272,7 +300,44 @@ button:hover{
 .perfil-img:hover{
 	border-radius: 0;
 }
+.evento_portada img{
+	width: 100%;
+}
+.evento_portada_contenido{
+	text-align: center;
+}
+.evento_portada_contenido i{
+	font-size: 6rem;
+}
+.divider{
+	border: 1px solid grey;
+	width: 60%;
+	margin-bottom: 100px;
+	margin-top: 50px;
+}
+.aplica{
+	padding: 20px;
+	background: orange;
+	color:white;
+	font-family: 'Dosis', sans-serif;
+	font-size: 3rem;
+	text-decoration: none;
+	cursor: pointer;
+	margin-bottom: 100px;
+	transition:all 0.5s ease;
+}
+.aplica:hover{
+	color:orange;
+	background: white;
+	border: 1px solid orange;
+}
 
-
+input[disabled] {
+    background:#ccc;
+    border-color: #ccc;
+    text-shadow:none;
+}
 
 /*Nueva landing*/
+
+

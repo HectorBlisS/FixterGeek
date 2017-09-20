@@ -377,6 +377,13 @@ width: 100%;
 
 /*Aplicacion*/
 
+.card-errors{
+	text-align: center;
+	background: red;
+	color:white;
+	font-size: 4rem;
+}
+
 
 
 
