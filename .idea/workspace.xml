@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48d9ca15-7caa-4a71-8ee0-ca68c9f015fc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/geek/settings.py" afterPath="$PROJECT_DIR$/geek/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/correos/beca.html" afterPath="$PROJECT_DIR$/templates/correos/beca.html" />
     </list>
     <ignored path="FixterGeek.iws" />
@@ -71,25 +69,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/geek/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="-2340">
               <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="beca.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="beca.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/correos/beca.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="195" column="31" lean-forward="true" selection-start-line="195" selection-start-column="31" selection-end-line="195" selection-end-column="31" />
+            <state relative-caret-position="450">
+              <caret line="328" column="100" lean-forward="false" selection-start-line="328" selection-start-column="100" selection-end-line="328" selection-end-column="100" />
               <folding>
-                <marker date="1507764800000" expanded="true" signature="6593:6880" ph="..." />
-                <marker date="1507764800000" expanded="false" signature="6704:6749" ph="..." />
-                <marker date="1507764800000" expanded="true" signature="6856:6880" ph="..." />
+                <marker date="1507765003000" expanded="true" signature="6593:6880" ph="..." />
+                <marker date="1507765003000" expanded="false" signature="6704:6749" ph="..." />
+                <marker date="1507765003000" expanded="true" signature="6856:6880" ph="..." />
               </folding>
             </state>
           </provider>
@@ -186,8 +184,8 @@
         <option value="$PROJECT_DIR$/templates/correos/info.html" />
         <option value="$PROJECT_DIR$/applys/templates/applys/do.html" />
         <option value="$PROJECT_DIR$/main/templates/main/next.html" />
-        <option value="$PROJECT_DIR$/templates/correos/beca.html" />
         <option value="$PROJECT_DIR$/geek/settings.py" />
+        <option value="$PROJECT_DIR$/templates/correos/beca.html" />
       </list>
     </option>
   </component>
@@ -546,12 +544,12 @@
       <workItem from="1504806161840" duration="3639000" />
       <workItem from="1505925920566" duration="1060000" />
       <workItem from="1507072132701" duration="229000" />
-      <workItem from="1507764335794" duration="482000" />
+      <workItem from="1507764335794" duration="618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6416000" />
+    <option name="totallyTimeSpent" value="6552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="23" width="1170" height="777" extended-state="0" />
@@ -977,23 +975,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/correos/beca.html">
+    <entry file="file://$PROJECT_DIR$/geek/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="195" column="31" lean-forward="true" selection-start-line="195" selection-start-column="31" selection-end-line="195" selection-end-column="31" />
-          <folding>
-            <marker date="1507764800000" expanded="true" signature="6593:6880" ph="..." />
-            <marker date="1507764800000" expanded="false" signature="6704:6749" ph="..." />
-            <marker date="1507764800000" expanded="true" signature="6856:6880" ph="..." />
-          </folding>
+        <state relative-caret-position="-2340">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/geek/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/correos/beca.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="450">
+          <caret line="328" column="100" lean-forward="false" selection-start-line="328" selection-start-column="100" selection-end-line="328" selection-end-column="100" />
+          <folding>
+            <marker date="1507765003000" expanded="true" signature="6593:6880" ph="..." />
+            <marker date="1507765003000" expanded="false" signature="6704:6749" ph="..." />
+            <marker date="1507765003000" expanded="true" signature="6856:6880" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
